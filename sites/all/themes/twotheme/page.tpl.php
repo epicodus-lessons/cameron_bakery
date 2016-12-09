@@ -126,6 +126,12 @@
         </div></div> <!-- /.section, /#sidebar-first -->
       <?php endif; ?>
 
+      <?php if ($page['sidebar_second']): ?>
+        <div id="sidebar-second" class="column sidebar col-sm-3"><div class="section">
+          <?php print render($page['sidebar_second']); ?>
+        </div></div> <!-- /.section, /#sidebar-second -->
+      <?php endif; ?>
+
       <div id="content" class="column col-sm-6"><div class="section">
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <a id="main-content"></a>
@@ -138,12 +144,6 @@
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
-
-      <?php if ($page['sidebar_second']): ?>
-        <div id="sidebar-second" class="column sidebar col-sm-3"><div class="section">
-          <?php print render($page['sidebar_second']); ?>
-        </div></div> <!-- /.section, /#sidebar-second -->
-      <?php endif; ?>
 
     </div></div> <!-- /#main, /#main-wrapper -->
 

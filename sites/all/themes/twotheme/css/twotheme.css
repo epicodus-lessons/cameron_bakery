@@ -22,6 +22,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 45px;
 }
 
+#site-name a {
+  color: #8E6BB2;
+}
+
 #header {
   margin-top: 20px;
   padding-left: 15%;
@@ -29,6 +33,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu-center {
   text-align: center;
+}
+
+#navigation {
+  margin: 5px 0;
+  border-bottom: 2px solid grey;
+  padding-bottom: 2px;
+}
+
+#secondary-menu li {
+  border: 1px solid grey;
+  border-radius: 10px 10px 0 0;
+}
+
+#main-menu li {
+  font-size: 16px;
+  border-right: 2px solid grey;
+}
+
+#main-menu li:last-child {
+  border-right: none;
 }
 
 .region-sidebar-first {
