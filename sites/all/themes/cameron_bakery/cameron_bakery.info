@@ -1,0 +1,9 @@
+name = Cameron Bakery
+description = A custom theme for Cameron Bakery.
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/styles.min.css
+scripts[] = js/bootstrap.min.js
+scripts[] = js/styles.min.js
