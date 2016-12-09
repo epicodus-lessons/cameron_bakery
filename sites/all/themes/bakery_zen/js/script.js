@@ -17,9 +17,14 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
-
-      // Place your code here.
-
+        $(document).ready(function() {
+            $('.header__name-and-slogan').addClass('animated pulse');
+            $('.header__logo-image').addClass('animated rollIn');
+            // $("a").click(function(){
+            //     $('p').addClass('animated bounceOutLeft');
+            //     $('img').addClass('animated bounceOutUp');
+            // });
+        });
     }
   };
 
