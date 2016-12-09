@@ -1,7 +1,5 @@
-a {
-  color: #666;
-}
-
 .jumbotron {
-  background-color: #f3e5ab;
+  height: 200px;
+  background-image: url(../img/bakedgoods1.png);
+  background-size: cover;
 }

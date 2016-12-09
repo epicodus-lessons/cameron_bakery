@@ -1,14 +1,13 @@
 jQuery(document).ready(function($) {
-  var colorScale = "0123456789ABCDEF";
-  setInterval(function() {eyesore()}, 800);
+  setInterval(function() {eyesore()}, 2000);
 
   function eyesore() {
-    var colorPatch = "#" + randomize(0, 16)  + randomize(0, 16)  + randomize(0, 16);
-    $("#header").css("background-color", colorPatch);
+    var bgFile = "url(/cameron_bakery/sites/all/themes/cameron_bakery/img/bakedgoods" + randomize(1,3) + ".png)";
+    $("#header").css("background", bgFile);
+    $("#header").css("background-size", "cover");
   }
 
   function randomize(min, max) {
-    var idx = Math.round((max - min) * Math.random());
-    return colorScale[idx];
+    return Math.ceil((max + 1 - min) * Math.random());
   }
 });
