@@ -1,1 +1,99 @@
+/*
+    COLORS:
+    gray - #5A5353
+    purple - #5A4C77
+    green - #B7D381
+*/
 
+/* SITE-WIDE */
+
+body {
+    color: #5A5353;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 95%;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+a {
+    color: #5A4C77;
+}
+
+a:hover {
+    color: #5A5353;
+}
+
+
+/* HEADER */
+
+#header {
+    background: #5A5353;
+    color: #fff;
+    font-family: 'Slabo 27px', serif;
+}
+
+#header a, #header a:visited {
+    color: #B7D381;
+}
+
+#header a:hover {
+    color: #fff;
+}
+
+#logo, #name-and-slogan {
+    display: inline-block;
+    padding-top: 30px;
+}
+
+#navigation {
+    float: right;
+    padding-top: 60px;
+}
+
+#navigation h2 {
+    display: none;
+}
+
+#navigation ul {
+    display: inline-block;
+}
+
+#site-name a {
+    font-size: 2rem;
+}
+
+
+/* MAIN CONTENT */
+
+#content {
+    width: 75%;
+    float: left;
+}
+
+.node, #sidebar-first {
+    border: 3px solid #5A5353;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#sidebar-first {
+    width: 20%;
+    float: right;
+}
+
+/* FOOTER */
+
+#footer {
+    background: #B7D381;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
