@@ -1,0 +1,18 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(../images-source/bakery.jpg);
+    color: white;
+}
+
+.node, .layout-3col__left-sidebar, .header__secondary-menu {
+    background-color: grey;
+    opacity: 0.86;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

@@ -1,5 +1,5 @@
-// jQuery(document).ready(function($) {
-//   $('h2').click(function(){
-//     alert('I am an h2!');
-//   });
-// });
+jQuery(document).ready(function($) {
+  $('#site-slogan').click(function(){
+    alert('Congratulations! You found the secret! Take a screenshot of this message and present it at checkout for 50% off your first purchase.');
+  });
+});
