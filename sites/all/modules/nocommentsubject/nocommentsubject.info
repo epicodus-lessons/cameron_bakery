@@ -1,0 +1,5 @@
+name = No Comment Subject
+description = Hides the Subject field for Article comment forms.
+package = Cameron Modules
+core = 7.x
+files[] = nocommentsubject.module
