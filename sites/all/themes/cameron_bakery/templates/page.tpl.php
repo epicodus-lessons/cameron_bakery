@@ -72,30 +72,17 @@
  * @ingroup themeable
  */
 ?>
-  <div id="baked-banner"></div>
 
-  <div class="container" id="page-wrapper"><div id="page">
+  <div id="page-wrapper"><div id="page">
 
-    <div id="header"><div class="section clearfix">
-
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
+    <div class="container-fluid" id="header"><div class="section clearfix">
 
       <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
+        <div class="container" id="name-and-slogan">
           <?php if ($site_name): ?>
-            <?php if ($title): ?>
-              <div id="site-name"><strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong></div>
-            <?php else: /* Use h1 when the content title is empty */ ?>
               <h1 id="site-name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
               </h1>
-            <?php endif; ?>
           <?php endif; ?>
 
           <?php if ($site_slogan): ?>
@@ -108,15 +95,14 @@
 
     </div></div> <!-- /.section, /#header -->
 
-    <?php if ($main_menu || $secondary_menu): ?>
-      <div class="container" id="navigation"><div class="section">
-        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
-        <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
-      </div></div> <!-- /.section, /#navigation -->
-    <?php endif; ?>
+    <div id="baked-banner"></div>
 
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+    <?php if ($main_menu || $secondary_menu): ?>
+      <div id="navigation"><div class="container section">
+        <span id="navigation-main"><?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?></span>
+        <span id="navigation-secondary"><?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
+</span>
+      </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
 
     <?php print $messages; ?>
@@ -150,8 +136,8 @@
 
     </div></div> <!-- /#main, /#main-wrapper -->
 
-    <div class="container" id="footer"><div class="section">
-      <?php print render($page['footer']); ?>
-    </div></div> <!-- /.section, /#footer -->
-
   </div></div> <!-- /#page, /#page-wrapper -->
+
+  <div class="footer container-fluid navbar-fixed-bottom" id="footer"><div class="container section">
+    <?php print render($page['footer']); ?>
+  </div></div> <!-- /.section, /#footer -->
