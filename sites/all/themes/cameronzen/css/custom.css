@@ -1,0 +1,57 @@
+body{
+  background-color: #d4d4d4;
+  color: #373737;
+}
+
+.header__site-link span{
+  color: #373737;
+}
+
+.header__site-link:hover {
+  text-decoration: none;
+}
+
+
+/* unvisited link */
+a:link {
+    color: #DCD0C0;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #C0B283;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #373737;
+}
+
+/* selected link */
+a:active {
+    color: #373737;
+}
+
+.navbar li{
+  background-color: #C0B283;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0px 7px;
+  margin: 1% 1%;
+
+}
+
+.navbar li a{
+  color: #f4f4f4;
+
+}
+.navbar li:hover{
+  background-color: #DCD0C0;
+
+}
+
+.layout-3col{
+  background-color: #F4F4F4;
+}
