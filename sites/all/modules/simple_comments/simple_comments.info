@@ -1,0 +1,5 @@
+name = Simple Comments
+description = Removes subject field from comments.
+package = Custom Modules
+core = 7.x
+files[] = simple_comments.module
