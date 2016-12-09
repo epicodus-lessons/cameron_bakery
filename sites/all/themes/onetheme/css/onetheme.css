@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+html, body {
+  background-color: #e7f2fe;
+}
+
+.header {
+  background-color: #C7E6E7;
+  text-align: center;
+  color: blue;
+  border-radius: 10px 10px 0 0;
+  padding: 5px;
+}
+
+.main-menu {
+  text-align: center;
+}
+
+.main-menu ul {
+  display: inline-block;
+}
+
 .main-menu ul li {
   background-color: blue;
   margin: 2px;
@@ -14,4 +36,39 @@
   color: white;
   text-decoration: none;
   text-align: center;
+}
+
+.node-teaser {
+  background-color: gray;
+  padding: 3px;
+  margin-top: 2px;
+}
+
+.node-teaser h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  margin: 0;
+  padding: 12px 0;
+  background-color: blue;
+}
+
+.node-teaser h2 a {
+  color: white;
+  text-decoration: none;
+}
+
+.node-teaser h2 a:hover {
+  color: #cccccc;
+}
+
+.submitted {
+  font-size: 10px;
+}
+
+.footer {
+  background-color: black;
+  text-align: center;
+  color: blue;
+  border-radius: 0 0 10px 10px;
+  padding: 5px;
 }
