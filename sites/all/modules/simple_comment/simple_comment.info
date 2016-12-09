@@ -1,0 +1,5 @@
+name = Simple Comment
+description = Eliminates the Subject field form the comments section.
+package = Cameron Modules
+core = 7.x
+files[] = simple_comment.module
