@@ -1,5 +1,11 @@
+body {
+    font-family: fantasy;
+    background-color: #33ffff;
+    text-align: center;
+    background-image: url(http://i.huffpost.com/gen/1387950/images/o-BREAD-facebook.jpg);
+}
 
-
+/*:):):)*/
 body:hover {
   animation: shake 5.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
@@ -8,19 +14,19 @@ body:hover {
 }
 
 @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+  50%, 50% {
+    transform: translate3d(-20px, 0, 0);
   }
 
   20%, 80% {
-    transform: translate3d(2px, 0, 0);
+    transform: translate3d(40px, 0, 0);
   }
 
   30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-80px, 0, 0);
   }
 
   40%, 60% {
-    transform: translate3d(4px, 0, 0);
+    transform: translate3d(10px, 0, 0);
   }
 }
