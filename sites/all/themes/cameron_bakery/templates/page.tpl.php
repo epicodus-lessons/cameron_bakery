@@ -73,9 +73,22 @@
  */
 ?>
 
-  <div id="page-wrapper"><div id="page">
+  <div id="page-wrapper">
 
-    <div class="container-fluid" id="header"><div class="section clearfix">
+    <?php if ($main_menu || $secondary_menu): ?>
+      <div id="navigation"><div class="container section">
+        <span id="navigation-main"><?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?></span>
+        <span id="navigation-secondary"><?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
+</span>
+      </div></div> <!-- /.section, /#navigation -->
+    <?php endif; ?>
+
+
+    <div id="page">
+
+    <div class="container-fluid" id="header">
+
+      <div class="section clearfix">
 
       <?php if ($site_name || $site_slogan): ?>
         <div class="container" id="name-and-slogan">
@@ -96,14 +109,6 @@
     </div></div> <!-- /.section, /#header -->
 
     <div id="baked-banner"></div>
-
-    <?php if ($main_menu || $secondary_menu): ?>
-      <div id="navigation"><div class="container section">
-        <span id="navigation-main"><?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')))); ?></span>
-        <span id="navigation-secondary"><?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
-</span>
-      </div></div> <!-- /.section, /#navigation -->
-    <?php endif; ?>
 
     <?php print $messages; ?>
 
