@@ -66,6 +66,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 10px;
   margin-bottom: 3px;
   background-color: #B2DFFF;
+  transition: background-color 1s;
 }
 
 .node-teaser .links a:hover {
@@ -90,4 +91,8 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid grey;
   margin-top: 2px;
   text-align: center;
+}
+
+.bright {
+  background-color: pink;
 }
