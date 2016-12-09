@@ -1,0 +1,9 @@
+body {
+  background-color: #FFFFF0;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+#logo {
+  width: 50%;
+  height: 50%;
+}
