@@ -1,0 +1,5 @@
+name = Subject Hide
+description = Hides the Subject Line on Article Comments
+package = Cameron Modules
+core = 7.x
+files[] = subject_hide.module
