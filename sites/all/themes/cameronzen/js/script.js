@@ -19,6 +19,9 @@
     attach: function (context, settings) {
 
       // Place your code here.
+      jQuery('.animation').click(function() {
+            $('.animation').remove();
+      });
 
     }
   };

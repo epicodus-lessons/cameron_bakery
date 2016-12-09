@@ -120,13 +120,14 @@
     </div>
 
     <?php if ($sidebar_first): ?>
-      <aside class="<?php print $sidebar_first_class; ?>" role="complementary">
+      <aside class="animation <?php print $sidebar_first_class; ?>" role="complementary">
+        <h4>Click to Hide</h4>
         <?php print $sidebar_first; ?>
       </aside>
     <?php endif; ?>
 
     <?php if ($sidebar_second): ?>
-      <aside class="<?php print $sidebar_second_class; ?>" role="complementary">
+      <aside class="animation <?php print $sidebar_second_class; ?>" role="complementary">
         <?php print $sidebar_second; ?>
       </aside>
     <?php endif; ?>
