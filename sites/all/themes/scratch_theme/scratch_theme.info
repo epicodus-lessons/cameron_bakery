@@ -1,0 +1,43 @@
+; This is the the theme built from scratch for Cameron's Bakery
+;
+
+name = Scratch Theme
+screenshot = scratch-screenshot.jpg
+description =  This is a theme built from scratch for Cameron's bakery.
+
+
+; This theme is only available in Drupal 7
+
+core = 7.x
+
+
+; Main stylesheet for the theme
+
+stylesheets[all][] = css/styles.css
+
+
+; Main Javascript file
+
+;scripts[] = js/scripts.js
+
+
+; Please create a label for each region and its associated file
+; e.g. regions[header] is using header.tpl.php
+
+regions[header]         = Header
+regions[sale]           = Sale
+regions[content]        = Content
+regions[navigation]     = Navigation bar
+regions[right_sidebar]  = Right Sidebar
+regions[left_sidebar]   = Left Sidebar
+regions[footer]         = Footer
+
+
+;features for the scratch theme
+
+features[] = favicon
+
+
+;settings
+
+settings[scratch_theme_width] = fluid
