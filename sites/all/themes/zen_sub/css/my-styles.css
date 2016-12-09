@@ -1,3 +1,95 @@
-.header {
+/*
+    COLORS:
+    red - #A07178
+    gray - #5A5353
+    tan - #E6CCBE
+    purple - #776274
+    green - #C8CC92
+*/
 
+/* SITE-WIDE */
+
+body {
+    color: #5A5353;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* BUTTONS */
+
+input[type=submit], button {
+    border-radius: 10px;
+    background: #776274;
+    color: #E6CCBE;
+    border: 1px solid #5A5353;
+    padding: 5px 10px;
+}
+
+input[type=submit]:hover, button:hover {
+    background: #A07178;
+    color: #E6CCBE;
+    box-shadow: 2px 2px 2px #A07178;
+}
+
+
+/* HEADER */
+
+.header {
+    background: #A07178;
+    color: #E6CCBE;
+    padding: 40px 20px 20px 20px;
+}
+
+.header a, .header a:visited {
+    color: #E6CCBE;
+}
+
+.header a:hover {
+    color: #5A5353;
+    text-decoration: none;
+}
+
+
+/* MAIN CONTENT */
+
+div.layout-swap {
+    background: #E6CCBE;
+    padding: 20px 10px;
+}
+
+div.layout-swap a, div.layout-swap a:visited {
+    color: #5A5353;
+}
+
+div.layout-swap a:hover {
+    color: #A07178;
+}
+
+div.layout-swap > * {
+    padding: 20px;
+}
+
+body > div.layout-center > div {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: #5A5353;
+    color: #E6CCBE;
+    padding: 40px 20px;
+}
+
+.footer a, .footer a:visited {
+    color: #E6CCBE;
+}
+
+.footer a:hover {
+    color: #A07178;
 }
