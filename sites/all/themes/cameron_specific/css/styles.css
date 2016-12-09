@@ -1,0 +1,13 @@
+.header__logo-image {
+  float: left;
+  padding-right: 20px;
+}
+
+#name-and-slogan {
+  font-size:3vh;
+}
+
+#site-slogan {
+  color: chocolate;
+  font-size: 2rem;
+}
