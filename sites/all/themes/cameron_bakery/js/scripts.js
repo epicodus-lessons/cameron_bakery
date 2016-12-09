@@ -1,10 +1,11 @@
 jQuery(document).ready(function($) {
   setInterval(function() {eyesore()}, 2000);
+  console.log(window.location.href);
 
   function eyesore() {
-    var bgFile = "url(/cameron_bakery/sites/all/themes/cameron_bakery/img/bakedgoods" + randomize(1,3) + ".png)";
-    $("#header").css("background", bgFile);
-    $("#header").css("background-size", "cover");
+    var bgFile = "url(/sites/all/themes/cameron_bakery/img/bakedgoods" + randomize(1,3) + ".png)";
+    $("#baked-banner").css("background", bgFile);
+    $("#baked-banner").css("background-size", "cover");
   }
 
   function randomize(min, max) {
