@@ -133,8 +133,6 @@
 
   </div>
 
-  <?php print render($page['footer']); ?>
-
   <div id="bottom" class="mainFooter">
     <?php print render($page['footer']); ?>
     <small class="text-muted">All Rights Reserved to J. Ryan Conklin for this Website.</small>
