@@ -1,0 +1,7 @@
+<?php
+
+function no_subject_field_form_alter(&$form, &$form_state, $form_id) {
+    if ($form['node_type']['#value'] === 'comment_node_article') {
+        $form['subject']['#access'] = 0;
+    }
+}
