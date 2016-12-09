@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Indie+Flower|Oxygen';
 * {
   box-sizing: border-box;
 }
@@ -70,7 +71,7 @@ a {
 }
 
 a:active {
-  color: #c00;
+
 }
 
 a:active:not(.button) {
@@ -796,6 +797,8 @@ th {
   background-position: center;
   background-size: cover;
   min-height: 400px;
+  color: white;
+  box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
   }
 
 [dir="rtl"] .header__logo {
@@ -807,33 +810,49 @@ th {
   vertical-align: bottom;
   max-width: 50%;
   align-self: center;
+
 }
 
 .header__name-and-slogan {
   float: left;
+
 }
 
 .header__site-name {
-  margin: 0;
+ margin-top: 50%;
+
 }
 
 .header__site-link:link, .header__site-link:visited {
-  color: #000;
+  font-family: 'Oxygen', sans-serif;
   text-decoration: none;
+  color: white;
+  font-size: 200%;
+  text-shadow: 4px 4px 7px rgba(49, 45, 45, 1);
 }
 
 .header__site-link:hover, .header__site-link:focus {
-  text-decoration: underline;
+  font-size: 201%;
+  font-weight: bolder;
 }
 
 .header__site-slogan {
   margin: 0;
+  font-family: 'Oxygen', sans-serif;
+  margin-left: 40px;
+  font-weight: bolder;
+  font-size: 150%;
+  font-style: italic;
+  text-shadow: 1px 1px 4px rgba(49, 45, 45, 1);
 }
 
 .header__secondary-menu {
   float: right;
 }
 
+.submitted {
+    display: none;
+}
 [dir="rtl"] .header__secondary-menu {
   float: left;
 }
@@ -1153,8 +1172,9 @@ span.field-label {
 .main-navigation .links,
 .main-navigation .menu {
   margin: 0;
-  padding: 0;
   text-align: left;
+  font-size: 200%;
+
 }
 
 [dir="rtl"] .navbar,
@@ -1173,6 +1193,9 @@ span.field-label {
   padding: 0 10px 0 0;
   list-style-type: none;
   list-style-image: none;
+  margin-top: 10px;
+  font-style: italic;
+  color: red;
 }
 
 [dir="rtl"] .navbar__item, [dir="rtl"]
@@ -1182,6 +1205,7 @@ span.field-label {
   float: right;
   padding: 0 0 0 10px;
 }
+
 
 .pager {
   clear: both;
