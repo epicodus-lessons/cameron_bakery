@@ -1,0 +1,17 @@
+.main-menu ul li {
+  background-color: blue;
+  margin: 2px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.main-menu ul li:hover {
+  background-color: #000099;
+}
+
+.main-menu ul li a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
