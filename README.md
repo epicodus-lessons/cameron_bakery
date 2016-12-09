@@ -1,13 +1,13 @@
-# Cameron's Bakery
+# Cameron's Bakery - Fixed
 
 ##### Epicodus Drupal Code Review 3
 
-#### By Diane Douglas
+#### By J. Ryan Conklin
 
 ## Description
 
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+This is a basic fictional website for a bakery. Cameron's custom module redirects on login.
+It also includes a custom theme and a zen based sub-theme.
 
 ## Setup
 
