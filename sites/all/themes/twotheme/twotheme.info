@@ -1,0 +1,6 @@
+name = Twotheme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/twotheme.css
+stylesheets[all][] = css/bootstrap.css
+scripts[] = js/twotheme.js
