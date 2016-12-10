@@ -12,7 +12,7 @@
     </div>
 
     <?php if ($page['left_sidebar']): ?>
-        <div id="sidebar">
+        <div id="left_sidebar">
             <?php print render($page['left_sidebar']); ?>
         </div>
     <?php endif; ?>
@@ -28,7 +28,7 @@
     </div>
 
     <?php if ($page['right_sidebar']): ?>
-        <div id="sidebar">
+        <div id="right_sidebar">
             <?php print render($page['right_sidebar']); ?>
         </div>
     <?php endif; ?>
