@@ -115,7 +115,7 @@
         </div> <!-- .container -->
     </div></div> <!-- /.section, /#header -->
 
-    <div class="container">
+    <div id="below-header" class="container">
         <?php if ($breadcrumb): ?>
             <div id="breadcrumb"><?php print $breadcrumb; ?></div>
         <?php endif; ?>

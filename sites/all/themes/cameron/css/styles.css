@@ -67,6 +67,16 @@ a:hover {
     display: inline-block;
 }
 
+#navigation li {
+    border-bottom: 0px solid #fff;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 #site-name a {
     font-size: 2rem;
 }
