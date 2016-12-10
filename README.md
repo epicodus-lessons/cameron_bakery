@@ -2,12 +2,11 @@
 
 ##### Epicodus Drupal Code Review 3
 
-#### By Diane Douglas
+#### By Mark Lawson
 
 ## Description
 
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+This Drupal site is a basic website for a fictional bakery, forked from Epicodus. This version fixes a buggy module, adds a custom comment form module, and adds two additional custom themes for styling. 
 
 ## Setup
 
