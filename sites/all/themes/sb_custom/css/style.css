@@ -1,0 +1,71 @@
+#header img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+#header {
+    text-align: center;
+    padding-bottom: 10px;
+    background-image: url('/sites/all/themes/sb_custom/bakery.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+#header a {
+    color: white;
+    text-shadow: black 1px 1px;
+}
+
+#site_name {
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    border: #solid 10px #000;
+    background-color: rgba(105,100,100,0.8);
+    width:80%;
+    margin-left: auto ;
+    margin-right: auto ;
+    color: white;
+}
+
+#site_name_link {
+    text-decoration: none;
+}
+
+body {
+    background-color: #FFFDE3;
+}
+
+#sidebar_right {
+    width: 25%;
+    float: right;
+    display: inline;
+    overflow: hidden;
+}
+
+#sidebar_first {
+    padding-left: 15px;
+    width: 26%;
+    float: left;
+    margin-right: 2%;
+    padding-top: 10px;
+    background-color: #F8AEB9;
+    min-height: 70vh;
+}
+
+#content {
+    width: 68%;
+    padding-left: 25px;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+#footer, #footer a {
+    text-align: center;
+    padding: 30px;
+    clear: both;
+    color: white;
+    background-color: black;
+}
