@@ -17,11 +17,15 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
+
+      // start code here
         $(document).ready(function(){
-            $(".header").click(function(){
-                alert('Come in and taste our new blueberry cookies!');
-            });
+        $("#contact-site-form").submit(function(){
+            alert('Thank you for contacting Cameron\'s Bakery, we will respond in 2-3 business days!');
         });
+  });
+      //leave alone below here:
+
     }
   };
 
