@@ -1,4 +1,4 @@
-.header__logo-image {
+#logo {
   float: left;
   padding-right: 20px;
 }
@@ -10,4 +10,19 @@
 #site-slogan {
   color: chocolate;
   font-size: 2rem;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
 }
