@@ -32,6 +32,7 @@
   <div id="footer">
     <?php if ($page['footer']): ?>
       <?php print render($page['footer']); ?>
+      <?php print t("Custom Theme by Stephen Burden"); ?>
     <?php endif; ?>
   </div>
 
