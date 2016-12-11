@@ -792,6 +792,8 @@ th {
 }
 
 .header__logo {
+  width: 15%;
+
   float: left;
   margin: 0 10px 0 0;
   padding: 0;
@@ -1830,6 +1832,9 @@ tr.drag-previous {
 }
 
 .views-view-grid {
-  width: 115%;
+  width: 100%;
+}
 
+#cookie_title {
+  text-align: center;
 }

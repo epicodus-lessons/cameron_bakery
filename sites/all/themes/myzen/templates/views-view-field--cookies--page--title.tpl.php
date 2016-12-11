@@ -22,4 +22,4 @@
  * the view is modified.
  */
 ?>
-<h2><?php print $output; ?></h2>
+<h2 id="cookie_title"><?php print $output; ?></h2>
