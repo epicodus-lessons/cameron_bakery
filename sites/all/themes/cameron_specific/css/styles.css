@@ -1,35 +1,8 @@
-.header__logo {
-  width: 15%;
-
-  float: left;
-  margin: 0 10px 0 0;
+body {
+  margin: 10px;
   padding: 0;
-}
-
-[dir="rtl"] .header__logo {
-  float: right;
-  margin: 0 0 0 10px;
-}
-
-.header__logo-image {
-  vertical-align: bottom;
-}
-
-.header__name-and-slogan {
-  color: chocolate;
-  float: left;
-  padding-bottom: 20px;
-}
-
-.header__site-slogan {
-  color: chocolate;
-  font-size: 2rem;
-}
-
-#skip-link {
-  margin-top: 20px;
-  font-size: 2vh;
-  float:right;
+  color: #000;
+  background-color: #fff;
 }
 
 article,
@@ -45,4 +18,210 @@ nav,
 section,
 summary {
   display: block;
+}
+
+h1,
+.header__site-name {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 999px) {
+  .layout-3col__full {
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  [dir="rtl"] .layout-3col__full {
+    float: right;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  .layout-3col__left-content {
+    float: left;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  [dir="rtl"] .layout-3col__left-content {
+    float: right;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  .layout-3col__right-content {
+    float: left;
+    width: 66.66667%;
+    margin-left: 33.33333%;
+    margin-right: -100%;
+  }
+  [dir="rtl"] .layout-3col__right-content {
+    float: right;
+    margin-right: 33.33333%;
+    margin-left: -100%;
+  }
+  .layout-3col__left-sidebar, .layout-3col__first-left-sidebar, .layout-3col__second-left-sidebar {
+    clear: right;
+    float: right;
+    width: 33.33333%;
+    margin-right: 66.66667%;
+    margin-left: -100%;
+  }
+  [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
+    clear: left;
+  }
+  [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
+    float: left;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+  }
+  .layout-3col__right-sidebar {
+    clear: right;
+    float: right;
+    width: 33.33333%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  [dir="rtl"] .layout-3col__right-sidebar {
+    clear: left;
+  }
+  [dir="rtl"] .layout-3col__right-sidebar {
+    float: left;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  .layout-3col__col-1, .layout-3col__col-x:nth-child(3n+1) {
+    clear: both;
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -100%;
+  }
+  [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-x:nth-child(3n+1) {
+    float: right;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+  .layout-3col__col-2, .layout-3col__col-x:nth-child(3n+2) {
+    clear: none;
+    float: left;
+    width: 33.33333%;
+    margin-left: 33.33333%;
+    margin-right: -100%;
+  }
+  [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-x:nth-child(3n+2) {
+    float: right;
+    margin-right: 33.33333%;
+    margin-left: -100%;
+  }
+  .layout-3col__col-3, .layout-3col__col-x:nth-child(3n) {
+    clear: none;
+    float: left;
+    width: 33.33333%;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+  }
+  [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(3n) {
+    float: right;
+    margin-right: 66.66667%;
+    margin-left: -100%;
+  }
+  .layout-3col__col-4 {
+    display: none;
+  }
+}
+
+.layout-3col__grid-item-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.layout-3col__grid-item-container:before {
+  content: "";
+  display: table;
+}
+
+.layout-3col__grid-item-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clearfix:before,
+.header:before,
+.tabs:before {
+  content: '';
+  display: table;
+}
+
+.clearfix:after,
+.header:after,
+.tabs:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+#logo {
+  width: 15%;
+
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+[dir="rtl"] #logo {
+  float: right;
+  margin: 0 0 0 10px;
+}
+
+#logo-image {
+  vertical-align: bottom;
+}
+
+#name-and-slogan {
+  color: chocolate;
+  float: left;
+  padding-bottom: 20px;
+}
+
+#site-name {
+  margin: 0;
+}
+
+
+#site-link:link, #site-link:visited {
+  color: chocolate;
+  text-decoration: none;
+}
+
+#site-link:hover, #site-link:focus {
+  text-decoration: underline;
+}
+
+#site-slogan {
+  font-size: 3vh;
+  margin: 0;
+}
+
+#site-slogan:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+
+.layout-3col__right-content h1 {
+  color: chocolate;
+}
+
+.views-view-grid {
+  width: 100%;
+}
+
+#cookie_title {
+  text-align: center;
 }

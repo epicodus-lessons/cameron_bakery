@@ -1,3 +1,70 @@
-.heading {
-  margin: 10px;
+#content {
+  display: block;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 10px;
+  color: #000;
+  background-color: chocolate;
+}
+
+#main-menu {
+  font-size: 5vh;
+  margin-left: 25%;
+  margin-right: 25%;
+  display: block;
+  text-align: center;
+}
+
+#site-name {
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #660000 !important;
+}
+
+#logo {
+  width: 15%;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+#name-and-slogan {
+  color: chocolate;
+  float: left;
+  padding-bottom: 20px;
+}
+
+#site-link:link, #site-link:visited {
+  color: chocolate;
+  text-decoration: none;
+}
+
+#site-link:hover, #site-link:focus {
+  text-decoration: underline;
+}
+
+#site-slogan {
+  font-size: 4vh;
+  margin: 0;
+}
+
+#site-slogan:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+#page-title {
+  text-align: center;
+  font-size: 8vh;
+  color: #660000;
+}
+
+.views-view-grid {
+  font-size: 4vh;
+  width: 100%;
+  text-align: center;
+  color: chocolate;
 }
