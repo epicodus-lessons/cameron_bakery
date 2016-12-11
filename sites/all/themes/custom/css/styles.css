@@ -2,17 +2,11 @@ body {
   background-color: #b3caef;
   color: #3f67a8;
   font-family: Futura;
+  text-align: center;
 }
 
 #logo, #name-and-slogan {
     display: inline-block;
-    text-align: center;
-}
-
-#name-and-slogan {
-}
-
-#site-name {
 }
 
 #secondary-menu {
