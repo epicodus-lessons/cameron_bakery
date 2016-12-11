@@ -2,23 +2,26 @@
   box-sizing: border-box;
 }
 
+.highlight {
+  background-color: #d19ccf;
+}
+
 .node-article:header {
   border: 1px solid white;
   border-radius: 4px;
 }
 
-.layout-3col__left-sidebar {
+.layout-3col__left-sidebar, .layout-3col__right-content {
   background: #d19ccf;
   padding: 5px;
   border: 1px solid white;
   border-radius: 4px;
 }
 
-.layout-3col__right-content {
-  background: #d19ccf;
+.node-article {
+  background: #f7d9ef;
   padding: 5px;
-  border: 1px solid white;
-  border-radius: 4px;
+  border: 2px solid #d19ccf;
 }
 
 a, a:link {
