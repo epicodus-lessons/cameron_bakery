@@ -9,6 +9,10 @@
 * 1 Module Fixed: bakery_user (fixed bug preventing site to load)
 * 1 Module Created: no_subject_field (to hide the subject field in all the article comment submission forms.)
 
+[Click here to view live](http://dev-custom-theming.pantheonsite.io/)
+
+<img src="sites/screenshot.png" alt="a screenshot of the site">
+
 ## Description
 
 This is a basic fictional website for a bakery, which comes with a buggy custom module.
