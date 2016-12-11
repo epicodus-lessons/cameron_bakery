@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   color: #000;
-  background-color: #fff;
+  background-color: #fcf4e8;
 }
 
 article,
@@ -144,8 +144,8 @@ h6 {
 
 abbr[title] {
   border-bottom: 0;
-  text-decoration: underline;
-  text-decoration: underline dotted;
+  text-decoration: none;
+  text-decoration: none;
 }
 
 @media print {

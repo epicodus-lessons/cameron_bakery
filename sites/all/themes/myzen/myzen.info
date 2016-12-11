@@ -12,13 +12,8 @@
 ; page at admin/appearance.
 
 screenshot  = screenshot.png
-name        = Zen Sub-theme Starter Kit
-description = Read the <a href="https://drupal.org/node/873778">online docs</a> or the included README.txt on how to create a theme with Zen.
-
-
-
-; This theme is compatible with Drupal 7 core. And it is a sub-theme of Zen.
-
+name        = MyZen
+description = A custom sub-theme of Zen
 core        = 7.x
 base theme  = zen
 
@@ -66,6 +61,7 @@ stylesheets[all][] = css/styles.css
 ; Optionally add some JavaScripts to your theme.
 
 ;scripts[] = js/script.js
+scripts[] = js/myscripts.js
 
 
 
