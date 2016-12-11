@@ -1,15 +1,33 @@
-#logo {
+.header__logo {
+  width: 15%;
+
   float: left;
-  padding-right: 20px;
+  margin: 0 10px 0 0;
+  padding: 0;
 }
 
-#name-and-slogan {
-  font-size:3vh;
+[dir="rtl"] .header__logo {
+  float: right;
+  margin: 0 0 0 10px;
 }
 
-#site-slogan {
+.header__logo-image {
+  vertical-align: bottom;
+}
+
+.header__name-and-slogan {
+  color: chocolate;
+  float: left;
+  padding-bottom: 20px;
+}
+
+.header__site-slogan {
   color: chocolate;
   font-size: 2rem;
+}
+
+.main-menu {
+  float:right;
 }
 
 article,
