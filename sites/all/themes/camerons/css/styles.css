@@ -1,22 +1,23 @@
 #header {
     margin-top: 10px;
-    margin-bottom: 0;
-    padding: 0;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
 
 #content {
-  margin-top: 0;
+  margin-top: 0px;
   display: block;
   margin-left: 25%;
   margin-right: 25%;
   padding: 10px;
-  color: #000;
+  color: #660000;
   background-color: chocolate;
 }
 
 #main-menu {
   font-size: 3vh;
-  margin-top: -10px;
+  margin-top: -20px;
   margin-left: 25%;
   margin-right: 25%;
   display: block;
@@ -25,7 +26,8 @@
 }
 
 #site-name {
-  font-size: 3rem;
+  font-size: 7vh;
+  color: #660000;
   line-height: 3rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -41,7 +43,8 @@
 #name-and-slogan {
   color: chocolate;
   float: left;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #site-link:link, #site-link:visited {
@@ -55,7 +58,7 @@
 
 #site-slogan {
   font-size: 4vh;
-  margin: 0;
+  margin: 0px;
 }
 
 #site-slogan:hover {
@@ -68,6 +71,10 @@
   text-align: center;
   font-size: 6vh;
   color: #660000;
+}
+
+.field-item {
+  font-size: 3vh;
 }
 
 .views-view-grid {
