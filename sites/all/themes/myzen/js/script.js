@@ -18,7 +18,11 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+      jQuery(document).ready(function($) {
+        $('.header__site-slogan').click(function(){
+          alert('I know you want to see my cookies!');
+        });
+      });
 
     }
   };
