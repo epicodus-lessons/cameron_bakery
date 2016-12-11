@@ -1,0 +1,30 @@
+body {
+  background-color: #b3caef;
+  color: #3f67a8;
+  font-family: Futura;
+}
+
+#logo, #name-and-slogan {
+    display: inline-block;
+    text-align: center;
+}
+
+#name-and-slogan {
+}
+
+#site-name {
+}
+
+#secondary-menu {
+  float: left;
+}
+
+#navigation h2 {
+    display: none;
+}
+
+.content {
+  float: right;
+  margin: 8px;
+  padding-right: 20px;
+}
