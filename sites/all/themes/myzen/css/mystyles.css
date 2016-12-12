@@ -1,0 +1,13 @@
+body {
+    background-color: #fcf4e8;
+}
+.header__secondary-menu {
+    display: none;
+}
+.main-menu .navbar li a{
+    text-decoration: none;
+    padding: 15px;
+}
+.main-menu .navbar li a:first-child{
+    margin-left: 150px;
+}
