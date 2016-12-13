@@ -1,0 +1,5 @@
+name = Custom Comment Submit
+description = Hide the subject field in all the article comment submission forms
+package = Cameron Modules
+core = 7.x
+files[] = custom_comment_submit.module
