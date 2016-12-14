@@ -13,6 +13,7 @@
   padding: 10px;
   color: #660000;
   background-color: chocolate;
+  float: left;
 }
 
 #main-menu {
@@ -102,4 +103,14 @@
   padding-bottom: 0;
   font-size: 5vh;
   font-weight: bolder;
+}
+
+#block-system-main  div  p {
+  font-size: 2vh;
+  text-align: center;
+}
+
+#block-system-user-menu, #block-user-login {
+  float: right;
+  margin-right: 20%;
 }

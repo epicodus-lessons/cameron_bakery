@@ -1846,3 +1846,24 @@ tr.drag-previous {
 #cookie_title {
   text-align: center;
 }
+
+
+#carousel-bootstrap {
+  display: block;
+  margin: auto;
+  width:800px;
+  height:auto;
+}
+
+#carousel-bootstrap img {
+  display: block;
+  margin: auto;
+  width:800px;
+  height:auto;
+}
+
+#carousel-bootstrap .carousel-caption {
+  padding-bottom: 0;
+  font-size: 5vh;
+  font-weight: bolder;
+}
