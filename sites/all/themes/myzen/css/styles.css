@@ -1849,6 +1849,8 @@ tr.drag-previous {
 }
 
 #carousel-bootstrap {
+  display: block;
+  margin: auto;
   width:500px;
   height:auto;
 }
@@ -1866,11 +1868,19 @@ tr.drag-previous {
   font-weight: bolder;
 }
 
-#block-system-main  div  p {
-  font-size: 2vh;
+.layout-3col__full {
   text-align: center;
+  color: #660000;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.layout-3col__full p {
+  font-size: 2vh;
 }
 
 #block-system-user-menu, #block-user-login {
   float: right;
 }
+
+body div.layout-center div main p

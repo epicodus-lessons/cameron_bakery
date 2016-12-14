@@ -6,6 +6,13 @@ function bakery_user_menu() {
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
+
+    $items['goodbye'] = array(
+        'title' => 'Come back soon!',
+        'page callback' => 'goodbye_user',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
     return $items;
 }
 
@@ -15,4 +22,12 @@ function bakery_user_user_login(&$edit, $account) {
 
 function welcome_user() {
     return "<p>Welcome to Cameron's Bakery!</p>";
+}
+
+function bakery_user_user_logout(&$edit, $account) {
+    $_GET['destination'] = 'goodbye';
+}
+
+function goodbye_user() {
+    return "<p>Thank you for visiting!</p>";
 }
