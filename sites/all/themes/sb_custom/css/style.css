@@ -51,8 +51,7 @@ body {
 #sidebar_first {
     padding-left: 15px;
     width: 26%;
-    float: left;
-    margin-right: 2%;
+    float: right;
     padding-top: 10px;
     background-color: #F8AEB9;
     min-height: 70vh;
