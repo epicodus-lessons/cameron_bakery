@@ -793,7 +793,6 @@ th {
 
 .header__logo {
   width: 15%;
-
   float: left;
   margin: 0 10px 0 0;
   padding: 0;
@@ -809,12 +808,14 @@ th {
 }
 
 .header__name-and-slogan {
+  margin-top: 10px;
   color: chocolate;
   float: left;
   padding-bottom: 20px;
 }
 
 .header__site-name {
+  font-size: 5vh;
   margin: 0;
 }
 
@@ -1160,10 +1161,10 @@ span.field-label {
 .navbar,
 .main-navigation .links,
 .main-navigation .menu {
-  float: right;
+  float: left;
   margin-top: 10px;
-  padding: 0;
-  text-align: left;
+  padding: 20px;
+  text-align: center;
   font-size: 3vh;
 }
 
@@ -1847,23 +1848,29 @@ tr.drag-previous {
   text-align: center;
 }
 
-
 #carousel-bootstrap {
-  display: block;
-  margin: auto;
-  width:800px;
+  width:500px;
   height:auto;
 }
 
 #carousel-bootstrap img {
   display: block;
   margin: auto;
-  width:800px;
+  width:500px;
   height:auto;
 }
 
 #carousel-bootstrap .carousel-caption {
   padding-bottom: 0;
-  font-size: 5vh;
+  font-size: 3vh;
   font-weight: bolder;
+}
+
+#block-system-main  div  p {
+  font-size: 2vh;
+  text-align: center;
+}
+
+#block-system-user-menu, #block-user-login {
+  float: right;
 }
