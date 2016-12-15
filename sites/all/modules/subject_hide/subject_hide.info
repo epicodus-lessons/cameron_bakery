@@ -3,3 +3,5 @@ description = Hides the Subject Line on Article Comments
 package = Cameron Modules
 core = 7.x
 files[] = subject_hide.module
+files[] = subject_hide.test
+dependencies[] = simpletest
