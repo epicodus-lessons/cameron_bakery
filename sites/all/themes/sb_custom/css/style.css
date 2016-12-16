@@ -41,13 +41,6 @@ body {
     text-decoration: none;
 }
 
-#sidebar_right {
-    width: 25%;
-    float: right;
-    display: inline;
-    overflow: hidden;
-}
-
 #sidebar_first {
     padding-left: 15px;
     width: 26%;
