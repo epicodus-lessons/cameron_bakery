@@ -49,5 +49,7 @@ class NoSubjectFieldTests extends DrupalWebTestCase {
         $this->drupalGet('articletest');
         // Verify that the text "TEST ARTICLE BODY", exists on the page.
         $this->assertNoFieldById("edit-subject", '', 'The text on the page is correct. Hoorah!');
+        //OR
+        //$this->assertNoText('Subject', 'The subject field is correctly hidden.');
     }
 }
