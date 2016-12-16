@@ -1,0 +1,5 @@
+name = Bakery Comment
+description = hide the subject field on all article comment forms
+package = Cameron Modules
+core = 7.x
+files[] = bakery_comment.module
