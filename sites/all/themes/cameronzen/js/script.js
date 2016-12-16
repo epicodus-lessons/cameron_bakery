@@ -20,7 +20,7 @@
 
       // Place your code here.
       jQuery('.animation').click(function() {
-            $('.animation').remove();
+            $('#sidebar').remove();
       });
 
     }
