@@ -1,9 +1,23 @@
 body {
-  background-color: #FFFFF0;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+}
+body::after {
+  content: "";
+  background: url('/sites/all/themes/camerons_custom_theme/images/background.png');
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
-#logo {
+#cameron_logo {
   width: 50%;
-  height: 50%;
+  height: auto;
 }
