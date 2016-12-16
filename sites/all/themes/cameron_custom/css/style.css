@@ -1,0 +1,32 @@
+* {
+  text-decoration: none;
+}
+
+#page-wrapper {
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  font-family: sans-serif;
+}
+
+#header {
+  border-style: solid;
+  border-width: thin;
+  padding: 15px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+#navigation{
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+#content.column {
+  border-style: solid;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+}
