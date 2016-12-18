@@ -1,11 +1,9 @@
 # **Cameron's Bakery - Release 2.0.**
 
-##### Epicodus Drupal Code Review 3. 12.11.2016
-#
-##### By Diane Douglas & [Lisa MacCarrigan](https://github.com/lisamaccarrigan)
-#
+#### Epicodus Drupal Code Review 3. 12.11.2016
 
-----
+#### By Diane Douglas & [Lisa MacCarrigan](https://github.com/lisamaccarrigan)
+
 ### **Description**
 
 This is a basic fictional website for a bakery, which comes with two custom modules, a custom theme, and Zen sub-theme.
