@@ -1,0 +1,10 @@
+#logo img {
+  height: 100px;
+  width: auto;
+}
+
+.fun-container {
+  height: 25%;
+  width: auto;
+  background-color: grey;
+}

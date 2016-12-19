@@ -119,7 +119,10 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <?php print render($page['fun_region']); ?>
+      <div class="fun-container">
+        <img src="sites/all/themes/myzen/images-source/bread_cat_meme.jpg">
+        <?php print render($page['fun_region']); ?>
+      </div>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
     </main>
