@@ -13,7 +13,7 @@
 
 screenshot  = screenshot.png
 name        = My Zen Sub-Theme
-description = Cameron Loves Cupcakes 
+description = Cameron Loves Cupcakes
 
 ; This theme is compatible with Drupal 7 core. And it is a sub-theme of Zen.
 
@@ -52,7 +52,6 @@ stylesheets[all][] = node.css
 
 ; Then we add our own stylesheet.
 stylesheets[all][] = css/styles.css
-stylesheets[all][] = css/cupcake_styles.css
 
 ; If you wish to use conditional stylesheets, you should install the
 ; conditional stylesheets module: https://drupal.org/project/conditional_styles
