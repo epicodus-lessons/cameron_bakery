@@ -57,7 +57,7 @@
       $sidebar_first  = render($page['sidebar_first']);
       $sidebar_second = render($page['sidebar_second']);
       // Decide on layout classes by checking if sidebars have content.
-      
+
       // if fun region has no content then make content region take up full space
       $fun_region = render($page['fun_region']);
       $fun_region_class = 'layout-3col__col-1';
@@ -79,10 +79,10 @@
 
         $sidebar_first_class = 'layout-3col__first-left-sidebar';
         $sidebar_second_class = 'layout-3col__second-left-sidebar';
-      
+
       elseif ($sidebar_second):
-          
-        if ($fun_region):      
+
+        if ($fun_region):
           $fun_region_class = 'layout-3col__right-content';
           $content_class = 'layout-3col__left-content';
         else:
@@ -90,10 +90,10 @@
         endif;
 
         $sidebar_second_class = 'layout-3col__right-sidebar';
-      
+
       elseif ($sidebar_first):
-          
-        if ($fun_region):      
+
+        if ($fun_region):
           $fun_region_class = 'layout-3col__left-content';
           $content_class = 'layout-3col__right-content';
         else:
