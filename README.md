@@ -1,8 +1,8 @@
 # Cameron's Bakery
 
-##### Epicodus Drupal Code Review 3
+##### Epicodus Drupal Code Review 3 12-11-2016
 
-#### By Diane Douglas
+#### By Diane Douglas & Meredith Alcorn
 
 ## Description
 
@@ -17,3 +17,11 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
 * Create a user for the database: username = "cameron", password = "cameron"
 * Point browser to localhost
 * Site maintenance account info: username = "cameron", password = "cameron"
+
+## Technologies Used
+
+* Drupal 7.52
+* MAMP Version 4.0
+* MySQL Sever
+* PHP 7.1.0
+* phpMyAdmin Version 4.6.4
