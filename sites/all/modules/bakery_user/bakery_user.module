@@ -6,10 +6,16 @@ function bakery_user_menu() {
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
+    $items['welcome_user'] = array(
+       'title' => 'Welcome to Camerontown',
+       'page callback' => 'welcome_user',
+       'access callback' => TRUE,
+       'type' => MENU_NORMAL_ITEM,
+   );
     return $items;
 }
 
-function bakery_user_login(&$edit, $account) {
+function bakery_user_user_login(&$edit, $account) {
     $_GET['destination'] = 'welcome_user';
 }
 

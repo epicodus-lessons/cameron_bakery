@@ -8,3 +8,6 @@ regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 regions[content] = Content
 regions[help] = Help
+regions[highlighted] = Highlighted
+regions[sidebar_first] = sidebar_first
+regions[sidebar_second] = sidebar_second
