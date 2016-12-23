@@ -2,3 +2,4 @@ name = Ian Custom Theme
 core =7.x
 engine = phptemplate
 stylesheets[all][] = css/styles.css
+files[] = js/scripts.js
