@@ -1,4 +1,4 @@
-# _QA-Board_
+# _Cameron Bakery_
 
 #### _A simple bakery website practicing custom theming and modules , 12/15/16_
 
