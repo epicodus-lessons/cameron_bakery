@@ -11,7 +11,7 @@
 
 [Click here to view live](http://dev-custom-theming.pantheonsite.io/)
 
-<img src="sites/screenshot.png" alt="a screenshot of the site">
+<img src="sites/screenshot1.png" alt="a screenshot of the site">
 
 ## Description
 
