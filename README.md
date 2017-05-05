@@ -29,3 +29,12 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
   * Correct syntax errors in bakery_user.module, clear cache (using drush cc all)
   * Reload home screen, see initial report of error, reload again and no errors are displayed
   * Commit changes
+
+### Phase 2: In Admin menu, notice a security update available.
+#### On updates page see Installed Version is 7.41, Recommended Version is 7.54
+  * Analysis of update:
+    * Update does not include security fixes which reduces priority
+    * Update says "Manual updates required" which will increase length of project an unknown amount of time
+    * Release notes for update specify new features for custom Themes
+    * Since a portion of this project is about building and evaluating custom themes this increases the update's priority
+  * Decision: If time allows perform update at end of project
