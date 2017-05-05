@@ -28,12 +28,12 @@ function pastry_quiz_menu() {
         'type' => MENU_CALLBACK,
     );
 
-    // $items['quiz_question_3'] = array(
-    //     'page callback' => 'drupal_get_form',
-    //     'page arguments' => array('question_three_form'),
-    //     'access callback' => TRUE,
-    //     'type' => MENU_CALLBACK,
-    // );
+    $items['quiz_question_3'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('three_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
 
     $items['quiz_success'] = array(
         'title' => 'Quiz Results!',
@@ -93,12 +93,12 @@ function one_form_submit($form, &$form_state) {
 
 function two_form() {
   $form['sweet'] = array(
-      '#title' => 'Do you like sweets?',
+      '#title' => 'Sweet Tooth',
       '#type' => 'radios',
-      '#description' => t('Do you like sweets?'),
+      '#description' => t('Do you like sweet pastries?'),
       '#options' => array(
-          t('Yes'),
-          t('No'),
+        'yes' => t('Yes, I cant get enough!'),
+        'no' => t('No, I prefer other flavors.'),
       ),
       '#required' => TRUE,
   );
@@ -115,13 +115,37 @@ function two_form_submit($form, &$form_state) {
   $sweet = $form_state['values']['sweet'];
   $sweet_answer = null;
 
-  // if ($sweet === 'yes') {
-  //   $quiz_suggestion =  t('Try one of our daily gluten-free options!');
-  // } elseif ($sweet === 'no') {
-  //   $quiz_suggestion =  t('You should try one of our doughnuts!');
-  // }
-
   $_SESSION['sweet'] = $sweet_answer;
+  $form_state['redirect'] = 'quiz_question_3';
+}
+
+//********** Question three ****************
+
+function three_form() {
+  $form['savory'] = array(
+      '#title' => 'Savory Treats',
+      '#type' => 'radios',
+      '#description' => t('Do you like savory pastries (like: meat pies)?'),
+      '#options' => array(
+        'yes' => t('Yes, I love savory foods!'),
+        'no' => t('No, I prefer other flavors.'),
+      ),
+      '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'submit',
+  );
+
+  return $form;
+}
+
+function three_form_submit($form, &$form_state) {
+  $savory = $form_state['values']['savory'];
+  $savory_answer = null;
+
+  $_SESSION['savory'] = $savory_answer;
   $form_state['redirect'] = 'quiz_success';
 }
 
