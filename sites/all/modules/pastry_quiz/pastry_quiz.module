@@ -71,7 +71,7 @@ function start_form() {
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
+  $gluten = $_SESSION['value']['gluten'];
   if ($gluten) {
     return '<p>get a donut!</p>';
   } else {
