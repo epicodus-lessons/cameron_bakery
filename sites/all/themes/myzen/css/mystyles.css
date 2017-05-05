@@ -1,0 +1,42 @@
+html {
+  background-color: #EF5B5B;
+}
+
+.html {
+  /*background: url("../images-source/bread2.jpg");*/
+  background-color: blue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #23001E;
+  font-family: 'Shadows Into Light Two', cursive;
+  background-color: #20A39E;
+}
+
+body {
+  color: #23001E;
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+.header__logo-image {
+  height: 100px;
+}
+
+#logo img {
+  height: 100px;
+}
+
+#site-name {
+  color: #23001E;
+  text-align: center;
+}
+
+.header {
+  background-color: #EF5B5B;
+  width: 100%;
+}
+
+#header {
+  background-color: #FFBA49;
+  width: 100%;
+  opacity: 0.8;
+}
