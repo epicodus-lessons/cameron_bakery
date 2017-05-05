@@ -1,0 +1,26 @@
+body {
+    background-color: pink;
+    font-family: 'Quicksand', sans-serif;
+}
+
+a {
+    color: hotpink;
+}
+
+.node {
+    background: white;
+    padding: 10px;
+    padding-left: 40px;
+    border: 3px solid hotpink;
+}
+
+.cameron-header {
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 210%;
+}
+
+.header__site-slogan {
+    margin-left: 60%;
+    text-transform: uppercase;
+}
