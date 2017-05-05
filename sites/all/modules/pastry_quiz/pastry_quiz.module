@@ -30,7 +30,8 @@ function pastry_quiz_menu() {
 
     return $items;
 }
-function quiz_form() {
+
+function start_form() {
   $form['gluten'] = array(
       '#title' => 'Gluten Intollerance',
       '#type' => 'radios',
@@ -50,17 +51,17 @@ function quiz_form() {
   return $form;
 }
 
-function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
+function quiz_form() {
+    $form['croissant'] = array(
+        '#title' => 'Croissant',
+        '#type' => 'radios',
+        '#description' => t('Do you wish you could eat a croissant?'),
+        '#options' => array(
+            t('Yes'),
+            t('No'),
+        ),
+        '#required' => TRUE,
+    );
 
     $form['submit'] = array(
         '#type' => 'submit',
@@ -71,21 +72,36 @@ function start_form() {
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
+    $gluten = $_SESSION['gluten'];
+    $croissant = $_SESSION['croissant'];
+    var_dump($_SESSION['gluten']);
+    var_dump($_SESSION['croissant']);
+    $output = "<p> ";
+
+    if ($croissant==="0" && $gluten==="0") {
+        $output .= "We've developed the worlds first gluten free croissant! They are not free though... but here's a coupon!";
+    } else if ($gluten==="0") {
+        $output .= "We've got tons of options for you!";
+    } else if ($croissant==="0") {
+        $output .= "here's a coupon for a free croissant!";
+    }
+    if ($gluten==="1") {
+        $output .= "We've got lots of traditional pastries! ";
+    }
+    if ($croissant==="1"){
+        $output .= "Wow you are the one person in the whole world that doesn't like croissants, but that's OK!!! Here's a coupon for a donut GF or tradish!";
+    }
+    return $output . "</p>";
 }
 
 function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+    $_SESSION['gluten'] = $form_state['values']['gluten'];
+    $form_state['redirect'] = 'quiz_question_1';
 }
 
 function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
+    // $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+    $croissant = $form_state['values']['croissant'];
+    $_SESSION['croissant'] = $croissant;
+    $form_state['redirect'] = 'quiz_results';
 }
