@@ -10,10 +10,10 @@ html {
   -webkit-text-size-adjust: 100%;
   min-height: 100%;
   text-shadow:
-     -2px -2px 0 #000000,  
-      2px -2px 0 #000000,
-      -2px 2px 0 #000000,
-      2px 2px 0 #000000;
+     -1px -1px 0 #000000,  
+      1px -1px 0 #000000,
+      -1px 1px 0 #000000,
+      1px 1px 0 #000000;
 
 }
 
