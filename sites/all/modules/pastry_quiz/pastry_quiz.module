@@ -58,7 +58,7 @@ function start_form() {
 }
 
 function quiz_form_2() {
-    $form['gluten'] = array(
+    $form['tastebud'] = array(
         '#title' => 'Tastebud',
         '#type' => 'radios',
         '#description' => t('Are you craving sweet or savory?'),
@@ -78,7 +78,7 @@ function quiz_form_2() {
 }
 
 function quiz_form_3() {
-    $form['gluten'] = array(
+    $form['calories'] = array(
         '#title' => 'Calories',
         '#type' => 'radios',
         '#description' => t('Low or high calorie?'),
@@ -98,27 +98,39 @@ function quiz_form_3() {
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  $tastebud = $_SESSION['values']['tastebud'];
-  $calories = $_SESSION['values']['calories'];
-  if ($gluten === 'Yes') {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
+  $gluten = $_SESSION['gluten'];
+  $tastebud = $_SESSION['tastebud'];
+  $calories = $_SESSION['calories'];
+  if ($gluten === '0') {
+    return '<p>We have gluten-free donuts!</p>';
+  }
+  else if ($calories === '0') {
+    return '<p>Try out our new low-calorie cupcakes!</p>';
+  }
+  else if ($tastebud === '1') {
+    return '<p>We have lunch specials, like ham/cheese croissants!</p>';
   }
 }
 
 function start_form_submit($form, &$form_state) {
+  $gluten = $form_state['values']['gluten'];
+  $_SESSION['gluten'] = $gluten;
+  // echo '<pre>';
+  // var_dump($gluten);
+  // echo '</pre>';
+  // exit;-
   $form_state['redirect'] = 'quiz_question_2';
 }
 
 function quiz_form_2_submit($form, &$form_state) {
+  $tastebud = $form_state['values']['tastebud'];
+  $_SESSION['tastebud'] = $tastebud;
   $form_state['redirect'] = 'quiz_question_3';
 }
 
 function quiz_form_3_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
+  // $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+  $calories = $form_state['values']['calories'];
+  $_SESSION['calories'] = $calories;
   $form_state['redirect'] = 'quiz_results';
 }
