@@ -1,0 +1,13 @@
+name = Alex's Custom Theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/styles.css
+scripts[] = js/scripts.js
+regions[fun] = Fun
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[content] = Content
+regions[help] = Help
+regions[highlighted] = Highlighted
+regions[sidebar_first] = sidebar_first
+regions[sidebar_second] = sidebar_second
