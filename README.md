@@ -38,3 +38,17 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
     * Release notes for update specify new features for custom Themes
     * Since a portion of this project is about building and evaluating custom themes this increases the update's priority
   * Decision: If time allows perform update at end of project
+
+### Phase 3: Test Cameron's feature that is supposed to display a welcome message to logged in users.
+* No message is displayed when logging in as cameron (the only user at this point).
+* Analyze code in bakery_user module, manually check 'welcome' route, correct user login hook.
+* During testing receive following errors on logout:
+  * Warning: session_destroy(): Session callback expects true/false return value in user_logout() (line 178 of /Users/bts/Desktop/cameron_bakery/modules/user/user.pages.inc).
+  * Warning: session_destroy(): Session object destruction failed in user_logout() (line 178 of /Users/bts/Desktop/cameron_bakery/modules/user/user.pages.inc).
+* Investigate error messages:
+  * Find related issue: https://www.drupal.org/node/2656548
+  * Retest with bakery_user module removed (errors persist)
+  * In MAMP, switch PHP from 7.1.1 to 5.6.30 (errors eliminated)
+  * Add back bakery_user custom module (errors still eliminated)
+* Decision: Leave MAMP PHP set at 5.6.30 and continue project
+  
