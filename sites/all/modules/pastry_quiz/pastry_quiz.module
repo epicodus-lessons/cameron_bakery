@@ -9,6 +9,7 @@
  */
 define('QUIZ', 'pastry_quiz_module');
 define('GLUTEN_INTOLERANT', 'gluten_intolerant');
+define('FLAVOR', 'flavor');
 
 /**
  * Implements hook_menu().
@@ -23,6 +24,7 @@ function pastry_quiz_menu() {
   );
 
   $items['question_2'] = array(
+    'title' => t('What flavor best matches your mood?'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('question_2_form'),
     'access callback' => TRUE,
@@ -76,6 +78,20 @@ function question_1_form_submit($form, &$form_state) {
  * Creates a Form
  */
 function question_2_form() {
+  $form['flavor'] = array(
+    '#title' => t('Flavor Choice'),
+    '#type' => 'radios',
+    '#description' => t('What flavor might you enjoy today?'),
+    '#options' => array(
+      t('Vanilla') => t('Vanilla'),
+      t('Chocolate') => t('Chocolate'),
+      t('Cinnamon Sugar') => t('Cinnamon Sugar'),
+      t('Honey Oat') => t('Honey Oat'),
+      t('Lemon Poppy') => t('Lemon Poppy'),
+    ),
+    '#required' => TRUE,
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Submit'),
@@ -88,6 +104,7 @@ function question_2_form() {
  * hook_form_submit
  */
 function question_2_form_submit($form, &$form_state) {
+  $_SESSION[QUIZ][FLAVOR] = $form_state['values']['flavor'];
   $form_state['redirect'] = 'quiz_results';
 }
 
@@ -100,6 +117,7 @@ function quiz_success() {
   if ($_SESSION[QUIZ][GLUTEN_INTOLERANT]) {
     $gluten_free .= t('gluten free');
   }
+  $flavor = $_SESSION[QUIZ][FLAVOR];
 
   $get_a = t('Get a');
   $donut = t('donut!');
@@ -107,7 +125,7 @@ function quiz_success() {
   $pastries = t('pastries!');
 
   return <<<EOD
-    <p>$get_a $gluten_free $donut</p>
+    <p>$get_a $gluten_free $flavor $donut</p>
     <p>$and_while $gluten_free $pastries</p>
 EOD;
 }
