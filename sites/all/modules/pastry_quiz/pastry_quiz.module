@@ -49,9 +49,8 @@ function pastry_quiz_menu() {
 }
 function quiz_form() {
   $form['gluten'] = array(
-      '#title' => 'Gluten Intolerance',
+      '#title' => 'Are you gluten intolerant?',
       '#type' => 'radios',
-      '#description' => t('Are you gluten intolerant?'),
       '#options' => array(
           t('Yes'),
           t('No'),
@@ -68,9 +67,8 @@ function quiz_form() {
 }
 function quiz_form_2() {
   $form['protein'] = array(
-      '#title' => 'Protein Lover',
+      '#title' => 'Do you work out a lot?',
       '#type' => 'radios',
-      '#description' => t('Do you work out a lot?'),
       '#options' => array(
           t('Yes'),
           t('No'),
@@ -87,9 +85,8 @@ function quiz_form_2() {
 }
 function quiz_form_3() {
   $form['diet'] = array(
-      '#title' => 'Diet Person',
+      '#title' => 'Can you eat carbs?',
       '#type' => 'radios',
-      '#description' => t('Can you eat carbs?'),
       '#options' => array(
           t('Yes'),
           t('No'),
@@ -121,11 +118,11 @@ function quiz_success() {
   $diet = $_SESSION['diet'];
 
   if ($diet == 1) {
-    return '<p>Get an egg pastry with no carbs!</p>';
+    return '<h3>Get an egg pastry with no carbs!</h3>';
   } else if ($protein == 0) {
-    return "<p>Get a whole wheat protein loaded biscuit pastry</p>";
+    return "<h3>Get a whole wheat protein loaded biscuit pastry!</h3>";
   } else {
-    return "<p>Get a gluten free bagel pastry</p>";
+    return "<h3>Get a gluten free bagel pastry!</h3>";
   }
 
 }
