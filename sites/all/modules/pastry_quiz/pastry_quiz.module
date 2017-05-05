@@ -61,7 +61,7 @@ function quiz_form() {
 
   $form['submit'] = array(
           '#type' => 'submit',
-          '#value' => 'Quiz Question 1',
+          '#value' => 'Next Question',
   );
 
   return $form;
@@ -80,7 +80,7 @@ function quiz_form_2() {
 
   $form['submit'] = array(
           '#type' => 'submit',
-          '#value' => 'Quiz Question 2',
+          '#value' => 'Next Question',
   );
 
   return $form;
@@ -99,7 +99,7 @@ function quiz_form_3() {
 
   $form['submit'] = array(
           '#type' => 'submit',
-          '#value' => 'Quiz Question 3',
+          '#value' => 'See Results',
   );
 
   return $form;
@@ -109,7 +109,7 @@ function start_form() {
 
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'submit',
+        '#value' => 'Start Quiz',
     );
 
     return $form;
