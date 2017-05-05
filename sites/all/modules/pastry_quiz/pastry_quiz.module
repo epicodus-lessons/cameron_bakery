@@ -207,7 +207,7 @@ function quiz_success() {
     $should_get = $can_get[rand(0, count($can_get))];
 
     $output = "<p> You should get " . $should_get . " today.</p>
-    <p>You can also get :
+    <p>You can also get :</p>
     <ul>";
     foreach($can_get as $option){
         $output .="<li>".$option."</li>";
