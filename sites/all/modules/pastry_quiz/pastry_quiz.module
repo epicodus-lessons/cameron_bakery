@@ -112,13 +112,8 @@ function quiz_success() {
     $gluten = $_SESSION['gluten'];
     $dairy = $_SESSION['dairy'];
     $chocolate = $_SESSION['chocolate'];
-    print('gluten = '.$gluten.'  ');
-    print('dairy = '.$dairy.'   ');
-    print('chocolate = '.$chocolate.'   ');
     if ($gluten == 0) {
-        print('hah gluten intolerance!');
         if ($dairy == 0) {
-          print('hah dairy intolerance!');
             if ($chocolate <= 2){
               return '<p>Try one of our tasty gluten & dairy free Lemon Cashew Tarts:</p>'.
                      '<img src="http://www.onegreenplanet.org/wp-content/uploads/2010/10/2015/03/cheesecakes.jpg">';

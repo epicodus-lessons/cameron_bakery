@@ -1,0 +1,5 @@
+name = Cameron's Super Awesome Bakery Theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/style.css
