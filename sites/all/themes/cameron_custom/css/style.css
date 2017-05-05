@@ -1,0 +1,21 @@
+#logo img {
+    float: left;
+}
+
+#sidebar-second {
+    width: 200px;
+}
+
+#sidebar-first {
+    width: 200px;
+    float: left;
+}
+
+#navigation {
+    width: 200px;
+    float: left;
+}
+
+/*body {
+    background-color:
+}*/
