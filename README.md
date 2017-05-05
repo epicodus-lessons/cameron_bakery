@@ -24,7 +24,7 @@
 | Create a README.md | $ touch README.md | complete |
 | Update README.md with necessary content and implementation plan | update if goof | complete |
 | Fix landing page module | update `bakery_user` so the module works correctly  | complete |
-| Fix quiz module/clean up code | update 'pastry_quiz' so the module works | incomplete |
+| Fix quiz module/clean up code | update 'pastry_quiz' so the module works | complete |
 | Create a sub-theme using Zen | download Zen theme and tailor starter kit | incomplete |
 | Create a custom theme  with javascript | Create theme `bakery` | incomplete |
 
