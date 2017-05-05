@@ -101,21 +101,29 @@ function quiz_success() {
   $taste = $_SESSION['taste'];
   if ($gluten === '0' && $taste = '0') {
     return '<h1>Try our Chocolate Pots</h1>
-            <p>This extra-rich, creamy pudding incorporates both bittersweet chocolate and cocoa powder for a double dose of chocolate.</p>';
+            <p>This extra-rich, creamy pudding incorporates both bittersweet chocolate and cocoa powder for a double dose of chocolate.</p>
+            <img src="sites/all/modules/pastry_quiz/images/chocolate.jpg" alt="Chocolate Pots">';
   } else if ($dairy === '0' && $taste = '1') {
     return '<h1>Sweet Potato Alfajores</h1>
-            <p>This vegan version of an Argentinian classic cookie is a brilliant shade of fuchsia, thanks to the incorporation of purple sweet potatoes. Coconut milk dolce de leche replaces that traditional dairy filling to create a delicious, dairy-free cookie.</p>';
+            <p>This vegan version of an Argentinian classic cookie is a brilliant shade of fuchsia, thanks to the incorporation of purple sweet potatoes. Coconut milk dolce de leche replaces that traditional dairy filling to create a delicious, dairy-free cookie.</p>
+            <img src="sites/all/modules/pastry_quiz/images/Sweet Potato Alfajores.jpg" alt="Sweet Potato Alfajores">';
   } else if ($taste = '0' && $dairy = '0') {
     return '<h1>Dark Chocolate Hazelnut Tart with Fresh Strawberries</h1>
-            <p>This completely raw, no-bake chocolate tart with ganache filling is absolutely sinful. This entire dessert is so creamy, you won’t believe that there isn’t a drop of dairy.</p>';
+            <p>This completely raw, no-bake chocolate tart with ganache filling is absolutely sinful. This entire dessert is so creamy, you won’t believe that there isn’t a drop of dairy.</p>
+            <img src="sites/all/modules/pastry_quiz/images/hazlenut tart.jpg" alt="Hazlenut Tart">';
   } else if ($taste = '2' && $dairy = '1') {
     return '<h1>Salted Chocolate Diablo Cookie Ice Cream Sandwiches</h1>
-            <p>With cinnamon, ginger, and cayenne. Sinfully good.</p>';
+            <p>With cinnamon, ginger, and cayenne. Sinfully good.</p>
+            <img src="sites/all/modules/pastry_quiz/images/ice_creme.jpg" alt="Ice Creme Sandwiches">';
   } else if ($taste = '0' && $dairy = '0' && $gluten = '0') {
     return '<h1>Vegan Strawberry Cheesecake Bites</h1>
-            <p>This vegan, raw and gluten-free dessert is healthy enough to eat as a snack, and sweet enough as a satisfying dessert.</p>';
+            <p>This vegan, raw and gluten-free dessert is healthy enough to eat as a snack, and sweet enough as a satisfying dessert.</p>
+            <img src="sites/all/modules/pastry_quiz/images/cheesecake.jpg" alt="Vegan Cheesecake Bites">';
   } else {
-    return "<p>cool! we've got stuff for you too!/p>";
+    return '<p>Cool! We have got stuff for you too!</p>
+            <img src="sites/all/modules/pastry_quiz/images/dessert1.jpg" alt="Dessert">
+            <img src="sites/all/modules/pastry_quiz/images/dessert2.jpg" alt="Dessert">
+            <img src="sites/all/modules/pastry_quiz/images/dessert3.jpg" alt="Dessert">';
   }
 }
 
