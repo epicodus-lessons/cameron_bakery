@@ -1,0 +1,22 @@
+body {
+  background-color: pink;
+}
+
+div#header {
+  border: 2px solid blue;
+  padding: 10px;
+}
+
+div#navigation {
+  border: 4px dashed fuchsia;
+}
+
+div#sidebar-first {
+  border: 12px dotted tomato;
+}
+
+div#content {
+  margin: 40px;
+  padding: 20px;
+  box-shadow: 20px 20px 15px orange, -20px -20px 15px orange, 20px -20px 15px orange, -20px 20px 15px orange;
+}
