@@ -16,7 +16,21 @@ function pastry_quiz_menu() {
 
     $items['quiz_question_1'] = array(
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
+        'page arguments' => array('quiz_form_1'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+
+    $items['quiz_question_2'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz_form_2'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+
+    $items['quiz_question_3'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz_form_3'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
@@ -30,7 +44,17 @@ function pastry_quiz_menu() {
 
     return $items;
 }
-function quiz_form() {
+
+function start_form() {
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#description' => t('Are you ready to find the right pastry for you?'),
+        '#value' => t('submit'),
+    );
+    return $form;
+}
+
+function quiz_form_1() {
   $form['gluten'] = array(
       '#title' => 'Gluten Intollerance',
       '#type' => 'radios',
@@ -50,24 +74,44 @@ function quiz_form() {
   return $form;
 }
 
-function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
+function quiz_form_2() {
+  $form['gluten'] = array(
+      '#title' => 'Gluten Intollerance',
+      '#type' => 'radios',
+      '#description' => t('Are you afraid of gluten?'),
+      '#options' => array(
+          t('Yes'),
+          t('No'),
+      ),
+      '#required' => TRUE,
+  );
 
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
+  $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => 'submit',
+  );
 
-    return $form;
+  return $form;
+}
+
+function quiz_form_3() {
+  $form['gluten'] = array(
+      '#title' => 'Gluten Intollerance',
+      '#type' => 'radios',
+      '#description' => t('Do you sneeze when you look at the sun?'),
+      '#options' => array(
+          t('Yes'),
+          t('No'),
+      ),
+      '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => 'submit',
+  );
+
+  return $form;
 }
 
 function quiz_success() {
