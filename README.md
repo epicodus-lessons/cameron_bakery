@@ -1,13 +1,14 @@
 # Cameron's Bakery
 
+#### _12-9-16_
+
 ##### Epicodus Drupal Code Review 3
 
-#### By Diane Douglas
+#### By Stephen Newkirk
 
 ## Description
 
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+Creates module to disable subject input on comments, custom theme and zen subtheme.
 
 ## Setup
 
@@ -17,3 +18,21 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
 * Create a user for the database: username = "cameron", password = "cameron"
 * Point browser to localhost
 * Site maintenance account info: username = "cameron", password = "cameron"
+
+## Support and contact details
+
+_Stephen Newkirk: newkirk771@gmail.com_
+
+## Known Bugs
+
+_None_
+
+## Technologies Used
+
++ Drupal
+
+### License
+
+*This webpage is licensed under the GPL 2.0 license.*
+
+Copyright (c) 2016 **_Stephen Newkirk_**
