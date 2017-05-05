@@ -15,15 +15,22 @@ define('GLUTEN_INTOLERANT', 'gluten_intolerant');
  */
 function pastry_quiz_menu() {
   $items['quiz'] = array(
-    'title' => 'What should I eat!?',
+    'title' => t('What should I eat!?'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('question_1_form'),
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
   );
 
+  $items['question_2'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question_2_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
   $items['quiz_results'] = array(
-    'title' => 'Quiz Results!',
+    'title' => t('Quiz Results!'),
     'page callback' => 'quiz_success',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
@@ -38,7 +45,7 @@ function pastry_quiz_menu() {
  */
 function question_1_form() {
   $form['gluten'] = array(
-    '#title' => 'Gluten Intolerance',
+    '#title' => t('Gluten Intolerance'),
     '#type' => 'radios',
     '#description' => t('Are you gluten intolerant?'),
     '#options' => array(
@@ -50,7 +57,7 @@ function question_1_form() {
 
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => 'Submit',
+    '#value' => t('Submit'),
   );
 
   return $form;
@@ -61,6 +68,26 @@ function question_1_form() {
  */
 function question_1_form_submit($form, &$form_state) {
   $_SESSION[QUIZ][GLUTEN_INTOLERANT] = (int) $form_state['values']['gluten'];
+  $form_state['redirect'] = 'question_2';
+}
+
+
+/**
+ * Creates a Form
+ */
+function question_2_form() {
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * hook_form_submit
+ */
+function question_2_form_submit($form, &$form_state) {
   $form_state['redirect'] = 'quiz_results';
 }
 
@@ -71,11 +98,16 @@ function question_1_form_submit($form, &$form_state) {
 function quiz_success() {
   $gluten_free = '';
   if ($_SESSION[QUIZ][GLUTEN_INTOLERANT]) {
-    $gluten_free .= 'gluten free';
+    $gluten_free .= t('gluten free');
   }
 
+  $get_a = t('Get a');
+  $donut = t('donut!');
+  $and_while = t('And while you\'re here, check out our other fresh');
+  $pastries = t('pastries!');
+
   return <<<EOD
-    <p>Get a $gluten_free donut!</p>
-    <p>And while you're here, check out our other fresh $gluten_free pastries!</p>
+    <p>$get_a $gluten_free $donut</p>
+    <p>$and_while $gluten_free $pastries</p>
 EOD;
 }
