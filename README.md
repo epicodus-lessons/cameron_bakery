@@ -2,12 +2,14 @@
 
 ##### Epicodus Drupal Code Review 3
 
-#### By Diane Douglas
+#### By Diane Douglas, updated by Zach Swanson
 
 ## Description
 
 This is a basic fictional website for a bakery, which comes with a buggy custom module.
 Students must fix the module, add their own custom module and a Zen sub-theme.
+
+Update: Login message and quiz functionality has been repaired.  Two custom themes are included: one simple, playful extension of the Zen theme and one custom theme with some demos of dynamic re-sizing and coloring.
 
 ## Setup
 
