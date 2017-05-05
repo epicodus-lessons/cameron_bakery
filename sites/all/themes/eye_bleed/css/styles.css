@@ -2,6 +2,14 @@ body {
   background-color: pink;
 }
 
+a {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
 div#header {
   border: 2px solid blue;
   padding: 10px;

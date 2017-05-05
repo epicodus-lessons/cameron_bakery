@@ -26,7 +26,7 @@
         }, function(){
           let divs = $('div');
           let index = random_number($('div').length - 1);
-          $(divs[index]).attr('style', 'background-color: ' + random_color());
+          $(divs[index]).attr('style', 'color: ' + random_color());
         });
       });
 
