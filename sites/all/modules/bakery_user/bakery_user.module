@@ -3,7 +3,7 @@ function bakery_menu() {
   $items = array();
   $items['welcome_user'] = array(
     'title' => "Hi There!",
-    'page callback' => 'say_welcome_user',
+    'page callback' => 'say_welcome',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
@@ -14,6 +14,6 @@ function bakery_user_login() {
   $_GET['destination'] = 'welcome_user';
 }
 
-function say_welcome_user() {
+function say_welcome() {
   return "<p>Welcome to Cameron's Bakery!</p>";
 }
