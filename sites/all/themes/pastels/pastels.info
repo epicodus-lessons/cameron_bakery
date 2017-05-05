@@ -1,0 +1,5 @@
+name = Pastels Pastry Theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/style.css
+scripts[] = js/scripts.js
