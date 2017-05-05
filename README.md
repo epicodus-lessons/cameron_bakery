@@ -1,6 +1,6 @@
 # Cameron's Bakery
 
-##### Epicodus Drupal Code Review 3
+##### Epicodus Drupal Code Review 3 
 
 #### By Diane Douglas
 
