@@ -168,6 +168,9 @@ function quiz_success() {
       $quiz_ouput = t("It sounds like you're a lover of all things pastry! You should try our house made doughnuts, or a veggie and meat pie!");
     } elseif ($savory_answer === 'no' && $sweet_answer === 'yes') {
       $quiz_ouput = t("No savory, got it! You should try one of our house made doughnuts, or one of our fresh berry tarts");
+    } else {
+      $quiz_ouput = t("No savory, check! No sweet, check! Don't worry we still have lots of daily specials for you to try!");
+
     }
   }
 

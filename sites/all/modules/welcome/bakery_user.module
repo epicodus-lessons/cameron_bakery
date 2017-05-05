@@ -3,15 +3,15 @@ function welcome_menu() {
   $items = array();
   $items['welcome_user'] = array(
     'title' => "Hi There!",
-    'page callback' => 'say_welcome_user',
+    'page callback' => 'welcome_user',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
   return $items;
 }
 
-function bakery_user_login(&$edit, $account) {
-  $_GET['destination'] = 'say_welcome_user';
+function welcome_user_login() {
+  $_GET['destination'] = 'welcome_user';
 }
 
 function welcome_user() {
