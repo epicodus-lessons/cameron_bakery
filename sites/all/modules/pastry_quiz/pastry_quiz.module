@@ -160,9 +160,6 @@ function start_form() {
         $gluten = $_SESSION['gluten'];
         $cheese = $_SESSION['cheese'];
         $chocolate = $_SESSION['chocolate'];
-        echo '<pre>';
-        var_dump($excited, $gluten, $cheese, $chocolate);
-        echo '</pre>';
         if($gluten == 1 && $cheese == 1 && $chocolate == 1){
             return '<p>get a donut!</p>';
         }elseif($gluten == 1 && $cheese == 0 && $chocolate == 1){
