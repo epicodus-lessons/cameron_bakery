@@ -40,65 +40,64 @@ function pastry_quiz_menu() {
     return $items;
 }
 function quiz_form_1() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intolerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intolerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+    $form['gluten'] = array(
+        '#title' => 'Gluten Intolerance',
+        '#type' => 'radios',
+        '#description' => t('Are you gluten intolerant?'),
+        '#options' => array(
+            t('Yes'),
+            t('No'),
+        ),
+        '#required' => TRUE,
+    );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'submit',
+    );
 
   return $form;
 }
 
 function quiz_form_2() {
-  $form['dairy'] = array(
-      '#title' => 'Dairy Allergy',
-      '#type' => 'radios',
-      '#description' => t('Do you have an allergy to dairy products?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+    $form['dairy'] = array(
+        '#title' => 'Dairy Allergy',
+        '#type' => 'radios',
+        '#description' => t('Do you have an allergy to dairy products?'),
+        '#options' => array(
+            t('Yes'),
+            t('No'),
+        ),
+        '#required' => TRUE,
+    );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
-  return $form;
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'submit',
+    );
+    return $form;
 }
 
 function quiz_form_3() {
-  $form['chocolate'] = array(
-      '#title' => 'Chocolate-Love',
-      '#type' => 'select',
-      '#description' => t('How much do you like chocolate?'),
-      '#options' => array(
-          t('--SELECT'),
-          t('1 - Bleargh!'),
-          t('2 - Meh.'),
-          t('3 - Its ok.'),
-          t('4 - Yum.'),
-          t('5 - YAAAAAASSS!'),
-      ),
-      '#required' => TRUE,
-  );
+    $form['chocolate'] = array(
+        '#title' => 'Chocolate-Love',
+        '#type' => 'select',
+        '#description' => t('How much do you like chocolate?'),
+        '#options' => array(
+            t('1 - Bleargh!'),
+            t('2 - Meh.'),
+            t('3 - Its ok.'),
+            t('4 - Yum.'),
+            t('5 - YAAAAAASSS!'),
+        ),
+        '#required' => TRUE,
+    );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
-  return $form;
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'submit',
+    );
+    return $form;
 }
 
 function start_form() {
@@ -110,32 +109,55 @@ function start_form() {
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
+    $gluten = $_SESSION['gluten'];
+    $dairy = $_SESSION['dairy'];
+    $chocolate = $_SESSION['chocolate'];
+    print('gluten = '.$gluten.'  ');
+    print('dairy = '.$dairy.'   ');
+    print('chocolate = '.$chocolate.'   ');
+    if ($gluten == 0) {
+        print('hah gluten intolerance!');
+        if ($dairy == 0) {
+          print('hah dairy intolerance!');
+            if ($chocolate <= 2){
+              return '<p>Try one of our tasty gluten & dairy free Lemon Cashew Tarts:</p>'.
+                     '<img src="http://www.onegreenplanet.org/wp-content/uploads/2010/10/2015/03/cheesecakes.jpg">';
+            } else {
+                return '<p>Try some delicious gluten & dairy free Chocolate Cake:</p>'.
+                       '<img src="http://www.momables.com/wp-content/uploads/2013/04/Gluten-Egg-Dairy-Free-Chocolate-Cake-2.png">';
+
+            }
+        } else {
+            return '<p>Perhaps some of our scrumptious Gluten Free Blueberry Buttermilk Cake:<p>'.
+                   '<img src="http://urbantastebuds.wpengine.netdna-cdn.com/wp-content/uploads/2014/06/gluten-free-blueberry-buttermilk-breakfast-cake.jpg">';
+        }
+    } else if ($dairy == 0 && $chocolate <= 2) {
+        return '<p>Perhaps some of our delicious Dairy Free Lemon Blackberry Cream Puffs</p>'.
+               '<img src="https://cravingchronicles.files.wordpress.com/2013/05/bbcreampuff3_wp.jpg?w=600&h=400">';
+    } else {
+        return '<Try some Pain au Chocolat</p>'.
+               '<img src="http://atreatsaffair.com/wp-content/uploads/2015/05/chocolate-croissant-recipe-2.jpg">';
+    }
 }
 
 function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+    $form_state['redirect'] = 'quiz_question_1';
 }
 
 function quiz_form_1_submit($form, &$form_state) {
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_question_2';
+    $gluten = $form_state['values']['gluten'];
+    $_SESSION['gluten'] = $gluten;
+    $form_state['redirect'] = 'quiz_question_2';
 }
 
 function quiz_form_2_submit($form, &$form_state) {
-  $dairy = $form_state['values']['dairy'];
-  $_SESSION['dairy'] = $dairy;
-  $form_state['redirect'] = 'quiz_question_3';
+    $dairy = $form_state['values']['dairy'];
+    $_SESSION['dairy'] = $dairy;
+    $form_state['redirect'] = 'quiz_question_3';
 }
 
 function quiz_form_3_submit($form, &$form_state) {
-  $chocolate = $form_state['values']['chocolate'];
-  $_SESSION['chocolate'] = $chocolate;
-  $form_state['redirect'] = 'quiz_results';
+    $chocolate = $form_state['values']['chocolate'];
+    $_SESSION['chocolate'] = $chocolate;
+    $form_state['redirect'] = 'quiz_results';
 }
