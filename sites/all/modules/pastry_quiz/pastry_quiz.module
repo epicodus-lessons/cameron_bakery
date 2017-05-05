@@ -96,9 +96,24 @@ function start_form() {
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
+  $gluten = $_SESSION['gluten'];
+  $dairy = $_SESSION['dairy'];
+  $taste = $_SESSION['taste'];
+  if ($gluten === '0' && $taste = '0') {
+    return '<h1>Try our Chocolate Pots</h1>
+            <p>This extra-rich, creamy pudding incorporates both bittersweet chocolate and cocoa powder for a double dose of chocolate.</p>';
+  } else if ($dairy === '0' && $taste = '1') {
+    return '<h1>Sweet Potato Alfajores</h1>
+            <p>This vegan version of an Argentinian classic cookie is a brilliant shade of fuchsia, thanks to the incorporation of purple sweet potatoes. Coconut milk dolce de leche replaces that traditional dairy filling to create a delicious, dairy-free cookie.</p>';
+  } else if ($taste = '0' && $dairy = '0') {
+    return '<h1>Dark Chocolate Hazelnut Tart with Fresh Strawberries</h1>
+            <p>This completely raw, no-bake chocolate tart with ganache filling is absolutely sinful. This entire dessert is so creamy, you won’t believe that there isn’t a drop of dairy.</p>';
+  } else if ($taste = '2' && $dairy = '1') {
+    return '<h1>Salted Chocolate Diablo Cookie Ice Cream Sandwiches</h1>
+            <p>With cinnamon, ginger, and cayenne. Sinfully good.</p>';
+  } else if ($taste = '0' && $dairy = '0' && $gluten = '0') {
+    return '<h1>Vegan Strawberry Cheesecake Bites</h1>
+            <p>This vegan, raw and gluten-free dessert is healthy enough to eat as a snack, and sweet enough as a satisfying dessert.</p>';
   } else {
     return "<p>cool! we've got stuff for you too!/p>";
   }
@@ -110,19 +125,25 @@ function start_form_submit($form, &$form_state) {
 
 function question1_form_submit($form, &$form_state) {
   $form_state['redirect'] = 'quiz_question_2';
+  $gluten = $form_state['values']['gluten'];
+  $_SESSION['gluten'] = $gluten;
 }
 
 function question2_form_submit($form, &$form_state) {
   $form_state['redirect'] = 'quiz_question_3';
+  $dairy = $form_state['values']['dairy'];
+  $_SESSION['dairy'] = $dairy;
 }
 
 function question3_form_submit($form, &$form_state) {
   $form_state['redirect'] = 'quiz_results';
+  $taste = $form_state['values']['taste'];
+  $_SESSION['taste'] = $taste;
 }
 
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
-}
+// function quiz_form_submit($form, &$form_state) {
+//   $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+//   $gluten = $form_state['values']['gluten'];
+//   $_SESSION['gluten'] = $gluten;
+//   $form_state['redirect'] = 'quiz_results';
+// }
