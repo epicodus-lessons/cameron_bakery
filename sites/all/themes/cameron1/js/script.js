@@ -18,7 +18,14 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+        $('#block-user-login').mouseover(function() {
+        $('.block-user .block__title').addClass('rollover-effect');
+        $('#block-user-login').addClass('rollover-effect');
+    });
+        $('#block-user-login').mouseleave(function() {
+        $('.block-user .block__title').removeClass('rollover-effect');
+        $('#block-user-login').removeClass('rollover-effect');
+    });
 
     }
   };

@@ -85,6 +85,29 @@ li {
     width: 50%;
 }
 
+.rollover-effect {
+    font-size: 110%;
+    transition: .5s;
+    -webkit-animation: rainbow .5s infinite, border 3s infinite;
+}
+
+@-webkit-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}
+}
+
+@-webkit-keyframes border{
+	16%{border-radius: 20px;}
+	32%{border-radius: 0px;}
+	48%{border-radius: 20px;}
+	64%{border-radius: 0px;}
+	80%{border-radius: 20px;}
+	100%{border-radius: 0px;}
+}
+
 /*END CUSTOM STYLING*/
 
 @media print {
