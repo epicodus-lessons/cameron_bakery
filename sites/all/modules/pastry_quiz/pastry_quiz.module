@@ -14,22 +14,22 @@ define('GLUTEN_INTOLERANT', 'gluten_intolerant');
  * Implements hook_menu().
  */
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What should I eat!?',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('question_1_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
+  $items['quiz'] = array(
+    'title' => 'What should I eat!?',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question_1_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
 
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_results'] = array(
+    'title' => 'Quiz Results!',
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  return $items;
 }
 
 
@@ -38,19 +38,19 @@ function pastry_quiz_menu() {
  */
 function question_1_form() {
   $form['gluten'] = array(
-      '#title' => 'Gluten Intolerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intolerant?'),
-      '#options' => array(
-          '1' => t('Yes'),
-          '0' => t('No'),
-      ),
-      '#required' => TRUE,
+    '#title' => 'Gluten Intolerance',
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intolerant?'),
+    '#options' => array(
+      '1' => t('Yes'),
+      '0' => t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
+    '#type' => 'submit',
+    '#value' => 'Submit',
   );
 
   return $form;
@@ -69,10 +69,13 @@ function question_1_form_submit($form, &$form_state) {
  * Output final result of Quiz
  */
 function quiz_success() {
-  $gluten_intolerant = $_SESSION[QUIZ][GLUTEN_INTOLERANT];
-  if (!$gluten_intolerant) {
-    return '<p>Get a donut!</p>';
-  } else {
-    return "<p>Cool! We've got stuff for you too!</p>";
+  $gluten_free = '';
+  if ($_SESSION[QUIZ][GLUTEN_INTOLERANT]) {
+    $gluten_free .= 'gluten free';
   }
+
+  return <<<EOD
+    <p>Get a $gluten_free donut!</p>
+    <p>And while you're here, check out our other fresh $gluten_free pastries!</p>
+EOD;
 }
