@@ -1,0 +1,12 @@
+<?php
+
+function no_subject_field_form_alter(&$form, &$form_state, $form_id) {
+    // print '<pre>';
+    // print_r($form_id);
+    // print '</pre>';
+    if ($form['#form_id'] === 'comment_node_article_form') {
+        $form['subject']['#access'] = 0;
+        //OR
+        //$form['subject']['#type'] = 'hidden';
+    }
+};

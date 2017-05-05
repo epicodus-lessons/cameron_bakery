@@ -1,0 +1,1 @@
+[14-Dec-2016 14:28:23 America/Los_Angeles] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 632 bytes) in /Users/Guest/Desktop/cameron_bakery/includes/database/database.inc on line 2227
