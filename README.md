@@ -1,13 +1,8 @@
-# Cameron's Bakery
+# _Cameron Bakery_
 
-##### Epicodus Drupal Code Review 3
+#### _A simple bakery website practicing custom theming and modules , 12/15/16_
 
-#### By Diane Douglas
-
-## Description
-
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+#### By _**Ian Baum & Diane Douglas**_
 
 ## Setup
 
@@ -17,3 +12,9 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
 * Create a user for the database: username = "cameron", password = "cameron"
 * Point browser to localhost
 * Site maintenance account info: username = "cameron", password = "cameron"
+
+### License
+
+*Licensed under the MIT license*
+
+Copyright (c) 2016 **_Ian Baum & Diane Douglas_**
