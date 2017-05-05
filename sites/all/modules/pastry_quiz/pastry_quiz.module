@@ -1,9 +1,9 @@
 <?php
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
+TO DO:
+1. fix everything
+2. write at least two more questions
+3. make suggestions based on questions
 
 function pastry_quiz_menu() {
     $items['quiz'] = array(
@@ -31,16 +31,16 @@ function pastry_quiz_menu() {
     return $items;
 }
 function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+  // $form['gluten'] = array(
+  //     '#title' => 'Gluten Intollerance',
+  //     '#type' => 'radios',
+  //     '#description' => t('Are you gluten intollerant?'),
+  //     '#options' => array(
+  //         t('Yes'),
+  //         t('No'),
+  //     ),
+  //     '#required' => TRUE,
+  // );
 
   $form['submit'] = array(
           '#type' => 'submit',
@@ -51,16 +51,16 @@ function quiz_form() {
 }
 
 function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
+    $form['gluten'] = array(
+        '#title' => 'Gluten Intollerance',
+        '#type' => 'radios',
+        '#description' => t('Are you gluten intollerant?'),
+        '#options' => array(
+            t('Yes'),
+            t('No'),
+        ),
+        '#required' => TRUE,
+    );
 
     $form['submit'] = array(
         '#type' => 'submit',
