@@ -18,7 +18,12 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+        jQuery(document).ready(function($) {
+            $('.field-item.even').hover(function(){
+                $('.field-item.even').empty();
+                $('.field-item.even').append(" <h1>We promise.</h1>");
+            });
+        });
 
     }
   };
