@@ -1,5 +1,5 @@
 <?php
-function welcome_menu() {
+function bakery_menu() {
   $items = array();
   $items['welcome_user'] = array(
     'title' => "Hi There!",
@@ -10,10 +10,10 @@ function welcome_menu() {
   return $items;
 }
 
-function bakery_user_login(&$edit, $account) {
-  $_GET['destination'] = 'say_welcome_user';
+function bakery_user_login() {
+  $_GET['destination'] = 'welcome_user';
 }
 
-function welcome_user() {
+function say_welcome_user() {
   return "<p>Welcome to Cameron's Bakery!</p>";
 }
