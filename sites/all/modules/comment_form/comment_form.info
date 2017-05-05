@@ -1,0 +1,5 @@
+name =  Comment Form
+description = Removing the subject from the article contact form.
+package = Cameron Modules
+core = 7.x
+files[] = comment_form.module
