@@ -1,0 +1,1 @@
+[14-Dec-2016 14:22:59 America/Los_Angeles] PHP Fatal error:  Call to undefined function user_role() in /Users/Guest/Desktop/cameron_bakery/sites/all/modules/bakery_user/bakery_user.test on line 53
