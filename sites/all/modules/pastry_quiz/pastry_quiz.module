@@ -118,9 +118,6 @@ function quiz_success() {
     $gluten = $_SESSION['gluten'];
     $croissant = $_SESSION['croissant'];
     $beverage = $_SESSION['beverage'];
-    var_dump($_SESSION['gluten']);
-    var_dump($_SESSION['croissant']);
-    var_dump($_SESSION['beverage']);
 
     $output = "<p> ";
 

@@ -1,0 +1,83 @@
+html {
+    background-color: black;
+}
+.header {
+    background-color: grey;
+}
+
+.sub-footer{
+    background-color: green;
+}
+.footer{
+    background-color: pink;
+}
+.nav-wrap,
+.header-wrap,
+.body-wrap,
+.sub-footer-wrap,
+.footer-wrap{
+    float: left; width:100%; clear:both;
+}
+
+.header,
+.sub-footer,
+.footer{
+    width: 860px;
+    margin: 0 auto;
+}
+
+.nav {
+    margin: 0 auto;
+    width: 860px;
+    height: 38px;
+    border: 2px solid;
+    background-color: lightblue;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+.nav li{
+    display: inline;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.body{
+    margin: 0 auto;
+    width: 900px;
+    height: 900px;
+    box-shadow: 0 0 1px #4c4c4c;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: #36454f;
+}
+
+.body-wrap{
+    margin-left: 0px;
+    margin-right: 0px;
+    background: #262626; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#4c4c4c, #262626); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#4c4c4c, #262626); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#4c4c4c, #262626); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4c4c4c, #262626); /* Standard syntax */
+}
+.content{
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    width: 400px;
+    color: #fdf9f3;
+}
+.sidebar-first{
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    width: 300px;
+}
+/*#page {
+    background: src;
+}*/
