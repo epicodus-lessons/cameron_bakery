@@ -1,0 +1,25 @@
+#logo{
+    display: none;
+}
+
+#block-system-navigation{
+    text-align: left;
+}
+
+#site-name{
+    font-size: 3em;
+}
+
+#site-slogan{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+body{
+    text-align: center;
+}
+
+h1, h2{
+    background-color: black;
+    color: white;
+}
