@@ -51,4 +51,8 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
   * In MAMP, switch PHP from 7.1.1 to 5.6.30 (errors eliminated)
   * Add back bakery_user custom module (errors still eliminated)
 * Decision: Leave MAMP PHP set at 5.6.30 and continue project
-  
+
+### Phase 4: Test and revise Quiz to:
+  * Eliminate spelling and syntax errors
+  * Ask at least 3 questions on 3 different pages
+  * Provide at least 3 unique outcomes on a result page
