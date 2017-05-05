@@ -21,7 +21,21 @@ function pastry_quiz_menu() {
         'type' => MENU_CALLBACK,
     );
 
-    $items['quiz_results'] = array(
+    $items['quiz_question_2'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('question_two_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+
+    // $items['quiz_question_3'] = array(
+    //     'page callback' => 'drupal_get_form',
+    //     'page arguments' => array('question_three_form'),
+    //     'access callback' => TRUE,
+    //     'type' => MENU_CALLBACK,
+    // );
+
+    $items['quiz_success'] = array(
         'title' => 'Quiz Results!',
         'page callback' => 'quiz_success',
         'access callback' => TRUE,
@@ -30,37 +44,65 @@ function pastry_quiz_menu() {
 
     return $items;
 }
+
 function quiz_form() {
   $form['gluten'] = array(
       '#title' => 'Gluten Intollerance',
       '#type' => 'radios',
       '#description' => t('Are you gluten intollerant?'),
       '#options' => array(
+          'yes' => t('Yes!'),
+          'no' => t('No, bring on the carbs!'),
+      ),
+      '#required' => TRUE,
+  );
+
+$form_state['redirect'] = 'quiz_question_2';
+
+  return $form;
+}
+
+function question_two_form() {
+  $form['sweet'] = array(
+      '#title' => 'Gluten Intollerance',
+      '#type' => 'radios',
+      '#description' => t('Do you like sweets?'),
+      '#options' => array(
           t('Yes'),
           t('No'),
       ),
       '#required' => TRUE,
   );
-
+  // $form_state['redirect'] = 'quiz_question_3';
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
+      '#type' => 'submit',
+      '#value' => 'submit',
   );
 
   return $form;
 }
 
+// function question_two_form() {
+//   $form['savory'] = array(
+//       '#title' => 'Gluten Intollerance',
+//       '#type' => 'radios',
+//       '#description' => t('Are you gluten intollerant?'),
+//       '#options' => array(
+//           t('Yes'),
+//           t('No'),
+//       ),
+//       '#required' => TRUE,
+//   );
+//
+//   $form['submit'] = array(
+//       '#type' => 'submit',
+//       '#value' => 'submit',
+//   );
+//
+//   return $form;
+// }
+
 function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
 
     $form['submit'] = array(
         '#type' => 'submit',
@@ -70,22 +112,50 @@ function start_form() {
     return $form;
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
-}
 
 function start_form_submit($form, &$form_state) {
   $form_state['redirect'] = 'quiz_question_1';
 }
 
 function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+  // $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+  // $_SESSION['gluten'] = $gluten;
+  // $form['gluten']['default_value'] = $form_state['values']['gluten'];
   $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
+  $sweet = $form_state[['values']['sweet'];
+  // $gluten = $form_state['values']['gluten'];
+  // $form_state['redirect'] = 'quiz_results';
+
+  // $savory = $_SESSION['values']['savory'];
+  $quiz_suggestion = null;
+
+  if ($gluten === 'yes') {
+    $quiz_suggestion =  t('Try one of our daily gluten-free options!');
+  } elseif ($gluten === 'no') {
+    $quiz_suggestion =  t('You should try one of our doughnuts!');
+  }
+
+
+
+  $_SESSION['test_result'] = $quiz_suggestion;
+  $form_state['redirect'] = 'quiz_success';
+}
+
+function quiz_success() {
+  $quiz_ouput = $_SESSION['test_result'];
+  return '<p>' . $quiz_ouput . '</p>';
+
+  // return "success page obtained!";
+  // if ($sweet === 'yes') {
+  //   return '<p>get a donut!</p>';
+  // } else {
+  //   return "<p>cool! we've got stuff for you too!</p>";
+  // }
+  //
+  // if ($savory === 'yes') {
+  //   return '<p>get a donut!</p>';
+  // } else {
+  //   return "<p>cool! we've got stuff for you too!</p>";
+  // }
+
 }
