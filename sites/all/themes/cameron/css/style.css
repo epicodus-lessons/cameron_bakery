@@ -1,0 +1,24 @@
+h2 {
+  text-decoration:underline;
+}
+
+body {
+  background-color: #9EC5AB;
+}
+
+#site-name {
+  text-align: center;
+}
+
+#site-slogan {
+  text-align: center;
+}
+
+#navigation {
+  text-align: center;
+}
+
+#content {
+  border: 1px solid black;
+  border-radius: 5%;
+}
