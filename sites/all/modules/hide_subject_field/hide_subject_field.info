@@ -1,0 +1,5 @@
+name = Hide Subject Field
+description = Hide's the subject field in all the article comment submission forms.
+package = Jon's modules
+core = 7.x
+files[] = no_subject_field.module

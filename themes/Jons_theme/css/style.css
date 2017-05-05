@@ -1,0 +1,28 @@
+body {
+  background-color: limegreen;
+  background-image: url(../images/cb.png);
+  background-position: center;
+  background-repeat: round;
+  background-repeat: no-repeat;
+  border-color: red;
+  margin-left: auto;
+}
+
+
+h1#page-title{
+  color: white;
+}
+
+h2 {
+  font-family: 'Cutive Mono', monospace;
+  color: red;
+
+}
+
+label {
+  color: white;
+}
+
+pre {
+  color: green;
+}
