@@ -2,12 +2,13 @@
 
 ##### Epicodus Drupal Code Review 3
 
-#### By Diane Douglas
+#### By David Ayala
+#### _December 09, 2016_
 
 ## Description
 
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+This is a basic fictional website for a bakery, where a buggy custom module was fixed.
+A custom module and a Zen sub-theme was added.
 
 ## Setup
 
@@ -17,3 +18,9 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
 * Create a user for the database: username = "cameron", password = "cameron"
 * Point browser to localhost
 * Site maintenance account info: username = "cameron", password = "cameron"
+
+## Licensing
+
+*This product can be used in accordance with the provisions under its MIT license.*
+
+copyright (c) 2016 **_David Ayala_**

@@ -1,0 +1,5 @@
+name = Article Comment Subject Field Hider
+description = This module will hide the subject line in the article comment form.
+package = Cameron Modules
+core = 7.x
+files[] = article_hide_cmmtsbjfield.module

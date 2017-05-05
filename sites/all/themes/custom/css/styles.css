@@ -1,0 +1,24 @@
+body {
+  background-color: #b3caef;
+  color: #3f67a8;
+  font-family: Futura;
+  text-align: center;
+}
+
+#logo, #name-and-slogan {
+    display: inline-block;
+}
+
+#secondary-menu {
+  float: left;
+}
+
+#navigation h2 {
+    display: none;
+}
+
+.content {
+  float: right;
+  margin: 8px;
+  padding-right: 20px;
+}
