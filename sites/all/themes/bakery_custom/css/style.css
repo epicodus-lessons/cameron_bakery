@@ -1,0 +1,33 @@
+body {
+    background-image: url(../img/custom_background.jpg);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+#navigation {
+    border-style: dashed;
+    border-color: white;
+    padding: 20px;
+}
+
+#navigation h2 {
+    display: none;
+    text-align: center;
+}
+
+#site-name, #site-slogan {
+    font-family: 'Playfair Display', serif;
+
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+div.content {
+    text-align: center;
+}
