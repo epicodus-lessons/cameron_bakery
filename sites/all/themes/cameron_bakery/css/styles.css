@@ -1,0 +1,43 @@
+#page-wrapper {
+  margin-bottom: 60px;
+}
+
+#baked-banner {
+  height: 200px;
+  background-image: url(../img/bakedgoods1.png);
+  background-size: cover;
+}
+
+#header {
+  background-color: #f3e5ab;
+  padding-bottom: 20px;
+}
+
+#navigation {
+  background-color: #d2691e;
+  height: 50px;
+  line-height: 50px;
+}
+
+#navigation-main {
+  float: left;
+}
+
+#navigation-secondary {
+  float: right;
+}
+
+#footer {
+  background-color: #d2691e;
+  height: 40px;
+  line-height: 40px;
+}
+
+#footer .section, #footer p {
+  height: 40px;
+  margin-bottom: 0px;
+}
+
+#navigation a, #footer a, #footer p {
+  color: white;
+}
