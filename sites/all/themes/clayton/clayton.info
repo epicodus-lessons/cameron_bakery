@@ -1,5 +1,6 @@
 name = Hell-cake
 core = 7.x
 engine = phptemplate
+screenshot = spin_screenshot.png
 stylesheets[all][] = css/style.css
 scripts[] = js/scripts.js
