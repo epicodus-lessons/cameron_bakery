@@ -1,0 +1,75 @@
+html {
+    background-color: #7C3B31;
+    height: 100%;
+}
+
+a, a:visited {
+    color: #2567AD;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #43D4E5;
+    text-decoration: underline;
+}
+
+.html {
+    background-color: #7C3B31;
+    background: url('../darkcake.png');
+    background-repeat: no-repeat;
+    background-position: absolute;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    color: #C3BB6F;
+}
+
+.header {
+    font-family: 'Pacifico', cursive;
+}
+
+.header__secondary_menu, .breadcrumb__list {
+    margin-top: 5px;
+    background: rgba(223, 212, 164, 0.5);
+    padding: 10px;
+}
+
+#topsitename {
+    color: #F1E6CA;
+}
+#topsitename:hover {
+    color: #F1E6CA;
+    text-decoration: none;
+}
+
+.header__site-slogan {
+    color: #EA6851;
+}
+
+.layout-3col__right-content, main {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.layour-3col__right-content h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 90%;
+}
+
+.layout-3col__right-content {
+    margin-top: 10px;
+    background: rgba(157, 102, 59, 0.6);
+    padding: 20px;
+}
+
+.layout-3col__left-sidebar {
+    margin-top: 10px;
+    background: rgba(205, 174, 150, 0.4);
+    padding: 10px;
+}
+
+.navbar, .header {
+    background: rgba(91, 42, 39, 0.7);
+    padding: 10px;
+    width: 100%;
+}
