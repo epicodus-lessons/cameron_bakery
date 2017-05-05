@@ -18,7 +18,7 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      $(".tabb tr").hover(
+      $("body").hover(
         function(){
           $(this).filter(':not(:animated)').animate({
              marginLeft:'9px'
