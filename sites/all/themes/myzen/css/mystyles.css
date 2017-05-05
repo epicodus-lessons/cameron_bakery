@@ -1,0 +1,13 @@
+body {
+    background-image: url('../new-logo.gif');
+}
+
+h1, h2, p {
+    font-family: cursive;
+    color: magenta;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.header__logo > img {
+    display: none;
+}
