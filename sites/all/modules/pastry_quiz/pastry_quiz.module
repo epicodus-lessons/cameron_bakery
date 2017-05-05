@@ -134,14 +134,25 @@ function quiz_form_2_submit($form, &$form_state) {
 function quiz_form_3_submit($form, &$form_state) {
     $fear = $form_state['values']['sneeze'];
     $_SESSION['sneeze'] = $fear;
-    $form_state['redirect'] = 'quiz_question_3';
+    $form_state['redirect'] = 'quiz_results';
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['value']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
+  $gluten = $_SESSION['gluten'];
+  $fear = $_SESSION['fear'];
+  $sneeze = $_SESSION['sneeze'];
+
+  if ($gluten && $fear && $sneeze) {
+      return '<p>Get some carrot cake!</p>';
+  } else if ($gluten && $fear) {
+      return '<p>Get some flan!</p>';
+  } else if ($fear && $sneeze) {
+      return '<p>Get a tiny almond-crust pie!</p>';
+  } else if ($fear) {
+      return '<p>It\'s probably safe to eat a muffin!</p>';
+  } else if ($gluten){
+      return '<p>Get a scone!</p>';
   } else {
-    return "<p>cool! we've got stuff for you too!/p>";
+      return '<p>I don\'t know how to help you.</p>';
   }
 }
