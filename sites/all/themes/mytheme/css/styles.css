@@ -1,0 +1,12 @@
+body{
+  background-color: lightblue;
+
+}
+#header,#navigation{
+  text-align: center;
+}
+
+#footer{
+  /*background-color: blue;*/
+  text-align: center;
+}
