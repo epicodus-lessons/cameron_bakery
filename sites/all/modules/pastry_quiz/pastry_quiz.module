@@ -10,6 +10,7 @@
 define('QUIZ', 'pastry_quiz_module');
 define('GLUTEN_INTOLERANT', 'gluten_intolerant');
 define('FLAVOR', 'flavor');
+define('DONUT_OR_BITE', 'donut_or_bite');
 
 /**
  * Implements hook_menu().
@@ -27,6 +28,14 @@ function pastry_quiz_menu() {
     'title' => t('What flavor best matches your mood?'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('question_2_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['question_3'] = array(
+    'title' => t('What size best matches your appetite?'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question_3_form'),
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
@@ -105,6 +114,38 @@ function question_2_form() {
  */
 function question_2_form_submit($form, &$form_state) {
   $_SESSION[QUIZ][FLAVOR] = $form_state['values']['flavor'];
+  $form_state['redirect'] = 'question_3';
+}
+
+
+/**
+ * Creates a Form
+ */
+function question_3_form() {
+  $form['size'] = array(
+    '#title' => t('Size Choice'),
+    '#type' => 'radios',
+    '#description' => t('Pick one, but remember you can always change your mind!'),
+    '#options' => array(
+      t('donut!') => t('Donut'),
+      t('bite!') => t('Bite'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * hook_form_submit
+ */
+function question_3_form_submit($form, &$form_state) {
+  $_SESSION[QUIZ][DONUT_OR_BITE] = $form_state['values']['size'];
   $form_state['redirect'] = 'quiz_results';
 }
 
@@ -117,15 +158,15 @@ function quiz_success() {
   if ($_SESSION[QUIZ][GLUTEN_INTOLERANT]) {
     $gluten_free .= t('gluten free');
   }
-  $flavor = $_SESSION[QUIZ][FLAVOR];
 
   $get_a = t('Get a');
-  $donut = t('donut!');
+  $flavor = $_SESSION[QUIZ][FLAVOR];
+  $pastry = $_SESSION[QUIZ][DONUT_OR_BITE];
   $and_while = t('And while you\'re here, check out our other fresh');
   $pastries = t('pastries!');
 
   return <<<EOD
-    <p>$get_a $gluten_free $flavor $donut</p>
+    <p>$get_a $gluten_free $flavor $pastry</p>
     <p>$and_while $gluten_free $pastries</p>
 EOD;
 }
