@@ -1,5 +1,9 @@
 jQuery(document).ready(function($) {
-  $('body').click(function(e) {
+  $('html').addClass('slowspin');
+  setInterval(function(){
+    $('html').addClass('slowspin');
+  }, 100000);
+  $('html').click(function(e) {
     if ($(e.target).hasClass('spin')) {
 
       $(e.target).addClass('spinback');
@@ -8,7 +12,7 @@ jQuery(document).ready(function($) {
       $(e.target).addClass('spin');
     }
   });
-  $('body').hover(function(e) {
+  $('html').hover(function(e) {
     if ($(e.target).hasClass('spin')) {
 
       $(e.target).addClass('spinback');

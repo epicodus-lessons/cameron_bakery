@@ -5,9 +5,19 @@
   display: block;
 }
 
+html {
+  font-family: 'Sailor';
+  font-size: 30px;
+  -webkit-animation: shadow 10s infinite;
+}
+
 ul.menu {
   list-style: none;
   text-align: center;
+}
+
+ul {
+  list-style: none;
 }
 
 
@@ -17,10 +27,28 @@ ul.menu {
 }
 
 .spinback {
-    transition: transform 2s:
-    transform: rotate(-180deg)
+    transition: transform 2s;
+    transform: rotate(-180deg);
+}
+
+.slowspin {
+    transition: transform 1000s;
+    transform: rotate(360deg);
 }
 
 #navigation {
   display: none;
+}
+
+@-webkit-keyframes shadow {
+  0% { text-shadow: 4px 4px 8px red}
+  25% { text-shadow: -4px 4px 8px yellow}
+  50% { text-shadow: -4px -4px 8px green}
+  75% { text-shadow: 4px -4px 8px blue}
+  100% { text-shadow: 4px 4px 8px red}
+}
+
+@font-face {
+    font-family: 'Sailor';
+    src: url('../Rats-Get-Fat.ttf');
 }
