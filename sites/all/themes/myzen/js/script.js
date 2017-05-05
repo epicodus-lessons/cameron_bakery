@@ -24,3 +24,11 @@
   };
 
 })(jQuery, Drupal, this, this.document);
+
+jQuery(document).ready(function($) {
+    $('.header__logo-image').hover(function () {
+        this.src = 'sites/all/themes/myzen/images-source/cake.png';
+    }, function () {
+        this.src = 'sites/all/themes/myzen/images-source/muffins.png';
+    });
+})
