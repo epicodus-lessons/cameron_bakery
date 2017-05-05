@@ -1,0 +1,5 @@
+name = Sans Subject
+description = hides the subject field in all the article comment submission forms
+package = Custom Modules
+core = 7.x
+files[] = sans_subject.module
