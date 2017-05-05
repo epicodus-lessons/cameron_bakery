@@ -1,0 +1,13 @@
+name = Cameron's Super Awesome Bakery Theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/style.css
+regions[deals] = Deals
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[content] = Content
+regions[sidebar_first] = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[highlighted] = Highlighted
+regions[help] = Help
