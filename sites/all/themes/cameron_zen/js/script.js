@@ -18,7 +18,11 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+      jQuery(document).ready(function($) {
+          $('li.menu-15.last').click(function(){
+            alert('Thanks for stopping by Cameron\'s!');
+          });
+      });
 
     }
   };
