@@ -1,0 +1,8 @@
+name = Cameron's Custom Theme 2
+description =  A 100% from-scratch theme for Cameron's Bkaery
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/bootstrap.min.css
+scripts[] = js/myscript.js
+screenshot = images/screenshot.png

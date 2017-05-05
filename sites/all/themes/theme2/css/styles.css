@@ -1,0 +1,35 @@
+a:hover{
+  text-decoration: none !important;
+}
+#site-name{
+  font-family: "Pacifico";
+  font-size: 5em;
+}
+#site-name a{
+  color: white !important;
+}
+#header{
+  width: 100%;
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+text-align: center;
+}
+body{
+  margin-top: 9em !important;
+  background: url('http://2.bp.blogspot.com/-Uo3u94wNMwY/UDBw3M6BjBI/AAAAAAAAGNA/mzFDD_W_g3g/s1600/free+digital+scrapbook+paper_pink+cream+stripes_background.jpg') center center repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.secondar_menu{
+  position: fixed;
+  left: 0;
+}
+#page-wrapper{
+  background: white;
+  box-shadow: 3px 3px 31px black;
+  border-radius: 6px;
+  padding: 28px;
+
+}
