@@ -1,0 +1,14 @@
+name = Bakery
+description = Custom theme for Cameron's bakery.
+package = Core
+version = VERSION
+core = 7.x
+stylesheets[all][] = style.css
+
+regions['help'] = Help
+regions['header'] = Header
+regions['highlighted'] = Highlighted
+regions['content'] = Content
+regions['sidebar_first'] = Sidebar First
+regions['sidebar_second'] = Sidebar Second
+regions['footer'] = Footer
