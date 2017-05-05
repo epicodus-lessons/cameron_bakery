@@ -94,19 +94,14 @@ function question1_submit($form, &$form_state) {
 
 function question2() {
     $form['personality'] = array(
-        '#title' => 'Where do you fall on the spectrum?',
-        '#type' => 'select',
+        '#title' => 'Your carriage has broken down. You find yourself stranded on the side of the road with the other passengers (a small family with two children and a lone older man), when bandits come upon your group. What do you do?',
+        '#type' => 'radios',
         '#description' => t('Serious business'),
         '#options' => array(
-            t('Lawful Good'),
-            t('Neutral Good'),
-            t('Chaotic Good'),
-            t('Lawful Neutral'),
-            t('Neutral'),
-            t('Chaotic Neutral'),
-            t('Lawful Evil'),
-            t('Neutral Evil'),
-            t('Chaotic Evil'),
+            t('You leave them at the mercy of the bandits and run away. You have pastries to get to'),
+            t('You pull out your best weapon and fight them to the death. Only heroes deserve pastries'),
+            t('You cut a deal with the bandits to help slaughter the other passengers in exchange for extra pastries'),
+            t('You rouse the courage of the other passengers by reminding them there are pastries at stake, and they take on the bandits with a vengeance'),
         ),
         '#required' => TRUE,
     );
@@ -132,6 +127,7 @@ function question3() {
             t('Loss'),
             t('Hate'),
             t('Sadness'),
+            t('Nothing'),
         ),
         '#required' => TRUE,
     );
@@ -176,14 +172,18 @@ function question4() {
 }
 
 function question4_submit($form, &$form_state) {
-    $_SESSION['existential'] = $form_state['values']['zodiac'];
+    $_SESSION['zodiac'] = $form_state['values']['zodiac'];
     $form_state['redirect'] = 'quiz_results';
 }
 
 function quiz_success() {
-  if ($_SESSION['existential'] === 'Love') {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!</p>";
-  }
+    if ($_SESSION['personality'] == '0' && ($_SESSION['existential'] === '1' || $_SESSION['existential'] === '3' || $_SESSION['existential'] === '4') && ($_SESSION['zodiac'] == '0' || $_SESSION['zodiac'] == '1' || $_SESSION['zodiac'] == '4' || $_SESSION['zodiac'] == '5' || $_SESSION['zodiac'] == '8' || $_SESSION['zodiac'] == '9')) {
+        return "<img src='/sites/images/sad-chocolate.jpg'><p>Sad Panda pastries are the best for you, let out your inner pain and angst with our delicious chocolate puff pastry (gluten free options on request).</p><a href='quiz'>Not good enough, re-take quiz!</a>";
+    } else if ($_SESSION['personality'] == '2' && ($_SESSION['existential'] === '1' || $_SESSION['existential'] === '2' || $_SESSION['existential'] === '4') && ($_SESSION['zodiac'] == '0' || $_SESSION['zodiac'] == '2' || $_SESSION['zodiac'] == '4' || $_SESSION['zodiac'] == '6' || $_SESSION['zodiac'] == '8' || $_SESSION['zodiac'] == '10')) {
+        return "<img src='/sites/images/bite-me-cake.jpg'><p>Our special 'Bite Me' monster chocolate cakes are perfect for that anti-social sociopath in all of us, filled with strawberry sauce and indulgent cherries because you F***KING deserve it.</p><a href='quiz'>Not good enough, re-take quiz!</a>";
+    } else if ($_SESSION['personality'] == '3' && ($_SESSION['existential'] === '0' || $_SESSION['existential'] === '1' || $_SESSION['existential'] === '3' || $_SESSION['existential'] === '4')) {
+        return "<img src='/sites/images/fours.jpg'><p>Because the most courageous deserve the best, you earned the right to indulge in our supreme 'Emperor Petit Fours', a collection of little pastry cakes filled with a variety of surprise indulgent flavors, like decadent chocolate, creamy almond, sweet strawberry, and sharp lemon flavors. Winner takes all!!</p><a href='quiz'>Not good enough, re-take quiz!</a>";
+    } else {
+        return "<img src='/sites/images/tarts-sm.jpg'><p>Why not try one of our delicious, fresh fruit tarts? There's combinations for everyone in light, sweet, and creamy flavors!</p><a href='quiz'>Not good enough, re-take quiz!</a>";
+    }
 }
