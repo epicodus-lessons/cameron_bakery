@@ -139,10 +139,6 @@ function quiz_form_3_submit($form, &$form_state) {
 
 
 function quiz_success() {
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
-
     $gluten = $_SESSION['gluten'];
     $sweet = $_SESSION['sweet'];
     $size = $_SESSION['size'];
