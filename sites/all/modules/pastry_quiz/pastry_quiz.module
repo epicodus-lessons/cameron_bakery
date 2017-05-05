@@ -63,9 +63,9 @@ function start_form_submit($form, &$form_state) {
 
 function one_form() {
   $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
+      '#title' => 'Are you gluten intolerant?',
       '#type' => 'radios',
-      '#description' => t('Are you gluten intolerant?'),
+      '#description' => t(''),
       '#options' => array(
           'yes' => t('Yes!'),
           'no' => t('No, bring on the carbs!'),
@@ -85,7 +85,7 @@ function one_form_submit($form, &$form_state) {
   $gluten = $form_state['values']['gluten'];
   $gluten_answer = null;
 
-  $_SESSION['gluten'] = $gluten_answer;
+  $_SESSION['gluten'] = $gluten;
   $form_state['redirect'] = 'quiz_question_2';
 }
 
@@ -93,9 +93,9 @@ function one_form_submit($form, &$form_state) {
 
 function two_form() {
   $form['sweet'] = array(
-      '#title' => 'Sweet Tooth',
+      '#title' => ' Do you have a sweet tooth?',
       '#type' => 'radios',
-      '#description' => t('Do you like sweet pastries?'),
+      '#description' => t('berry tarts, doughnuts, etc..'),
       '#options' => array(
         'yes' => t('Yes, I cant get enough!'),
         'no' => t('No, I prefer other flavors.'),
@@ -115,7 +115,7 @@ function two_form_submit($form, &$form_state) {
   $sweet = $form_state['values']['sweet'];
   $sweet_answer = null;
 
-  $_SESSION['sweet'] = $sweet_answer;
+  $_SESSION['sweet'] = $sweet;
   $form_state['redirect'] = 'quiz_question_3';
 }
 
@@ -123,9 +123,9 @@ function two_form_submit($form, &$form_state) {
 
 function three_form() {
   $form['savory'] = array(
-      '#title' => 'Savory Treats',
+      '#title' => 'Are you interested in savory treats?',
       '#type' => 'radios',
-      '#description' => t('Do you like savory pastries (like: meat pies)?'),
+      '#description' => t('meat pies, quiches, etc..'),
       '#options' => array(
         'yes' => t('Yes, I love savory foods!'),
         'no' => t('No, I prefer other flavors.'),
@@ -145,13 +145,34 @@ function three_form_submit($form, &$form_state) {
   $savory = $form_state['values']['savory'];
   $savory_answer = null;
 
-  $_SESSION['savory'] = $savory_answer;
+  $_SESSION['savory'] = $savory;
   $form_state['redirect'] = 'quiz_success';
 }
 
 
 function quiz_success() {
-  // $quiz_ouput = $_SESSION['test_result'];
-  // return '<p>' . $quiz_ouput . '</p>';
-  return "quiz sucess page obtained!";
+  $gluten_answer = $_SESSION['gluten'];
+  $sweet_answer = $_SESSION['sweet'];
+  $savory_answer = $_SESSION['savory'];
+
+  $quiz_ouput = null;
+
+  // if($gluten_answer === 'yes' && $sweet_answer === 'yes' && $savory_answer === 'yes')
+
+  if ($gluten_answer === 'yes') {
+    $quiz_ouput = t("Gluten intolerant? Don't worry, we've got you covered! Visit the store to check the daily gluten free options available!");
+  } else {
+    if($savory_answer === 'yes' && $sweet_answer === 'no') {
+      $quiz_ouput = t("Not much of a sweet tooth, eh? You're in luck! We offer a range of savory treats! Try one of our famous quiches or a meat and veggie pie both are made daily!");
+    } elseif ($savory_answer === 'yes' && $sweet_answer === 'yes') {
+      $quiz_ouput = t("It sounds like you're a lover of all things pastry! You should try our house made doughnuts, or a veggie and meat pie!");
+    } elseif ($savory_answer === 'no' && $sweet_answer === 'yes') {
+      $quiz_ouput = t("No savory, got it! You should try one of our house made doughnuts, or one of our fresh berry tarts");
+    }
+  }
+
+  return '<p>' . $quiz_ouput . '</p>';
+
+
+
 }
