@@ -1,0 +1,12 @@
+header {
+    border-radius: 20px;
+    border-style: solid;
+    border-width: thick;
+}
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: #ffffcc;
+}
