@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css?family=Megrim|Voltaire');
+
+/* Main Styles*/
+
+header {
+    font-family: 'Megrim', cursive;
+}
+
+body {
+    font-family: 'Voltaire', sans-serif;
+}
+
+a, a:link, a:hover, a:visited, a:active {
+    text-decoration: none !important;
+}
+
+/* Class Styles */
+
+.header {
+    margin-top: .5em;
+    background-color: #BFD8D2;
+    padding: 1em;
+}
+
+.header__logo {
+    padding: .5em;
+}
+
+.header__name-and-slogan {
+    color: #FFF !important;
+}
+
+.main-menu {
+    background-color: #DCB239;
+    padding: .5em;
+}
+
+.form-submit {
+    background-color: #DF744A;
+    color: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 10%;
+}
+
+.form-submit:hover {
+    background-color: #FFF;
+    color: #DF744A;
+    border: 1px solid #DF744A;
+    border-radius: 10%;
+}
+
+.mainFooter {
+  font-size: .75em;
+  width: 100%;
+  padding-top: 50px;
+  height: 100px;
+  border-bottom: solid 7px #BFD8D2;
+  text-align: center;
+  margin-top: 20em;
+}
+
+
+/*font-family: 'Megrim', cursive;
+font-family: 'Voltaire', sans-serif;*/

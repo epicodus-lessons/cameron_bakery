@@ -1,0 +1,71 @@
+<?php
+/**
+ * @file
+ * Tests for the Bakery User module.
+ */
+
+class SubjectHideTests extends DrupalWebTestCase {
+
+    /**
+     * Implementation of getInfo()
+     * The getInfo Method Controls the Info About Our Test - How it Displays on Web Interface
+     */
+    public static function getInfo() {
+        return array(
+            'name' => 'Subject Hide Tests',
+            'description' => 'Tests for the Bakery User Module',
+            'group' => 'Epicodus',
+        );
+    } // End getInfo() method
+
+    /**
+     * Implementation of setUp()
+     * Sets up the modules we are testing, in this case subject_hide
+     */
+    public function setUp() {
+
+        // Define Our Module
+        parent::setUp(array('subject_hide'));
+
+        // Create an Administrator to Post Content
+        $user = $this->drupalCreateAdminUser();
+        // Log in Admin
+        $this->drupalLogin($user);
+        $this->createTestingPage();
+    }
+
+    // Function to Create the Page We're Testing
+    public function createTestingPage() {
+        // Create a page using the $info array
+        $info = array();
+        $info['title'] = "Testing!";
+        $info['body[und][0][value]'] = '1, 2, 3!';
+
+        // Post Content with drupalPost()
+        $this->drupalPost('node/add/page', $info, t('Save'));
+
+        // Create Link to Article
+        $path['source'] = 'node/1';
+        $path['alias'] = 'new-article';
+        path_save($path);
+    }
+
+    // Function to Create Administrator
+    public function drupalCreateAdminUser( array $permissions = array() ) {
+        $roles = user_roles();
+        $index = array_search('administrator', $roles);
+        $user = $this->drupalCreateUser($permissions);
+        $user->roles[$index] = 'administrator';
+        return user_save($user);
+    }
+
+    /**
+     *  Implementation of our test.
+     *  Checks for hidden subject line on form fields.
+     */
+    public function testHiddenSubject() {
+        $this->assertNoText('Subject', 'The subject field is correctly hidden.');
+    }
+
+
+}
