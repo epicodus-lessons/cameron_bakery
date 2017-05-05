@@ -16,7 +16,19 @@ function pastry_quiz_menu() {
 
     $items['quiz_question_1'] = array(
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
+        'page arguments' => array('quiz_form_1'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    $items['quiz_question_2'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz_form_2'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    $items['quiz_question_3'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz_form_3'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
@@ -30,7 +42,8 @@ function pastry_quiz_menu() {
 
     return $items;
 }
-function quiz_form() {
+
+function quiz_form_1() {
   $form['gluten'] = array(
       '#title' => 'Gluten Intollerance',
       '#type' => 'radios',
@@ -50,6 +63,67 @@ function quiz_form() {
   return $form;
 }
 
+function quiz_form_1_submit($form, &$form_state) {
+  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+  $gluten = $form_state['values']['gluten'];
+  $_SESSION['gluten'] = $gluten;
+  $form_state['redirect'] = 'quiz_question_2';
+}
+
+function quiz_form_2() {
+  $form['dairy'] = array(
+      '#title' => 'Lactose Intollerance',
+      '#type' => 'radios',
+      '#description' => t('Are you lactose intollerant?'),
+      '#options' => array(
+          t('Yes'),
+          t('No'),
+      ),
+      '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => 'submit',
+  );
+
+  return $form;
+}
+function quiz_form_2_submit($form, &$form_state) {
+
+  $form['dairy']['default_value'] = variable_get('comment_preview', 1);
+  $dairy = $form_state['values']['dairy'];
+  $_SESSION['dairy'] = $dairy;
+  $form_state['redirect'] = 'quiz_question_3';
+}
+
+function quiz_form_3() {
+  $form['large'] = array(
+      '#title' => 'Do you want something a little bigger?',
+      '#type' => 'radios',
+      '#description' => t('Would you like a large pastery or dessert?'),
+      '#options' => array(
+          t('Yes'),
+          t('No'),
+      ),
+      '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => 'submit',
+  );
+
+  return $form;
+}
+function quiz_form_3_submit($form, &$form_state) {
+
+  $form['large']['default_value'] = variable_get('comment_preview', 1);
+  $large = $form_state['values']['large'];
+  $_SESSION['large'] = $large;
+  $form_state['redirect'] = 'quiz_results';
+}
+
 function start_form() {
     // $form['gluten'] = array(
     //     '#title' => 'Gluten Intollerance',
@@ -64,28 +138,81 @@ function start_form() {
 
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'submit',
+        '#value' => 'Begin',
     );
 
     return $form;
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
-}
-
 function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+    $form_state['redirect'] = 'quiz_question_1';
 }
 
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
+function quiz_success() {
+    $gluten = $_SESSION['gluten'];
+    $dairy = $_SESSION['dairy'];
+    $large = $_SESSION['large'];
+
+    $should_get = '';
+    $can_get = array();
+
+    $has_gluten = [
+        "Cherry Pie (slice or full)",
+        "Croissant",
+    ];
+    $has_dairy = [
+        "One Dozen Gluten-free Doughnuts (sale)",
+        "Apple Pie (slice or full)",
+        "Pumpkin Cinnamon Scone",
+
+    ];
+    $not_large = [
+        "Pumpkin Cinnamon Scone",
+        "Croissant",
+        "Granola Breakfast Cookies",
+        "Blueberry Almond Muffin",
+    ];
+    $all_options = [
+        "Apple Pie (slice or full)",
+        "Cherry Pie (slice or full)",
+        "One Dozen Gluten-free Doughnuts (sale)",
+        "Apple Pie (slice or full)",
+        "Cherry Pie (slice or full)",
+        "Granola Breakfast Cookies",
+        "Blueberry Almond Muffin",
+        "Banana Bread",
+        "Pumpkin Cinnamon Scone",
+        "Croissant",
+        "Granola Breakfast Cookies",
+        "Banana Bread",
+        "One Dozen Gluten-free Doughnuts (sale)",
+    ];
+
+    array_merge($has_gluten, [$has_dairy, $not_large]);
+
+    // $unavaliable = $all_options;
+    $can_get = $all_options;
+
+    foreach($all_options as $option){
+        if($gluten == "Yes" && array_search($option, $has_gluten, TRUE) === TRUE && array_search($option, $can_get, TRUE) === TRUE){
+            unset($can_get[array_search($option, $can_get)]);
+        }
+        if($dairy == "Yes" && array_search($option, $has_dairy, TRUE) === true && array_search($option, $can_get, TRUE) === TRUE){
+            unset($can_get[array_search($option, $can_get)]);
+        }
+        if($large == "Yes" && array_search($option, $not_large, TRUE) === true && array_search($option, $can_get, TRUE) === TRUE){
+            unset($can_get[array_search($option, $can_get)]);
+        }
+    }
+    $should_get = $can_get[rand(0, count($can_get))];
+
+    $output = "<p> You should get " . $should_get . " today.</p>
+    <p>You can also get :
+    <ul>";
+    foreach($can_get as $option){
+        $output .="<li>".$option."</li>";
+    }
+    $output .="</ul>";
+
+    return $output;
 }
