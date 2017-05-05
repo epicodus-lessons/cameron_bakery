@@ -1,0 +1,116 @@
+#header {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+#content {
+  margin-top: 0px;
+  display: block;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 10px;
+  color: #660000;
+  background-color: chocolate;
+  float: left;
+}
+
+#main-menu {
+  font-size: 3vh;
+  margin-top: -20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+#site-name {
+  font-size: 7vh;
+  color: #660000;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#logo {
+  width: 15%;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+#name-and-slogan {
+  color: chocolate;
+  float: left;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#site-link:link, #site-link:visited {
+  color: chocolate;
+  text-decoration: none;
+}
+
+#site-link:hover, #site-link:focus {
+  text-decoration: underline;
+}
+
+#site-slogan {
+  font-size: 4vh;
+  margin: 0px;
+}
+
+#site-slogan:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+#page-title {
+  text-align: center;
+  font-size: 6vh;
+  color: #660000;
+}
+
+.field-item {
+  font-size: 3vh;
+}
+
+.views-view-grid {
+  font-size: 3vh;
+  width: 100%;
+  text-align: center;
+  color: chocolate;
+}
+
+#carousel-bootstrap {
+  display: block;
+  margin: auto;
+  width:800px;
+  height:auto;
+}
+
+#carousel-bootstrap img {
+  display: block;
+  margin: auto;
+  width:800px;
+  height:auto;
+}
+
+#carousel-bootstrap .carousel-caption {
+  padding-bottom: 0;
+  font-size: 5vh;
+  font-weight: bolder;
+}
+
+#block-system-main  div  p {
+  font-size: 2vh;
+  text-align: center;
+}
+
+#block-system-user-menu, #block-user-login {
+  float: right;
+  margin-right: 20%;
+}
