@@ -120,10 +120,6 @@ function quiz_success() {
   $protein = $_SESSION['protein'];
   $diet = $_SESSION['diet'];
 
-  print_r($gluten);
-  print_r($protein);
-  print_r($diet);
-
   if ($diet == 1) {
     return '<p>Get an egg pastry with no carbs!</p>';
   } else if ($protein == 0) {
