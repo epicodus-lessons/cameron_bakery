@@ -1,0 +1,16 @@
+#page-wrapper{
+  background-image: url(http://eskipaper.com/images/pastry-background-1.jpg);
+  background-size: 100%;
+}
+
+body{
+  color: red;
+}
+
+a:link{
+  color: purple;
+}
+
+#main-wrapper img{
+  width: 60%;
+}
