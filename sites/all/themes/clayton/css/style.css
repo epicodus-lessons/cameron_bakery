@@ -1,0 +1,26 @@
+#page {
+  background-image: url('../img/prop.jpg');
+  background-size: 100vw 100vh;
+  text-align: center;
+  display: block;
+}
+
+ul.menu {
+  list-style: none;
+  text-align: center;
+}
+
+
+.spin {
+    transition: transform 2s;
+    transform: rotate(180deg);
+}
+
+.spinback {
+    transition: transform 2s:
+    transform: rotate(-180deg)
+}
+
+#navigation {
+  display: none;
+}
