@@ -1,0 +1,13 @@
+name = Cameron's Alternative Theme #2
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/styles.css
+scripts[] = js/script.js
+
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
+regions[highlighted] = Highlighted
+regions[content] = Content
+regions[header] = Header
+regions[footer] = Footer
+regions[help] = Help
