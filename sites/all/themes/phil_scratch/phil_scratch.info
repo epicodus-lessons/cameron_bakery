@@ -1,0 +1,13 @@
+name = A theme made from scratch for Cameron, by Phil
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/styles.css
+
+regions[deals] = Deals
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[content] = Content
+regions[help] = Help
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[highlighted] = Highlighted
