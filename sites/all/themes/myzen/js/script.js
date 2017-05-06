@@ -18,7 +18,9 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+        $('h1').click(function(){
+          alert('I am an h2!');
+        });
 
     }
   };
