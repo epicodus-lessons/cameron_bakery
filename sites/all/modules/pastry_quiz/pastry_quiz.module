@@ -1,91 +1,172 @@
 <?php
+/**
+ * @file
+ * Present Questions on different pages and provide final food suggestion
+ */
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
+/**
+ * Define our name space and fields in $_SESSION
+ */
+define('QUIZ', 'pastry_quiz_module');
+define('GLUTEN_INTOLERANT', 'gluten_intolerant');
+define('FLAVOR', 'flavor');
+define('DONUT_OR_BITE', 'donut_or_bite');
 
+/**
+ * Implements hook_menu().
+ */
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What should I eat!?',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
+  $items['quiz'] = array(
+    'title' => t('What should I eat!?'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question_1_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
 
-    $items['quiz_question_1'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['question_2'] = array(
+    'title' => t('What flavor best matches your mood?'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question_2_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['question_3'] = array(
+    'title' => t('What size best matches your appetite?'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question_3_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  $items['quiz_results'] = array(
+    'title' => t('Quiz Results!'),
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
 }
-function quiz_form() {
+
+
+/**
+ * Creates a Form
+ */
+function question_1_form() {
   $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+    '#title' => t('Gluten Intolerance'),
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intolerant?'),
+    '#options' => array(
+      '1' => t('Yes'),
+      '0' => t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
+    '#type' => 'submit',
+    '#value' => t('Submit'),
   );
 
   return $form;
 }
 
-function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
-
-    return $form;
+/*
+ * hook_form_submit
+ */
+function question_1_form_submit($form, &$form_state) {
+  $_SESSION[QUIZ][GLUTEN_INTOLERANT] = (int) $form_state['values']['gluten'];
+  $form_state['redirect'] = 'question_2';
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
+
+/**
+ * Creates a Form
+ */
+function question_2_form() {
+  $form['flavor'] = array(
+    '#title' => t('Flavor Choice'),
+    '#type' => 'radios',
+    '#description' => t('What flavor might you enjoy today?'),
+    '#options' => array(
+      t('Vanilla') => t('Vanilla'),
+      t('Chocolate') => t('Chocolate'),
+      t('Cinnamon Sugar') => t('Cinnamon Sugar'),
+      t('Honey Oat') => t('Honey Oat'),
+      t('Lemon Poppy') => t('Lemon Poppy'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
 }
 
-function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+/**
+ * hook_form_submit
+ */
+function question_2_form_submit($form, &$form_state) {
+  $_SESSION[QUIZ][FLAVOR] = $form_state['values']['flavor'];
+  $form_state['redirect'] = 'question_3';
 }
 
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
+
+/**
+ * Creates a Form
+ */
+function question_3_form() {
+  $form['size'] = array(
+    '#title' => t('Size Choice'),
+    '#type' => 'radios',
+    '#description' => t('Pick one, but remember you can always change your mind!'),
+    '#options' => array(
+      t('donut!') => t('Donut'),
+      t('bite!') => t('Bite'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * hook_form_submit
+ */
+function question_3_form_submit($form, &$form_state) {
+  $_SESSION[QUIZ][DONUT_OR_BITE] = $form_state['values']['size'];
   $form_state['redirect'] = 'quiz_results';
+}
+
+
+/*
+ * Output final result of Quiz
+ */
+function quiz_success() {
+  $gluten_free = '';
+  if ($_SESSION[QUIZ][GLUTEN_INTOLERANT]) {
+    $gluten_free .= t('gluten free');
+  }
+
+  $get_a = t('Get a');
+  $flavor = $_SESSION[QUIZ][FLAVOR];
+  $pastry = $_SESSION[QUIZ][DONUT_OR_BITE];
+  $and_while = t('And while you\'re here, check out our other fresh');
+  $pastries = t('pastries!');
+
+  return <<<EOD
+    <p>$get_a $gluten_free $flavor $pastry</p>
+    <p>$and_while $gluten_free $pastries</p>
+EOD;
 }

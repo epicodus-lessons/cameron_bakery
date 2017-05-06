@@ -1,18 +1,34 @@
 <?php
+/*
+ * @file
+ *
+ * Custom Module Provides:
+ *   Welcome message upon log in
+ */
+
+/*
+ * hook_menu()
+ */
 function bakery_user_menu() {
     $items['welcome'] = array(
-        'title' = 'Hi There!',
-        'page callback' => 'welcome_user'
+        'title' => 'Hi There!',
+        'page callback' => 'welcome_user',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
     return $items;
 }
 
-function bakery_user_login(&$edit, $account) {
-    $_GET['destination'] = 'welcome_user';
+/*
+ * hook_user_login()
+ */
+function bakery_user_user_login($account) {
+    $_GET['destination'] = 'welcome';
 }
 
+/*
+ * Called to issue welcome message
+ */
 function welcome_user() {
     return "<p>Welcome to Cameron's Bakery!</p>";
 }
