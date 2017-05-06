@@ -24,9 +24,8 @@ body {
 }
 
 #site-name {
-  color: #754242
-  /*text-align: center;*/
-  float:inherit;
+  color: #754242;
+  text-align: center;
 }
 
 .header {
@@ -39,10 +38,21 @@ body {
   color: #754242
 }
 
-.middle {
-  background-color: #754242;
+#header a {
+  color: #754242;
   text-align: center;
-  color: #20A39E;
+}
+
+#header a:hover {
+  color: #9e0918;
+}
+
+.middle {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #754242; 
+  text-align: center;
+  color: #20A39E; *//teal
 }
 
 .middle a {
@@ -51,4 +61,38 @@ body {
 
 .middle a:hover {
   color: #0d3e47;
+}
+
+.container-inline {
+  padding: 10px;
+  background-color: #FFBA49;
+  width: 15%;
+  color: #20A39E;
+  border-radius: 15%;
+  margin-bottom: 10px;
+}
+
+.container-inline a {
+  color: #754242;
+}
+
+#block-system-navigation {
+  padding: 10px;
+  background-color: #FFBA49;
+  width: 15%;
+  color: #20A39E;
+  border-radius: 15%;
+}
+
+#block-system-navigation a{
+  color: #754242;
+}
+
+#block-system-navigation a:hover{
+  color: #9e0918;
+}
+
+#edit-submit {
+  background-color: #20A39E;
+  color: #23001E;
 }
