@@ -65,7 +65,7 @@ If you run into any issues or have questions, ideas or concerns, please feel fre
 
 ## Technologies Used
 
-Written using PHP, Drupal, JavaScript, MAMP, phpMyAdmin, Atom, and Git.
+Written using PHP, Drupal, JavaScript, MAMP, phpMyAdmin, Google Fonts, Atom, and Git.
 
 
 ## MIT License

@@ -1,5 +1,5 @@
 body {
-  font-family: verdana;
+  font-family: 'Roboto', sans-serif;
   margin: 10%;
 }
 
@@ -16,7 +16,12 @@ a {
 }
 
 #site-name {
-  font-size: 30pt;
+  font-size: 50pt;
+  font-family: 'Montez', cursive;
+}
+
+#site-slogan {
+  font-size: 16pt;
 }
 
 #navigation h2 {
@@ -27,6 +32,7 @@ a {
   background-color: #4747d1;
   color: white;
   padding: 10px;
+  margin-top: 20px;
 }
 
 #main-menu {
@@ -40,6 +46,7 @@ a {
 #secondary-menu {
   float: right;
   font-size: 10pt;
+  margin-top: 30px;
 }
 
 #header {
