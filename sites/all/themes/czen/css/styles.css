@@ -807,6 +807,7 @@ th {
 
 .header__logo-image {
   vertical-align: bottom;
+  background-color: green;
 }
 
 .header__name-and-slogan {

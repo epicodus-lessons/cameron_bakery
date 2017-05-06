@@ -18,7 +18,36 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+      jQuery(document).ready(function($) {
+
+        $('img.header__logo-image').hover(
+          function () {
+            setRotation($(this), 222);
+          },
+          function () {
+            setRotation($(this), 0);
+          }
+        );
+
+        $('a.header__site-link').hover(
+          function () {
+            $(this).css({'background-color': 'pink'});
+          },
+          function () {
+            $(this).css({'background-color': 'black'});
+          }
+        );
+
+        // From: https://jsfiddle.net/Dunkel85/d4c9d6en/
+        function setRotation(target, deg) {
+          target.css({    // rotate element via css
+            '-webkit-transform': 'rotate(' + deg + 'deg)',
+            '-moz-transform': 'rotate(' + deg + 'deg)',
+            '-ms-transform': 'rotate(' + deg + 'deg)',
+            'transform': 'rotate(' + deg + 'deg)'
+          });
+        }
+      });
 
     }
   };
