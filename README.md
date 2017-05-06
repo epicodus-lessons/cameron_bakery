@@ -56,3 +56,14 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
   * Eliminate spelling and syntax errors
   * Ask at least 3 questions on 3 different pages
   * Provide at least 3 unique outcomes on a result page
+
+### Phase 5: Create Zen Sub Theme
+  * Install Zen Theme
+  * Create Initial C(ameron)Zen Sub Theme
+  * Develop Sub Theme with Green on Black scheme
+  * Add JavaScript to theme to twist the logo and highlight the site name
+
+### Phase 6: Create Custom Theme
+  * Create .info
+  * Find a sample and install logo
+  * Develop Theme with color bars on left
