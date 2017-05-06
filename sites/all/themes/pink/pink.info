@@ -1,0 +1,15 @@
+name = Pink theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/style.css
+scripts[] = js/scripts.js
+
+
+regions[navbar] = Nav Bar
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[content] = Content
+regions[highlighted] = highlighted
+regions[sidebar_first] = sidebar_first
+regions[sidebar_second] = sidebar_second
+regions[help] = Help

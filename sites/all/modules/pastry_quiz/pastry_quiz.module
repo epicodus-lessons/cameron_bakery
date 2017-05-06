@@ -16,7 +16,20 @@ function pastry_quiz_menu() {
 
     $items['quiz_question_1'] = array(
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
+        'page arguments' => array('quiz1_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+
+    $items['quiz_question_2'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz2_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    $items['quiz_question_3'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz3_form'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
@@ -30,62 +43,117 @@ function pastry_quiz_menu() {
 
     return $items;
 }
-function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
 
-  return $form;
-}
 
+// Start Quiz Submit
 function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'submit',
+        '#value' => 'Start Quiz',
     );
-
     return $form;
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
-}
-
 function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+    $form_state['redirect'] = 'quiz_question_1';
 }
 
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
+
+// First Question
+function quiz1_form() {
+    $form['gluten'] = array(
+    '#title' => 'Gluten Intollerance',
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intolerant?'),
+    '#options' => array(
+    t('Yes'),
+    t('No'),
+    ),
+    '#required' => TRUE,
+    );
+    $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+    );
+    return $form;
+}
+function quiz1_form_submit($form, &$form_state) {
+    $gluten = $form_state['values']['gluten'];
+    $_SESSION['gluten'] = $gluten;
+    $form_state['redirect'] = 'quiz_question_2';
+
+}
+
+
+// Second Question
+function quiz2_form() {
+    $form['lactose'] = array(
+    '#title' => 'Lactose Intollerance',
+    '#type' => 'radios',
+    '#description' => t('Are you lactose intolerant?'),
+    '#options' => array(
+    t('Yes'),
+    t('No'),
+    ),
+    '#required' => TRUE,
+    );
+
+    $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+    );
+    return $form;
+}
+function quiz2_form_submit($form, &$form_state) {
+    $lactose = $form_state['values']['lactose'];
+    $_SESSION['lactose'] = $lactose;
+    $form_state['redirect'] = 'quiz_question_3';
+}
+
+
+// Third Question
+function quiz3_form() {
+    $form['chocolate'] = array(
+    '#title' => 'Do you like chocolate?',
+    '#type' => 'radios',
+    '#description' => t('Do you like chocolate?'),
+    '#options' => array(
+    t('Yes'),
+    t('No'),
+    ),
+    '#required' => TRUE,
+    );
+
+    $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+    );
+    return $form;
+}
+function quiz3_form_submit($form, &$form_state) {
+    $chocolate = $form_state['values']['chocolate'];
+    $_SESSION['chocolate'] = $chocolate;
+    $form_state['redirect'] = 'quiz_results';
+}
+
+
+
+// Result
+function quiz_success() {
+    $lactose = $_SESSION['lactose'];
+    $gluten = $_SESSION['gluten'];
+    $chocolate = $_SESSION['chocolate'];
+    if($lactose === "0" && $gluten === "0" && $chocolate ==="0") {
+        return "<p>Trie our new Vegan and Allergic free Chocolate Bars for just $2 each!</p>";
+    } else  if($lactose === "0" && $gluten === "0" && $chocolate ==="1"){
+        return "<p>Trye our new Vegan and Allergic free Strawberry cakes! They are simply delicious!</p>";
+    } else  if($lactose === "1" && $gluten === "0" && $chocolate ==="1"){
+        return "<p>You are in the right place! We have gluten free brownies half of the price until Jun 21!</p>";
+    } else  if($lactose === "0" && $gluten === "1" && $chocolate ==="1"){
+        return "<p>We know how hard is to find lactose chocolate cakes, that's why he have this huge selection of them in all of ours stores! Just come and trie!</p>";
+    } else {
+        return ("<p>Trie our favorite cookies for half price this month!!</p>" );
+    }
+
 }
