@@ -1,5 +1,62 @@
-* {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    margin: 1px;
-    
+#deals {
+    background: rgba(255, 0, 0, 0.5);
+}
+#header, #footer {
+    background:#8d8;
+}
+#main-wrapper {
+    background: #a2fba2;
+}
+
+#content {
+    /*background: rgba(100, 0, 0, 0.9);*/
+    /*display: inline;*/
+    padding: 15px;
+
+}
+#help {
+    background: rgba(0, 100, 0, 0.9);
+}
+
+#sidebar {
+    float:left;
+    width: 25%;
+    clear:left;
+    margin: 15px;
+    margin-right: 50px;
+
+}
+#sidebar-first {
+    /*background: rgba(0, 0, 100, 0.9);*/
+}
+#sidebar-second {
+    /*background: rgba(100, 100, 100, 0.5);*/
+}
+#navigation {
+    float:left;
+    clear:right;
+    margin: 15px;
+    margin-right: 50px;
+
+}
+#sidebar, #navigation {
+    background: rgba(20, 20, 20, 0.4);
+    border-radius: 35px;
+    min-width:30%;
+    max-width: 30%;
+    padding:2%;
+}
+
+#logo {
+    float:left;
+    background-color: white;
+    border-radius: 10px;
+}
+#logo img {
+    max-width: 125px;
+    max-height: auto;
+}
+
+#name-and-slogan {
+    padding-left: 25%;
 }

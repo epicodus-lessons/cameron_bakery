@@ -4,3 +4,14 @@ engine = phptemplate
 
 stylesheets[all][] = css/style.css
 scripts[] = js/scripts.js
+
+
+
+regions[deals] = Deals
+regions[header] = Header
+regions[footer] = Footer
+regions[content] = Content
+regions[help] = Help
+
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
