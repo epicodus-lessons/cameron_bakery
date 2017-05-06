@@ -1,0 +1,4 @@
+name = Evan-Alexander's Awesome Theme from Scratch
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/style.css
