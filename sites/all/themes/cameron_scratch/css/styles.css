@@ -1,0 +1,76 @@
+body {
+  font-family: verdana;
+  margin: 10%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo img {
+  height: 150px;
+  width: auto;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+#site-name {
+  font-size: 30pt;
+}
+
+#navigation h2 {
+  display: none;
+}
+
+#navigation {
+  background-color: #4747d1;
+  color: white;
+  padding: 10px;
+}
+
+#main-menu {
+  margin-bottom: 30px;
+}
+
+#main-menu a {
+  color: white;
+}
+
+#secondary-menu {
+  float: right;
+  font-size: 10pt;
+}
+
+#header {
+  padding-top: 30px;
+}
+
+#breadcrumb {
+  display: none;
+}
+
+#sidebar-first {
+  float: left;
+}
+
+#content.column {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.submitted {
+  font-size: 10pt;
+}
+
+.region.region-sidebar-second {
+  float: right;
+}
+
+.feed-icon {
+  display: none;
+}
+
+#footer {
+  margin-top: 20%;
+}
