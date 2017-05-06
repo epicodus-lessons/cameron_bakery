@@ -1,0 +1,19 @@
+<?php
+function bakery_user_menu() {
+    $item = array();
+    $items['welcome'] = array(
+        'title' => 'Hi There!',
+        'page callback' => 'greeting',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function bakery_user_login(&$edit, $account) {
+    $_GET['destination'] = 'welcome';
+}
+
+function greeting() {
+    return "<p>Welcome to Cameron's Bakery!</p>";
+}
