@@ -161,7 +161,7 @@ function quiz_success() {
         "Croissant",
     ];
     $has_dairy = [
-        "One Dozen Gluten-free Doughnuts (sale)",
+        "One Dozen Gluten-free Cream-filled Doughnuts (sale)",
         "Apple Pie (slice or full)",
         "Pumpkin Cinnamon Scone",
 
@@ -175,7 +175,7 @@ function quiz_success() {
     $all_options = [
         "Apple Pie (slice or full)",
         "Cherry Pie (slice or full)",
-        "One Dozen Gluten-free Doughnuts (sale)",
+        "One Dozen Gluten-free Cream-filled Doughnuts (sale)",
         "Apple Pie (slice or full)",
         "Cherry Pie (slice or full)",
         "Granola Breakfast Cookies",
@@ -185,23 +185,25 @@ function quiz_success() {
         "Croissant",
         "Granola Breakfast Cookies",
         "Banana Bread",
-        "One Dozen Gluten-free Doughnuts (sale)",
+        "One Dozen Gluten-free Cream-filled Doughnuts (sale)",
     ];
 
-    array_merge($has_gluten, [$has_dairy, $not_large]);
+    // array_merge($has_gluten, [$has_dairy, $not_large]);
 
     // $unavaliable = $all_options;
     $can_get = $all_options;
 
     foreach($all_options as $option){
-        if($gluten == "Yes" && array_search($option, $has_gluten, TRUE) === TRUE && array_search($option, $can_get, TRUE) === TRUE){
-            unset($can_get[array_search($option, $can_get)]);
+        if($gluten == 0 && array_search($option, $has_gluten, TRUE) !== FALSE && array_search($option, $can_get, TRUE) !== FALSE){
+            $can_get = array_splice($can_get,array_search($option, $can_get),1);
         }
-        if($dairy == "Yes" && array_search($option, $has_dairy, TRUE) === true && array_search($option, $can_get, TRUE) === TRUE){
-            unset($can_get[array_search($option, $can_get)]);
+
+        if($dairy == 0 && array_search($option, $has_dairy, TRUE) !== FALSE && array_search($option, $can_get, TRUE) !== FALSE){
+            $can_get = array_splice($can_get,array_search($option, $can_get),1);
         }
-        if($large == "Yes" && array_search($option, $not_large, TRUE) === true && array_search($option, $can_get, TRUE) === TRUE){
-            unset($can_get[array_search($option, $can_get)]);
+
+        if($large == 0 && array_search($option, $not_large, TRUE) !== FALSE && array_search($option, $can_get, TRUE) !== FALSE){
+            $can_get = array_splice($can_get,array_search($option, $can_get),1);
         }
     }
     $should_get = $can_get[rand(0, count($can_get))];
