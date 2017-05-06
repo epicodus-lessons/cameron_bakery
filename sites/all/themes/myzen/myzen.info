@@ -52,7 +52,7 @@ stylesheets[all][] = comment.css
 stylesheets[all][] = node.css
 
 ; Then we add our own stylesheet.
-stylesheets[all][] = css/styles.css
+; stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/mystyle.css
 
 ; If you wish to use conditional stylesheets, you should install the
@@ -65,7 +65,7 @@ stylesheets[all][] = css/mystyle.css
 
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+scripts[] = js/script.js
 
 
 

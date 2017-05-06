@@ -1,0 +1,12 @@
+html{
+  background-color:  #AC7CCC;
+}
+#header{
+  background-color: green;
+}
+
+.html{
+  background: url("../images-source/pastries.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
