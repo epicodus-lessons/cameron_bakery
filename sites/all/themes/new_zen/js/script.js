@@ -19,13 +19,14 @@
     attach: function (context, settings) {
 
       // Place your code here.
-      $( document ).ready(function() {
-          $('.form-item').click(function() {
-              alert('clicked');
-          })
-      })
 
     }
   };
 
 })(jQuery, Drupal, this, this.document);
+
+jQuery(document).ready(function($) {
+  $('h2').click(function(){
+    alert('I am an h2!');
+  });
+});
