@@ -134,6 +134,9 @@
 
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <a id="main-content"></a>
+        <div id="cupcake_buttons">
+            <h4>Choose your styling: <img src="sites/all/themes/pastels/images/pcupcakesm.png" id="purple_cupcake">&nbsp;&nbsp;&nbsp;<img src="sites/all/themes/pastels/images/bcupcakesm.png" id="blue_cupcake">&nbsp;&nbsp;&nbsp;<img src="sites/all/themes/pastels/images/gcupcakesm.png" id="green_cupcake"></h4>
+        </div>
         <?php print render($title_prefix); ?>
         <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
         <?php print render($title_suffix); ?>

@@ -38,6 +38,11 @@ html {
   padding: 10px;
 }
 
+#cupcake_buttons {
+    margin-top: 15px;
+    text-align: center;
+}
+
 #block-system-navigation {
   width: 200px;
   float: left;
@@ -53,6 +58,7 @@ html {
     padding: 10px;
     margin-left: 200px;
     margin-top: 10px;
+    margin-right: 10px;
     font-size: 120%;
 }
 
