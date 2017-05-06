@@ -1,6 +1,8 @@
 body {
   font-family: 'Roboto', sans-serif;
-  margin: 10%;
+  margin-top: 5%;
+  margin-right: 8%;
+  margin-left: 8%;
 }
 
 a {
@@ -33,10 +35,7 @@ a {
   color: white;
   padding: 10px;
   margin-top: 20px;
-}
-
-#main-menu {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 #main-menu a {
@@ -49,29 +48,32 @@ a {
   margin-top: 30px;
 }
 
-#header {
-  padding-top: 30px;
-}
-
 #breadcrumb {
   display: none;
 }
 
 #sidebar-first {
+  margin-top: 5%;
+  float: left;
+  width: 20%;
+  margin-right: 3%;
+}
+
+#content {
+  margin-top: 5%;
   float: left;
 }
 
-#content.column {
-  margin-top: 10%;
-  margin-bottom: 10%;
+#sidebar-second {
+  margin-top: 5%;
+  float: right;
+  margin-right: 3%;
+  width: 20%;
+  overflow: hidden;
 }
 
 .submitted {
   font-size: 10pt;
-}
-
-.region.region-sidebar-second {
-  float: right;
 }
 
 .feed-icon {
@@ -79,5 +81,11 @@ a {
 }
 
 #footer {
-  margin-top: 20%;
+  font-weight: 300;
+  color: #c9bfb5;
+  display: block;
+  height: 3%;
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
 }
