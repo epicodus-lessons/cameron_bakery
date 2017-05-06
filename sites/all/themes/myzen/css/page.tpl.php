@@ -117,7 +117,10 @@
     </div></div> <!-- /.section, /#header -->
 
 
+    <div class="middle">
+      <?php print render($page['middle']); ?>
 
+    </div>
     <?php if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>

@@ -3,8 +3,6 @@ html {
 }
 
 .html {
-  /*background: url("../images-source/bread2.jpg");*/
-  background-color: blue;
   background-repeat: no-repeat;
   background-size: cover;
   color: #23001E;
@@ -26,17 +24,31 @@ body {
 }
 
 #site-name {
-  color: #23001E;
-  text-align: center;
+  color: #754242
+  /*text-align: center;*/
+  float:inherit;
 }
 
 .header {
   background-color: #EF5B5B;
-  width: 100%;
+  color: #754242
 }
 
 #header {
   background-color: #FFBA49;
-  width: 100%;
-  opacity: 0.8;
+  color: #754242
+}
+
+.middle {
+  background-color: #754242;
+  text-align: center;
+  color: #20A39E;
+}
+
+.middle a {
+  color: #20A39E;
+}
+
+.middle a:hover {
+  color: #0d3e47;
 }
