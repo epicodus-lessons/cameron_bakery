@@ -2,3 +2,11 @@ name = Evan-Alexander's Awesome Theme from Scratch
 core = 7.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
+
+regions[header]         = Header
+regions[navigation]     = Navigation bar
+regions[content]        = Content
+regions[sidebar_first]  = First sidebar
+regions[sidebar_second] = Second sidebar
+regions[footer]         = Footer
+regions[bottom]         = Page bottom
