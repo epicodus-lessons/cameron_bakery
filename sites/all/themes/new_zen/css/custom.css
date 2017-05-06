@@ -1,0 +1,13 @@
+* {
+  font-family: monospace;
+  color: white;
+  background-color: lightslategray;
+}
+
+a {
+  color: peachpuff;
+}
+
+:visited {
+  color: whitesmoke;
+}
