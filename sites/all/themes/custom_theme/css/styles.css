@@ -1,0 +1,40 @@
+#logo img {
+  height: 100px;
+  width: auto;
+  float: right;
+
+}
+
+body {
+  background-color: lightblue;
+}
+
+[method="post"] {
+  border-left: 1em solid gold;
+  padding-left: 1em;
+  background-color: lightgrey;
+}
+
+[id^="node-"] {
+  border-left: 1em solid pink;
+  padding-left: 1em;
+  background-color: lightgrey;
+}
+
+#main-menu {
+  border-left: 1em solid green;
+  padding-left: 1em;
+  background-color: lightgrey;
+}
+
+#block-system-navigation {
+  border-left: 1em solid turquoise;
+  padding-left: 1em;
+  background-color: lightgrey;
+}
+
+#header {
+  border-left: 1em solid blue;
+  padding-left: 1em;
+  background-color: lightgrey;
+}
