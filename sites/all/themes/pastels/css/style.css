@@ -1,0 +1,67 @@
+html {
+    font-family: 'Satisfy', cursive;
+    background-color: #D6C1F9;
+    background: linear-gradient(#D6C1F9, #A798D8, #E38EEB);
+    width: 100%;
+    min-height: 100%;
+    color: #3F375B;
+}
+
+.breadcrumb {
+    display: none;
+}
+
+#header {
+  background: url('../images/love-heart-purple-st.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  background-position: absolute;
+  top: 0;
+  height: 150px;
+}
+
+#name-and-slogan {
+  margin-left: 45%;
+}
+
+#logo-image {
+  margin-left: 50%;
+}
+
+#site-name {
+  font-size: 150%;
+}
+
+#mainmenusection {
+  background-color: #CFB7F9;
+  padding: 10px;
+}
+
+#cupcake_buttons {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#block-system-navigation {
+  width: 200px;
+  float: left;
+  left: 0;
+  top: 0;
+}
+
+#block-system-main {
+    background: url('../images/dots.png');
+    background-repeat: repeat;
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 200px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 120%;
+}
+
+#sidebar-second {
+    display: none;
+}
