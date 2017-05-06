@@ -1,0 +1,7 @@
+body {
+    background-color: pink;
+}
+
+#block-system-main-menu .menu  li{
+    display: inline;
+}
