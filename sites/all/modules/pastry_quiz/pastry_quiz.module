@@ -63,17 +63,16 @@ function start_form() {
 // first page submit //
 function start_form_submit($form, &$form_state) {
     $result = $form_state['values']['gluten'];
-    $_SESSION['first_answer'] = $result;
-
-  $form_state['redirect'] = 'quiz_question_1';
+    $_SESSION['first_stash'] = $result;
+    $form_state['redirect'] = 'quiz_question_1';
 }
 
 // second page form //
 function quiz_form() {
-    $result = $_SESSION['first_answer'];
+    $result = $_SESSION['first_stash'];
     if ($result == "0") {
 
-        $form['second_yes'] = array(
+        $form['second_question'] = array(
             '#title' => 'Gluten-free Choices',
             '#type' => 'radios',
             '#description' => t('Would you like extra sugar instead then?'),
@@ -83,17 +82,14 @@ function quiz_form() {
             ),
             '#required' => TRUE,
         );
-
         $form['submit'] = array(
             '#type' => 'submit',
             '#value' => 'submit',
         );
         return $form;
 
-
     } elseif ($result == "1") {
-
-          $form['second_no'] = array(
+          $form['second_question'] = array(
               '#title' => 'Wheat Madness!!!',
               '#type' => 'radios',
               '#description' => t('Great, then choose a cookie!'),
@@ -113,38 +109,28 @@ function quiz_form() {
 
 
 }
-
 // second page submit //
 function quiz_form_submit($form, &$form_state) {
 
-    if ($form_state['values']['second_yes'] == "0"){
-        $result_yes = $form_state['values']['second_yes'];
-        $_SESSION['second_answer_yes'] = $result_yes;
-
-    } elseif ($form_state['values']['second_no'] == "1") {
-        $result_no = $form_state['values']['second_no'];
-        $_SESSION['second_answer_no'] = $result_no;
-        
-    }
+    $result = $form_state['values']['second_question'];
+    $_SESSION['second_stash'] = $result;
     $form_state['redirect'] = 'quiz_question_2';
+
 }
-
-
-
 
 // second page form //
 function quiz_form_2() {
-
-    $result = $_SESSION['first_answer'];
+    $result = $_SESSION['second_stash'];
     if ($result == "0") {
 
-        $form['second_yes'] = array(
+        $form['third_question'] = array(
             '#title' => 'Diabetes Delight',
             '#type' => 'radios',
             '#description' => t('How clogged up would you like your arteries?'),
             '#options' => array(
                 t('Cupcaked up'),
                 t('Caked up'),
+                t('Couped up'),
             ),
             '#required' => TRUE,
         );
@@ -158,13 +144,14 @@ function quiz_form_2() {
 
     } elseif ($result == "1") {
 
-          $form['second_no'] = array(
+          $form['third_question'] = array(
               '#title' => 'Little sugar, longer life!',
               '#type' => 'radios',
               '#description' => t('How about these sugar-free options?'),
               '#options' => array(
                   t('Cardboard Cookies'),
                   t('Plain Pastry'),
+                  t("Papa's Purple"),
               ),
               '#required' => TRUE,
           );
@@ -175,25 +162,16 @@ function quiz_form_2() {
           );
           return $form;
     }
-
 }
 
 // second page submit //
 function quiz_form_2_submit($form, &$form_state) {
-    $result_yes = $form_state['values']['yes'];
-    $result_no = $form_state['values']['no'];
 
-    $_SESSION['second_answer_yes'] = $result_yes;
-    $_SESSION['second_answer_no'] = $result_no;
+    $result = $form_state['values']['third_question'];
+    $_SESSION['third_stash'] = $result;
     $form_state['redirect'] = 'quiz_results';
 }
 
 // success page //
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
 }
