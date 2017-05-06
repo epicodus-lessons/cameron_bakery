@@ -1,5 +1,8 @@
 * {
-  font-family: monospace;
+  font-family: sans-serif;
+}
+
+body {
   color: white;
   background-color: lightslategray;
 }
@@ -9,5 +12,15 @@ a {
 }
 
 :visited {
-  color: whitesmoke;
+  color: maroon;
+}
+
+input {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.header__logo-image {
+  height: 50px;
+  width: auto;
 }

@@ -19,6 +19,11 @@
     attach: function (context, settings) {
 
       // Place your code here.
+      $( document ).ready(function() {
+          $('.form-item').click(function() {
+              alert('clicked');
+          })
+      })
 
     }
   };

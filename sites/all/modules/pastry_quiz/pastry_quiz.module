@@ -48,8 +48,8 @@ function quiz_question_one_form() {
       '#type' => 'radios',
       '#description' => t('Are you gluten intollerant?'),
       '#options' => array(
-          t('Yes'),
-          t('No'),
+          true => t('Yes'),
+          false => t('No'),
       ),
       '#required' => TRUE,
   );
@@ -67,12 +67,12 @@ function quiz_question_two_form() {
       '#type' => 'radios',
       '#description' => t('Select a flavor'),
       '#options' => array(
-          t('Blueberry'),
-          t('Strawberry'),
-          t('Raspberry'),
-          t('Lemon'),
-          t('Pineapple'),
-          t('Plain'),
+          'Blueberry' =>t('Blueberry'),
+          'Strawberry' =>t('Strawberry'),
+          'Raspberry' =>t('Raspberry'),
+          'Lemon' =>t('Lemon'),
+          'Pineapple' =>t('Pineapple'),
+          'Plain' =>t('Plain'),
       ),
       '#required' => TRUE,
   );
@@ -134,12 +134,7 @@ function quiz_success() {
   if ($gluten) {
     return '<p>get a donut!</p>';
   } else {
-      switch ($fruit) {
-
-          default:
-              # code...
-              break;
-      }
+      $suggestion .= $fruit . " ";
       switch ($texture) {
           case '0': $suggestion .= 'baggette'; break;
           case '1': $suggestion .= 'blondie'; break;
