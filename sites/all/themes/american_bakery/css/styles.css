@@ -1,7 +1,62 @@
 * {
   box-sizing: border-box;
 }
+main {
+    padding:1%;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px #888888;
 
+}
+footer{
+    margin-top: 35%;
+}
+aside{
+    width:100%;
+}
+aside .block {
+    width:100%;
+}
+
+header {
+    font-size:
+}
+
+#side {
+    border:4px double rgba(255, 0, 0, 0.5);
+    border-radius: 30px;
+    overflow:auto;
+    max-width: 30%;
+}
+#side li {
+    display:block;
+    list-style: none;
+}
+
+.picnic {
+
+    min-height: 125px;
+
+    /* below courtesy of LEA VEROU lea.verou.me*/
+    background-image:
+      -moz-linear-gradient(45deg, rgba(255, 0,0, 0.5) 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, rgba(255, 0,0, 0.5) 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, rgba(255, 0,0, 0.5) 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, rgba(255, 0,0, 0.5) 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255, 0,0, 0.5)), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 0,0, 0.5)), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, rgba(255, 0,0, 0.5))),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, rgba(255, 0,0, 0.5)));
+
+    -moz-background-size:100px 100px;
+    background-size:100px 100px;
+    -webkit-background-size:100px 101px; /* override value for shitty webkit */
+
+    background-position:0 0, 50px 0, 50px -50px, 0px 50px;
+
+
+}
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -38,6 +93,7 @@ section,
 summary {
   display: block;
 }
+
 
 audio,
 canvas,
@@ -101,9 +157,9 @@ a:hover {
 
 h1,
 .header__site-name {
-  font-size: 2rem;
+  font-size: 3.0rem;
   line-height: 3rem;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -807,6 +863,7 @@ th {
 }
 
 .header__name-and-slogan {
+    margin-top: 2rem;
   float: left;
 }
 
@@ -824,6 +881,7 @@ th {
 }
 
 .header__site-slogan {
+    font-size: 1.25em;
   margin: 0;
 }
 
