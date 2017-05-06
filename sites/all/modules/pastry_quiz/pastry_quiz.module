@@ -14,21 +14,18 @@ function pastry_quiz_menu() {
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
-
     $items['quiz_question_1'] = array(
         'page callback' => 'drupal_get_form',
         'page arguments' => array('quiz_form'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
-
     $items['quiz_question_2'] = array(
         'page callback' => 'drupal_get_form',
         'page arguments' => array('quiz_form_2'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
-
     $items['quiz_results'] = array(
         'title' => '',
         'page callback' => 'quiz_success',
@@ -51,7 +48,6 @@ function start_form() {
         ),
         '#required' => TRUE,
     );
-
     $form['submit'] = array(
         '#type' => 'submit',
         '#value' => 'submit',
@@ -143,7 +139,6 @@ function quiz_form_2() {
 
 
     } elseif ($result == "1") {
-
           $form['third_question'] = array(
               '#title' => 'Little sugar, longer life!',
               '#type' => 'radios',
@@ -206,36 +201,34 @@ function quiz_success() {
         Take a piece of dough rolling into the shape and size of a tennis ball and carefully lowering it into hot oil. Deep fry six fat cakes at a time.<br>
         Allow to turn golden brown on sides by frequently turning. They are ready when floating and making puffy sound and doubled in size.<br>
         Remove from oil and drain on kitchen paper.";
-        return $display;
+    return $display;
 
     } elseif ($result == "2") {
         $display = " <h2><strong>Tiny Tucker</strong></h2><br>
         For the bottom layer:<br>
-6 tablespoons unsalted butter, melted.<br>
-1/2 cup granulated sugar<br>
-1/2 cup light brown sugar<br>
-2 large eggs<br>
-3/4 teaspoon salt<br>
-1 1/2 cups flour<br>
-2 teaspoons baking powder<br><br>
-For the top layer:<br><br>
-8 ounces cream cheese, softened<br>
-6 tablespoons light brown sugar<br>
-2 large eggs<br>
-1 tablespoon vanilla extract<br>
-3 1/2 cups powdered sugar, plus extra for serving<br><br>
-Instructions<br><br>
-First, preheat the oven to 350. Line a 8x8-inch baking pan one direction with parchment paper (meaning it covers the bottom and only two sides of the pan. Lightly spray the exposed sides with cooking spray).<br>
-First, make the bottom layer: In a medium bowl, whisk together the melted butter and sugars.<br>
-Add the eggs and salt and whisk well to combine. Finally, add the flour and baking powder.<br>
-Scoop the mixture into the prepared pan, and press flat using your hands. It’s a bit sticky—flour your fingers to help spread it evenly.
-Next, wipe out the bowl, and add the cream cheese and brown sugar. Beat with an electric mixer on medium speed until light and fluffy, about 1 minute. Next, add the eggs and vanilla. Beat until combined. Finally, add the powdered sugar and beat until homogenous.
-Pour the top layer on the crust.<br>
-Bake for 50-55 minutes, until the center only has a slight jiggle. Don’t over-bake (or it won’t be gooey).<br>
-Let cool completely, and then refrigerate or freeze until firm enough to cut evenly.<br>
-Sprinkle with powdered sugar and serve.";
-        return $display;
+        6 tablespoons unsalted butter, melted.<br>
+        1/2 cup granulated sugar<br>
+        1/2 cup light brown sugar<br>
+        2 large eggs<br>
+        3/4 teaspoon salt<br>
+        1 1/2 cups flour<br>
+        2 teaspoons baking powder<br><br>
+        For the top layer:<br><br>
+        8 ounces cream cheese, softened<br>
+        6 tablespoons light brown sugar<br>
+        2 large eggs<br>
+        1 tablespoon vanilla extract<br>
+        3 1/2 cups powdered sugar, plus extra for serving<br><br>
+        Instructions<br><br>
+        First, preheat the oven to 350. Line a 8x8-inch baking pan one direction with parchment paper (meaning it covers the bottom and only two sides of the pan. Lightly spray the exposed sides with cooking spray).<br>
+        First, make the bottom layer: In a medium bowl, whisk together the melted butter and sugars.<br>
+        Add the eggs and salt and whisk well to combine. Finally, add the flour and baking powder.<br>
+        Scoop the mixture into the prepared pan, and press flat using your hands. It’s a bit sticky—flour your fingers to help spread it evenly.
+        Next, wipe out the bowl, and add the cream cheese and brown sugar. Beat with an electric mixer on medium speed until light and fluffy, about 1 minute. Next, add the eggs and vanilla. Beat until combined. Finally, add the powdered sugar and beat until homogenous.
+        Pour the top layer on the crust.<br>
+        Bake for 50-55 minutes, until the center only has a slight jiggle. Don’t over-bake (or it won’t be gooey).<br>
+        Let cool completely, and then refrigerate or freeze until firm enough to cut evenly.<br>
+        Sprinkle with powdered sugar and serve.";
+    return $display;
     }
-
-
 }

@@ -1,0 +1,13 @@
+
+#love {
+    text-align: center;
+    align-self: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: green;
+        font-family: 'Raleway', sans-serif;
+}
+
+body{
+    background-color: lightblue;
+}
