@@ -1,6 +1,10 @@
 html {
     font-family: 'Satisfy', cursive;
     background-color: #D6C1F9;
+    background: linear-gradient(#D6C1F9, #A798D8, #E38EEB);
+    width: 100%;
+    min-height: 100%;
+    color: #3F375B;
 }
 
 .breadcrumb {
@@ -29,30 +33,29 @@ html {
   font-size: 150%;
 }
 
-.map-display {
-  width: 800px;
-  margin: 0 auto;
-  border: 5px solid black;
-}
-
 #mainmenusection {
-  background-color: #A898DE;
-  width: 100%;
+  background-color: #CFB7F9;
   padding: 10px;
 }
 
-#sidebar-first {
-  width: 30%;
+#block-system-navigation {
+  width: 200px;
   float: left;
+  left: 0;
+  top: 0;
 }
 
-#content {
-  width: 30%;
-  margin: 0 auto;
-  float: inherit;
+#block-system-main {
+    background: url('../images/dots.png');
+    background-repeat: repeat;
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 200px;
+    margin-top: 10px;
+    font-size: 120%;
 }
 
 #sidebar-second {
-  width: 30%;
-  float: right;
+    display: none;
 }
