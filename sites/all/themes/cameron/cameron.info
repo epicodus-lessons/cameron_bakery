@@ -3,3 +3,18 @@ core = 7.x
 engine = phptemplate
 stylesheets[all][] = css/styles.css
 scripts[] = js/scripts.js
+
+
+[core project directory]/modules/system/html.tpl.php
+[core project directory]/modules/system/page.tpl.php
+[core project directory]/modules/system/region.tpl.php
+[core project directory]/modules/node/node.tpl.php
+[core project directory]/modules/block/block.tpl.php
+[core project directory]/modules/field/theme/field.tpl.php
+
+
+regions[header_content] = Header Content
+regions[nav] = Nav
+regions[sidebar] = Sidebar
+regions[content] = Content
+regions[help] = Help

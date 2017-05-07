@@ -1,18 +1,60 @@
-h1 {
-    font-family: sans-serif;
-    font-size: 60px;
-    font-weight: bold;
+.header-wrap, .nav-wrap, .content-wrap {
+    float: left;
+    width: 100%;
+    clear: both;
 }
 
-h2 {
-    font-size: 60px;
-    color: red;
+.header, .nav, .content {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.header-wrap {
+    height: 100px;
+    background-color: rgb(128, 179, 139);
+}
+
+.nav-wrap {
+    height: 40px;
+    background-color: rgb(19, 101, 59);
+}
+
+.content-wrap {
+    margin-top: 100px;
+    padding: 30px 0;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.main-content {
+    float: left;
+    border-right: 2px solid black;
+    width: 760px;
+    padding: 5px;
+}
+
+.main-content a {
+    padding-right: 10px;
+    color: rgb(152, 168, 55);
     font-family: monospace;
 }
 
-article {
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 20px;
-    background-color:rgb(175, 159, 135);
+.sidebar-content {
+    float: left;
+    width: 100px;
+    padding: 30px;
+}
+
+p {
+    width: 700px;
+}
+
+li {
+    float: left;
+    padding-right: 10px;
+    list-style-type: none;
+}
+
+.sidebar-content, a {
+    float: left;
 }
