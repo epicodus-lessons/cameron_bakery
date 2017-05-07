@@ -1,0 +1,61 @@
+a {
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 6px;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 130%;
+}
+
+html {
+    -webkit-animation: background-pulse 120s infinite;
+    background-size: 100% 120%;
+    background-image: url('http://www.lovethisgif.com/uploaded_images/12157-Abstract-Psychedelic-Background.-Optical-Illusion.-Rainbow-....gif');
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 5px;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 130%;
+    font-weight: 400;
+}
+
+.feed-icon {
+    display: none;
+}
+
+#logo {
+    margin-left: 200px;
+}
+
+#main-wrapper {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    padding-bottom: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgba(15,170,156,0.3);
+}
+
+#navigation {
+    text-align: center;
+    margin-top: 35px;
+}
+
+#name-and-slogan {
+    float: right;
+    margin-right: 100px;
+}
+
+#site-name {
+    font-size: 2.8em;
+}
+
+.tabs {
+    font-size: 80%;
+}
