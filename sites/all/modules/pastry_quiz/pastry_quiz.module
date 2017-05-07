@@ -7,7 +7,7 @@
 
 function pastry_quiz_menu() {
     $items['quiz'] = array(
-        'title' => 'What should I eat!?',
+        'title' => 'What baked goods should I eat!?',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('start_form'),
         'access callback' => TRUE,
@@ -30,11 +30,39 @@ function pastry_quiz_menu() {
 
     return $items;
 }
+
+function start_form() {
+  $form['fruit'] = array(
+    '#title' => 'Do You like Fruit?',
+    '#type' => 'radios',
+    '#description' => t('I hope so?'),
+    '#options' => array(
+      t('Yes'),
+      t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+  );
+
+  return $form;
+}
+
+function start_form_submit($form, &$form_state) {
+  $fruit = $form_state['values']['fruit'];
+  $_SESSION['fruit'] = $fruit;
+
+  $form_state['redirect'] = 'quiz_question_1';
+}
+
 function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
+  $form['chocolate'] = array(
+      '#title' => 'Do you want chocolate?',
       '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
+      '#description' => t('Chocoholic?'),
       '#options' => array(
           t('Yes'),
           t('No'),
@@ -46,46 +74,21 @@ function quiz_form() {
           '#type' => 'submit',
           '#value' => 'submit',
   );
-
   return $form;
 }
 
-function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
-
-    return $form;
+function quiz_form_submit($form, &$form_state) {
+  $form['chocolate']['default_value'] = variable_get('comment_preview', 1);
+  $gluten = $form_state['values']['gluten'];
+  $_SESSION['gluten'] = $gluten;
+  $form_state['redirect'] = 'quiz_results';
 }
 
 function quiz_success() {
   $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
+  if ($gluten === 'No') {
+    return '<p>Get a donut!</p>';
   } else {
-    return "<p>cool! we've got stuff for you too!/p>";
+    return "<p>Cool! we've got stuff for you too!</p>";
   }
-}
-
-function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
-}
-
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
 }
