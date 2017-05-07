@@ -1,0 +1,28 @@
+.header__logo-image {
+  width: 200px;
+}
+
+body {
+  background-color: #803215;
+}
+
+a {
+  color: #123752;
+}
+
+a:visited {
+  color: #003B20;
+}
+
+h1, h2, h3 {
+  color: #FFC1AA;
+}
+
+.header__name-and-slogan, .header__site-link {
+  
+  color: #FFC1AA;
+}
+
+.form-submit {
+  border-radius: 15px 50px;
+}
