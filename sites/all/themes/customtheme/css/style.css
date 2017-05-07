@@ -1,0 +1,15 @@
+#name-and-slogan, .content{
+  text-align: center;
+}
+
+#main-menu {
+  margin: 0 auto;
+}
+
+body {
+  background-color: lightblue; 
+}
+
+.container-inline {
+  display: none;
+}
