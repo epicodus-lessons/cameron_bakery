@@ -19,7 +19,9 @@
     attach: function (context, settings) {
 
       // Place your code here.
-
+      $(".node", context).once('hover-add', function() {
+         $(".node").hover(function(){$('.node').css('opacity','0.6')}, function(){$('.node').css('opacity','1')});
+      });
     }
   };
 

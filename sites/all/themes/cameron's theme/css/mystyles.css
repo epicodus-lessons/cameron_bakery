@@ -24,3 +24,7 @@ a {
     margin-left: 60%;
     text-transform: uppercase;
 }
+
+.opaque {
+  opacity: .0 !important;
+}

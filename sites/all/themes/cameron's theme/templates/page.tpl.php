@@ -13,7 +13,7 @@
   <header class="header" role="banner">
 
     <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="https://cdn0.iconfinder.com/data/icons/bakery-10/512/Donut-128.png" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img id="make-clear" src="https://cdn0.iconfinder.com/data/icons/bakery-10/512/Donut-128.png" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
