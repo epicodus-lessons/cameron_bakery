@@ -1,0 +1,24 @@
+#header {
+    padding: 0;
+
+    a#logo img {
+        width:100%;
+        height:auto;
+    }
+    #site-name {
+        text-align:center;
+
+    }
+    #site-name a {
+        color: #91D1CB;
+        text-decoration:none;
+        @include font-size(32);
+    }
+    #site-slogan {
+        @include font-size(24);
+        text-align: center;
+        color: #EF7273;
+        padding: 0 0 3rem 0;
+    }
+    border:none;
+}

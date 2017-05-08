@@ -1,0 +1,71 @@
+$cell_width:100px;
+
+#navigation {
+    display:table;
+    width:auto;
+    margin:auto;
+    padding:0;
+    ul#primary {
+        display:table-row;
+        li {
+            display:table-cell;
+            float:none;
+        }
+
+        li a {
+            text-decoration: none;
+            @include font-size(16);
+            padding: .5rem 1rem;
+            display:block;
+            min-width: $cell_width;
+            text-align:center;
+            color:white;
+
+            -webkit-transition: color, background-color .5s; /* Safari */
+            transition: color, background-color .5s;
+
+        }
+
+        //green
+        li:nth-of-type(5n + 0) a {
+            background-color: #99CD78;
+            &:hover {
+                color: #99CD78;
+            }
+        }
+        //purple
+        li:nth-of-type(5n + 1) a {
+            background-color: #B087B4;
+            &:hover {
+                color:#B087B4;
+            }
+        }
+        //orange
+        li:nth-of-type(5n + 2) a {
+            background-color: #EB9772;
+            &:hover {
+                color:#EB9772;
+            }
+        }
+        li:nth-of-type(5n + 3) a {
+            background-color: #7CC7BD;
+            &:hover {
+                color:#7CC7BD;
+            }
+        }
+        li:nth-of-type(5n + 4) a {
+            background-color: #ED7272;
+            &:hover {
+                color:#ED7272;
+            }
+        }
+        li:hover a {
+            background: white;
+        }
+    }
+
+    #secondary {
+
+    }
+
+}
