@@ -1,91 +1,125 @@
 <?php
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
-
+// Set parameters
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
+    $items['what'] = array(
         'title' => 'What should I eat!?',
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
+        'page arguments' => array('what'),
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
-
-    $items['quiz_question_1'] = array(
+    $items['where'] = array(
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
+        'page arguments' => array('where'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
-
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
+    $items['guilt'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('guilt'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
-
+    $items['answer'] = array(
+        'title' => 'Your Answer...',
+        'page callback' => 'quiz_answer',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
     return $items;
 }
-function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
 
-  return $form;
-}
-
-function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
+// Create questions
+function what() {
+    $form['what'] = array(
+        '#title' => 'Gluten Intolerance',
+        '#type' => 'radios',
+        '#description' => t('Are you gluten intolerant?'),
+        '#options' => array(
+            t('Yes'),
+            t('No'),
+        ),
+        '#required' => TRUE,
+    );
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'submit',
+        '#value' => 'Submit',
     );
-
     return $form;
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
+function where() {
+    $form['where'] = array(
+        '#title' => 'Where is the best place to eat a pastry without getting caught?',
+        '#type' => 'select',
+        '#description' => t('Be honest!'),
+        '#options' => array(
+            t('Car'),
+            t('Bed'),
+            t('Park'),
+            t('Bar'),
+            t('Cafe'),
+        ),
+        '#required' => TRUE,
+    );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Submit',
+    );
+    return $form;
 }
 
-function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+function guilt() {
+    $form['guilt'] = array(
+        '#title' => 'How do you feel about this indulgence?',
+        '#type' => 'radios',
+        '#description' => t("We've all been there..."),
+        '#options' => array(
+            t('Guilty'),
+            t('Angel'),
+        ),
+        '#required' => TRUE,
+    );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Find Out!',
+    );
+    return $form;
 }
 
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
+
+// Submit questions
+function what_submit($form, &$form_state) {
+    $_SESSION['what_data'] = $form_state['values']['what'];
+    $form_state['redirect'] = 'where';
+}
+
+function where_submit($form, &$form_state) {
+    $_SESSION['where_data'] = $form_state['values']['where'];
+    $form_state['redirect'] = 'guilt';
+}
+
+function guilt_submit($form, &$form_state) {
+    $_SESSION['guilt_data'] = $form_state['values']['guilt'];
+    $form_state['redirect'] = 'answer';
+}
+
+
+// Display results
+function quiz_answer() {
+    $guilt = $_SESSION['guilt_data'];
+    $where = $_SESSION['where_data'];
+    $what = $_SESSION['what_data'];
+    // echo '<pre>';
+    // print_r($guilt);
+    // echo '</pre>';
+  if ($guilt === 'Angel') {
+    return '<h2>You are in denial but I respect your self assertiveness!</h2>';
+} else if ($where === 'Bar') {
+    return "<h2>Your on the right track!</h2>";
+} else if ($what === 'Yes') {
+    return "<h2>It's a darn shame. Best of luck!</h2>";
+}
 }

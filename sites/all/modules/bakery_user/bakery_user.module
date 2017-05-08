@@ -1,18 +1,53 @@
 <?php
+
+// Setup parameters
 function bakery_user_menu() {
-    $items['welcome'] = array(
-        'title' = 'Hi There!',
-        'page callback' => 'welcome_user'
+    $items['welcome_user'] = array(
+        'title' => 'Hi There!',
+        'page callback' => 'welcome_user',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    $items['goodbye_user'] = array(
+        'title' => 'Goodbye!',
+        'page callback' => 'goodbye_user',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
     return $items;
 }
 
-function bakery_user_login(&$edit, $account) {
+
+// Route to desired page
+function bakery_user_login() {
     $_GET['destination'] = 'welcome_user';
 }
 
+function bakery_user_logout() {
+    $_GET['destination'] = 'goodbye_user';
+}
+
+
+// Display message for each user role
 function welcome_user() {
-    return "<p>Welcome to Cameron's Bakery!</p>";
+    $user_level = $GLOBALS['user']->roles;
+    if (isset($user_level[3])) {
+        return "<h2>Hello Administrator, welcome to Cameron's Bakery!</h2>";
+    } else if (isset($user_level[2])) {
+        return "<h2>Hello Authenticated User, welcome to Cameron's Bakery!</h2>";
+    } else if (isset($user_level[1])) {
+        return "<h2>Welcome to Cameron's Bakery!</h2>";
+    }
+}
+
+function goodbye_user() {
+    // return "<p>Welcome to Cameron's Bakery!</p>";
+    $user_level = $GLOBALS['user']->roles;
+    if (isset($user_level[3])) {
+        return "<h2>Goodbye Administrator, see you next time!</h2>";
+    } else if (isset($user_level[2])) {
+        return "<h2>Goodbye Authenticated User, see you next time!</h2>";
+    } else if (isset($user_level[1])) {
+        return "<h2>Come see us again soon!</h2>";
+    }
 }
