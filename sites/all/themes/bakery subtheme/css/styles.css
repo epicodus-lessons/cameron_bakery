@@ -9,6 +9,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   min-height: 100%;
+  /*background-color: red;*/
 }
 
 @media print {
@@ -21,7 +22,8 @@ body {
   margin: 0;
   padding: 0;
   color: #000;
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-image: url('https://us.123rf.com/450wm/lianella/lianella1507/lianella150700058/42612752-hand-drawn-bakery-seamless-pattern-vector-repeating-background-with-baked-cakes-fruit-kitchen-tools.jpg?ver=6');
 }
 
 article,
@@ -63,6 +65,9 @@ template,
 a {
   color: #0072b9;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  font-family: cursive;
+  color: orange;
 }
 
 :visited {
@@ -101,10 +106,13 @@ a:hover {
 
 h1,
 .header__site-name {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 3rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  font-family: cursive;
+  color: #91d0d4;
+  text-shadow: 2px 1px #000;
 }
 
 h2 {
@@ -276,6 +284,10 @@ svg {
   height: auto;
 }
 
+img.header__logo-image {
+  height: 75px;
+}
+
 svg:not(:root) {
   overflow: hidden;
 }
@@ -348,6 +360,8 @@ button,
   text-decoration: none;
   cursor: pointer;
   color: #000;
+  background-color: #91d0d4;
+  border-radius: 3px;
 }
 
 .button::-moz-focus-inner,
@@ -690,6 +704,10 @@ th {
   padding-right: 20px;
   margin: 0 auto;
   max-width: 1165px;
+  margin: 30px;
+  padding: 50px;
+  border-radius: 15px;
+  background-color: #fff;
 }
 
 @media (min-width: 777px) {

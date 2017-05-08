@@ -48,7 +48,7 @@ function pastry_quiz_menu() {
 function start_form() {
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => 'submit',
+    '#value' => 'Start the quiz!',
   );
 
   return $form;
