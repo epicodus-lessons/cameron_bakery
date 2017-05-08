@@ -8,7 +8,7 @@
 // front page link - question 1 and question 2 - success page //
 function pastry_quiz_menu() {
     $items['quiz'] = array(
-        'title' => 'What should I eat!?',
+        'title' => 'What can you eat?',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('start_form'),
         'access callback' => TRUE,
@@ -39,9 +39,9 @@ function pastry_quiz_menu() {
 // first page form  //
 function start_form() {
     $form['gluten'] = array(
-        '#title' => 'Gluten Intollerance',
+        '#title' => 'Are you gluten intollerant?',
         '#type' => 'radios',
-        '#description' => t('Are you gluten intollerant?'),
+        '#description' => t(''),
         '#options' => array(
             t('Yes'),
             t('No'),
@@ -69,9 +69,9 @@ function quiz_form() {
     if ($result == "0") {
 
         $form['second_question'] = array(
-            '#title' => 'Gluten-free Choices',
+            '#title' => 'Would you like extra sugar instead then?',
             '#type' => 'radios',
-            '#description' => t('Would you like extra sugar instead then?'),
+            '#description' => t(''),
             '#options' => array(
                 t('Yes'),
                 t('No'),
@@ -86,9 +86,9 @@ function quiz_form() {
 
     } elseif ($result == "1") {
           $form['second_question'] = array(
-              '#title' => 'Wheat Madness!!!',
+              '#title' => 'Great, then choose a cookie!',
               '#type' => 'radios',
-              '#description' => t('Great, then choose a cookie!'),
+              '#description' => t(''),
               '#options' => array(
                   t('chocolate'),
                   t('Vanilla'),
@@ -120,9 +120,9 @@ function quiz_form_2() {
     if ($result == "0") {
 
         $form['third_question'] = array(
-            '#title' => 'Diabetes Delight',
+            '#title' => 'How clogged up would you like your arteries?',
             '#type' => 'radios',
-            '#description' => t('How clogged up would you like your arteries?'),
+            '#description' => t(''),
             '#options' => array(
                 t('Cupcaked up'),
                 t('Caked up'),
@@ -140,9 +140,9 @@ function quiz_form_2() {
 
     } elseif ($result == "1") {
           $form['third_question'] = array(
-              '#title' => 'Little sugar, longer life!',
+              '#title' => 'How about these sugar-free options?',
               '#type' => 'radios',
-              '#description' => t('How about these sugar-free options?'),
+              '#description' => t(''),
               '#options' => array(
                   t('Cardboard Cookies'),
                   t('Plain Pastry'),
@@ -171,7 +171,7 @@ function quiz_form_2_submit($form, &$form_state) {
 function quiz_success() {
     $result = $_SESSION['third_stash'];
     if ($result == "0"){
-        $display = " <h2> <strong>Fat Faced Cup Cake</strong></h2> <br>1 1/4 cups whole wheat flour
+        $display = " <h2> <strong>Cardboard Cookies</strong></h2> <br>1 1/4 cups whole wheat flour
         1 1/4 teaspoons of baking powder<br>
         1/2 teaspoon baking soda<br>
         1/2 teaspoon salt<br>
@@ -186,7 +186,7 @@ function quiz_success() {
     return $display;
 
     } elseif ($result == "1") {
-        $display = " <h2><strong>Magwinya</strong></h2><br><br>
+        $display = " <h2><strong>Plain Pastry</strong></h2><br><br>
         Ingredients<br>
         1 kg (2 1/4 pounds) white bread flour<br>
         1 cup sugar<br>
@@ -204,7 +204,7 @@ function quiz_success() {
     return $display;
 
     } elseif ($result == "2") {
-        $display = " <h2><strong>Tiny Tucker</strong></h2><br>
+        $display = " <h2><strong>Papa's Purple</strong></h2><br>
         For the bottom layer:<br>
         6 tablespoons unsalted butter, melted.<br>
         1/2 cup granulated sugar<br>
