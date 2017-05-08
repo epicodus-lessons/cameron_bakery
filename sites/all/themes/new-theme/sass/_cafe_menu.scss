@@ -20,9 +20,14 @@
             h3 {
                 @include font-size(30);
                 font-weight:200;
+                padding: 5px;
+                margin: 10px;
             }
             .views-field-title {
                 @include font-size(16);
+            }
+            .views-field-field-description {
+                font-style: italic;
             }
         }
     }

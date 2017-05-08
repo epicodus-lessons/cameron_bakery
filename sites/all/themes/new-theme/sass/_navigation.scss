@@ -1,10 +1,11 @@
 $cell_width:100px;
 
-#navigation {
+#navigation, #footer .menu-block-1 {
     display:table;
     width:auto;
     margin:auto;
     padding:0;
+    border: none;
     ul#primary {
         display:table-row;
         li {
@@ -64,8 +65,5 @@ $cell_width:100px;
         }
     }
 
-    #secondary {
-
-    }
 
 }

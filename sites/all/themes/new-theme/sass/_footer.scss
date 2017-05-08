@@ -1,0 +1,15 @@
+#footer{
+    display:table;
+    border: 0px none white;
+    background-color: lightgray;
+    h2.block-title{
+        display: none;
+    }
+    ul{
+        display: table-row;
+            li {
+                display:table-cell;
+                float:none;
+        }
+    }
+}

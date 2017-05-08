@@ -964,12 +964,17 @@ tr.odd {
   font-size: 3rem;
   line-height: 4.5rem;
   font-weight: 200;
+  padding: 5px;
+  margin: 10px;
 }
 .node_cafe_menu .cafe-menu-view .view-content .views-field-title {
   font-size: 16px;
   line-height: 24px;
   font-size: 1.6rem;
   line-height: 2.4rem;
+}
+.node_cafe_menu .cafe-menu-view .view-content .views-field-field-description {
+  font-style: italic;
 }
 
 #header {
@@ -1001,20 +1006,21 @@ tr.odd {
   padding: 0 0 3rem 0;
 }
 
-#navigation {
+#navigation, #footer .menu-block-1 {
   display: table;
   width: auto;
   margin: auto;
   padding: 0;
+  border: none;
 }
-#navigation ul#primary {
+#navigation ul#primary, #footer .menu-block-1 ul#primary {
   display: table-row;
 }
-#navigation ul#primary li {
+#navigation ul#primary li, #footer .menu-block-1 ul#primary li {
   display: table-cell;
   float: none;
 }
-#navigation ul#primary li a {
+#navigation ul#primary li a, #footer .menu-block-1 ul#primary li a {
   text-decoration: none;
   font-size: 16px;
   line-height: 24px;
@@ -1029,37 +1035,37 @@ tr.odd {
   /* Safari */
   transition: color, background-color .5s;
 }
-#navigation ul#primary li:nth-of-type(5n + 0) a {
+#navigation ul#primary li:nth-of-type(5n + 0) a, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 0) a {
   background-color: #99CD78;
 }
-#navigation ul#primary li:nth-of-type(5n + 0) a:hover {
+#navigation ul#primary li:nth-of-type(5n + 0) a:hover, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 0) a:hover {
   color: #99CD78;
 }
-#navigation ul#primary li:nth-of-type(5n + 1) a {
+#navigation ul#primary li:nth-of-type(5n + 1) a, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 1) a {
   background-color: #B087B4;
 }
-#navigation ul#primary li:nth-of-type(5n + 1) a:hover {
+#navigation ul#primary li:nth-of-type(5n + 1) a:hover, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 1) a:hover {
   color: #B087B4;
 }
-#navigation ul#primary li:nth-of-type(5n + 2) a {
+#navigation ul#primary li:nth-of-type(5n + 2) a, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 2) a {
   background-color: #EB9772;
 }
-#navigation ul#primary li:nth-of-type(5n + 2) a:hover {
+#navigation ul#primary li:nth-of-type(5n + 2) a:hover, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 2) a:hover {
   color: #EB9772;
 }
-#navigation ul#primary li:nth-of-type(5n + 3) a {
+#navigation ul#primary li:nth-of-type(5n + 3) a, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 3) a {
   background-color: #7CC7BD;
 }
-#navigation ul#primary li:nth-of-type(5n + 3) a:hover {
+#navigation ul#primary li:nth-of-type(5n + 3) a:hover, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 3) a:hover {
   color: #7CC7BD;
 }
-#navigation ul#primary li:nth-of-type(5n + 4) a {
+#navigation ul#primary li:nth-of-type(5n + 4) a, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 4) a {
   background-color: #ED7272;
 }
-#navigation ul#primary li:nth-of-type(5n + 4) a:hover {
+#navigation ul#primary li:nth-of-type(5n + 4) a:hover, #footer .menu-block-1 ul#primary li:nth-of-type(5n + 4) a:hover {
   color: #ED7272;
 }
-#navigation ul#primary li:hover a {
+#navigation ul#primary li:hover a, #footer .menu-block-1 ul#primary li:hover a {
   background: white;
 }
 
@@ -1069,4 +1075,20 @@ tr.odd {
 }
 .node_locations .gmap {
   margin: auto;
+}
+
+#footer {
+  display: table;
+  border: 0px none white;
+  background-color: lightgray;
+}
+#footer h2.block-title {
+  display: none;
+}
+#footer ul {
+  display: table-row;
+}
+#footer ul li {
+  display: table-cell;
+  float: none;
 }
