@@ -1,7 +1,7 @@
 <?php
-function bakery_menu() {
+function bakery_user_menu() {
   $items = array();
-  $items['welcome_user'] = array(
+  $items['welcome'] = array(
     'title' => "Hi There!",
     'page callback' => 'say_welcome',
     'access callback' => TRUE,
@@ -10,8 +10,8 @@ function bakery_menu() {
   return $items;
 }
 
-function bakery_user_login() {
-  $_GET['destination'] = 'welcome_user';
+function bakery_user_user_login() {
+  $_GET['destination'] = 'welcome';
 }
 
 function say_welcome() {
