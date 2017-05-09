@@ -1,0 +1,68 @@
+html {
+	/*background-color: lightgreen;*/
+	background-image: url("http://thecutestblogontheblock.com/wp-content/uploads/2011/10/BakersBliss_3columncopy.jpg");
+	background-size: auto
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: red;
+	padding: 45px;
+	border-radius: 15px;
+	margin-top: 150px;
+	width: 55%;
+	margin-left: 25%;
+	font-size: 18px;
+	font-family: sans-serif;
+	box-shadow: 5px 5px 15px #000;
+}
+
+#edit-search-block-form--2 {
+	width: 140px;
+	height: 25px;
+	border-radius: 5px;
+}
+
+#edit-submit {
+	background-color: purple;
+	padding: 5px;
+	font-size: 14px;
+	border-radius: 5px;
+
+}
+
+.nav {
+	background-color: red;
+	margin-right: 35px;
+}
+
+
+.content-wrap{
+	background-color: teal;
+	padding: 45px;
+	width: 650px;
+}
+
+.content {
+	background-color: white;
+}
+
+.side-bar-first-wrap {
+	background-color: #fff;
+	width: 250px;
+	padding: 25px;
+	/*height: 750px;*/
+}
+
+
+.sub-footer{
+	background-color: green;
+}
+
+div.region.region-header {
+	border: 2px solid purple;
+}
