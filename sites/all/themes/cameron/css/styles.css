@@ -1,7 +1,68 @@
-html {
-  background-color: #70AE6E;
+
+.html {
+  color: #483C46;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  color: #483C46;
+  font-family: 'Lato', sans-serif;
+}
+
+.header__logo-image {
+  height: 100px;
 }
 
 #logo img {
-    height: 100px;
+  height: 150px;
+  margin-left: 2%;
+}
+
+#site-name {
+  color: #483C46;
+  text-align: center;
+  font-size: 30px;
+}
+
+#site-slogan {
+  color: #65dcb4;
+  text-align: center;
+}
+
+.header {
+  background-color: #EF5B5B;
+  color: #754242
+
+}
+
+#header {
+  background-color: #4d2b25;
+  color: #65dcb4;
+  text-align: center;
+}
+
+#header a {
+  color: #65dcb4;
+}
+
+#header a:hover {
+  color: #bffce6;
+}
+
+#main {
+  background-color: #6effac;
+  color: #4d2b25;
+}
+
+#main a {
+  color: #4d2b25;
+}
+
+#main a:hover {
+  color: #734941;
+}
+
+#edit-submit {
+  background-color: #4d2b25;
+  color: #65dcb4;
 }
