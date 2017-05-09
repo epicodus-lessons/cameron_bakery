@@ -111,13 +111,39 @@ function quiz3_form_submit($form, &$form_state) {
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  $cherries = $_SESSION['values']['cherries'];
-  $chocolate = $_SESSION['values']['chocolate'];
-  var_dump($gluten);
-  if ($gluten === 'No') {
-    return '<p>Get a donut!</p>';
-  } else {
-    return "<p>Cool! we've got stuff for you too!</p>";
+  $fruit = $_SESSION['fruit'];
+  $chocolate = $_SESSION['chocolate'];
+  $gluten = $_SESSION['gluten'];
+
+  if ($fruit === '0' && $chocolate === '0' && $gluten === '0') {
+    return '<p>Try our gluten free chocolate cherry truffels!</p>';
+  }
+
+  if ($fruit === '0' && $chocolate === '1' && $gluten === '1') {
+    return '<p>We recommend our Bluberry Muffins!</p>';
+  }
+
+  if ($fruit === '0' && $chocolate === '0' && $gluten === '1') {
+    return '<p>Do a Mango Chocolate Donut!</p>';
+  }
+
+  if ($fruit === '1' && $chocolate === '1' && $gluten === '1') {
+    return '<p>This calls for a Croissant!</p>';
+  }
+
+  if ($fruit === '0' && $chocolate === '1' && $gluten === '0') {
+    return '<p>You might like our gluten free fruit danishes!</p>';
+  }
+
+  if ($fruit === '1' && $chocolate === '0' && $gluten === '1') {
+    return '<p>Slam back a few brownies to help you stifle your emotions!</p>';
+  }
+
+  if ($fruit === '1' && $chocolate === '0' && $gluten === '0') {
+    return '<p>Chocolate chip corn muffins!</p>';
+  }
+
+  if ($fruit === '1' && $chocolate === '1' && $gluten === '0') {
+    return '<p>Eat these gluten free shortbread cookies!</p>';
   }
 }
