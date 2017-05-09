@@ -10,12 +10,12 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	background-color: red;
+	/*background-color: red;*/
 	padding: 45px;
 	border-radius: 15px;
 	margin-top: 150px;
-	width: 55%;
-	margin-left: 25%;
+	width: 60%;
+	margin-left: 18%;
 	font-size: 18px;
 	font-family: sans-serif;
 	box-shadow: 5px 5px 15px #000;
@@ -28,7 +28,7 @@ body {
 }
 
 #edit-submit {
-	background-color: purple;
+	/*background-color: purple;*/
 	padding: 5px;
 	font-size: 14px;
 	border-radius: 5px;
@@ -36,23 +36,23 @@ body {
 }
 
 .nav {
-	background-color: red;
+	/*background-color: red;*/
 	margin-right: 35px;
 }
 
 
 .content-wrap{
-	background-color: teal;
+	/*background-color: teal;*/
 	padding: 45px;
 	width: 650px;
 }
 
 .content {
-	background-color: white;
+	/*background-color: white;*/
 }
 
 .side-bar-first-wrap {
-	background-color: #fff;
+	/*background-color: #fff;*/
 	width: 250px;
 	padding: 25px;
 	/*height: 750px;*/
@@ -60,9 +60,9 @@ body {
 
 
 .sub-footer{
-	background-color: green;
+	/*background-color: green;*/
 }
 
 div.region.region-header {
-	border: 2px solid purple;
+	/*border: 2px solid purple;*/
 }

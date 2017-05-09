@@ -5,6 +5,7 @@ engine = phptemplate
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/print.css
 
+scripts[] =js/scripts.js
 
 regions[header] = Header
 regions[sidebar_left] = Sidebar Left
