@@ -1,29 +1,24 @@
 <?php
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
-
 function pastry_quiz_menu() {
     $items['quiz'] = array(
         'title' => 'What baked goods should I eat!?',
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
+        'page arguments' => array('quiz1_form'),
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
 
-    $items['quiz_question_1'] = array(
+    $items['quiz_question_2'] = array(
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_1_form'),
+        'page arguments' => array('quiz2_form'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
 
-    $items['quiz_question_2'] = array(
+    $items['quiz_question_3'] = array(
         'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_2_form'),
+        'page arguments' => array('quiz3_form'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
@@ -38,45 +33,38 @@ function pastry_quiz_menu() {
     return $items;
 }
 
-function start_form() {
+function quiz1_form() {
   $form['fruit'] = array(
     '#title' => 'Do You like Fruit?',
     '#type' => 'radios',
     '#description' => t(''),
+    '#default_value' => variable_get('comment_preview', 0),
     '#options' => array(
       t('Yes'),
       t('No'),
     ),
     '#required' => TRUE,
   );
-
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => 'submit',
   );
-
   return $form;
 }
 
-function start_form_submit($form, &$form_state) {
-  $fruit = $form_state['values']['fruit'];
-  $_SESSION['fruit'] = $fruit;
 
-  $form_state['redirect'] = 'quiz_question_1';
-}
-
-function quiz_1_form() {
+function quiz2_form() {
   $form['chocolate'] = array(
       '#title' => 'Do you want chocolate?',
       '#type' => 'radios',
       '#description' => t('Chocoholic?'),
+      '#default_value' => variable_get('comment_preview', 0),
       '#options' => array(
           t('Yes'),
           t('No'),
       ),
       '#required' => TRUE,
   );
-
   $form['submit'] = array(
           '#type' => 'submit',
           '#value' => 'submit',
@@ -84,26 +72,19 @@ function quiz_1_form() {
   return $form;
 }
 
-function quiz_1_form_submit($form, &$form_state) {
-  // $form['chocolate']['default_value'] = variable_get('comment_preview', 1);
-  $chocolate = $form_state['values']['chocolate'];
-  $_SESSION['chocolate'] = $chocolate;
 
-  $form_state['redirect'] = 'quiz_question_2';
-}
-
-function quiz_2_form() {
+function quiz3_form() {
   $form['gluten'] = array(
       '#title' => 'Are you gluten intollerant?',
       '#type' => 'radios',
       '#description' => t('Got wheat?'),
+      '#default_value' => variable_get('comment_preview', 0),
       '#options' => array(
           t('Yes'),
           t('No'),
       ),
       '#required' => TRUE,
   );
-
   $form['submit'] = array(
           '#type' => 'submit',
           '#value' => 'submit',
@@ -111,11 +92,21 @@ function quiz_2_form() {
   return $form;
 }
 
-function quiz_2_form_submit($form, &$form_state) {
-  // $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+function quiz1_form_submit($form, &$form_state) {
+  $fruit = $form_state['values']['fruit'];
+  $_SESSION['fruit'] = $fruit;
+  $form_state['redirect'] = 'quiz_question_2';
+}
+
+function quiz2_form_submit($form, &$form_state) {
+  $chocolate = $form_state['values']['chocolate'];
+  $_SESSION['chocolate'] = $chocolate;
+  $form_state['redirect'] = 'quiz_question_3';
+}
+
+function quiz3_form_submit($form, &$form_state) {
   $gluten = $form_state['values']['gluten'];
   $_SESSION['gluten'] = $gluten;
-
   $form_state['redirect'] = 'quiz_results';
 }
 
@@ -123,6 +114,7 @@ function quiz_success() {
   $gluten = $_SESSION['values']['gluten'];
   $cherries = $_SESSION['values']['cherries'];
   $chocolate = $_SESSION['values']['chocolate'];
+  var_dump($gluten);
   if ($gluten === 'No') {
     return '<p>Get a donut!</p>';
   } else {
