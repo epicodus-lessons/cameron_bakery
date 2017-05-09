@@ -17,7 +17,12 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
-
+      $(function(){
+        $("*:not(html):not(body):not(div)").click(function(){
+          $(".focus-highlighted").removeClass("focus-highlighted");
+          $(this).addClass("focus-highlighted");
+        });
+      });
       // Place your code here.
 
     }

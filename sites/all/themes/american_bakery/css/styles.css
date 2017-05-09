@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.focus-highlighted {
+  border: 2px solid yellow;
+}
 main {
     padding:1%;
     background: white;
@@ -39,15 +42,15 @@ header {
 
     /* below courtesy of LEA VEROU lea.verou.me*/
     background-image:
-      -moz-linear-gradient(45deg, rgba(255, 0,0, 0.5) 25%, transparent 25%),
-      -moz-linear-gradient(-45deg, rgba(255, 0,0, 0.5) 25%, transparent 25%),
-      -moz-linear-gradient(45deg, transparent 75%, rgba(255, 0,0, 0.5) 75%),
-      -moz-linear-gradient(-45deg, transparent 75%, rgba(255, 0,0, 0.5) 75%);
+      -moz-linear-gradient(45deg, #ed5c5c 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #ed5c5c 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #ed5c5c 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #ed5c5c 75%);
     background-image:
-      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255, 0,0, 0.5)), color-stop(.25, transparent)),
-      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 0,0, 0.5)), color-stop(.25, transparent)),
-      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, rgba(255, 0,0, 0.5))),
-      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, rgba(255, 0,0, 0.5)));
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #ed5c5c), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #ed5c5c), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #ed5c5c)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #ed5c5c));
 
     -moz-background-size:100px 100px;
     background-size:100px 100px;
