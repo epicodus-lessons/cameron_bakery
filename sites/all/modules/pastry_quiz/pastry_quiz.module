@@ -1,81 +1,129 @@
 <?php
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
-
-function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What should I eat!?',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
-
-    $items['quiz_question_1'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
-
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
-
-    return $items;
-}
-function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
-
-  $form['submit'] = array(
+    function pastry_quiz_menu() {
+        $items['quiz'] = array(
+            'title' => 'What should I eat!?',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('start_form'),
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
+        $items['quiz_question_1'] = array(
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('question1_form'),
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        $items['quiz_question_2'] = array(
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('question2_form'),
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        $items['quiz_question_3'] = array(
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('question3_form'),
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        $items['quiz_results'] = array(
+            'title' => 'Quiz Results!',
+            'page callback' => 'quiz_success',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        return $items;
+    }
+    function question1_form() {
+      $form['gluten'] = array(
+          '#title' => 'Gluten Intollerance',
+          '#type' => 'radios',
+          '#description' => t('Are you gluten intollerant?'),
+          '#options' => array(
+              t('Yes'),
+              t('No'),
+          ),
+          '#required' => TRUE,
+      );
+      $form['submit'] = array(
           '#type' => 'submit',
           '#value' => 'submit',
-  );
-
-  return $form;
-}
+      );
+      return $form;
+    }
+    function question2_form() {
+      $form['dairy'] = array(
+          '#title' => 'Dairy Intollerance',
+          '#type' => 'radios',
+          '#description' => t('Are you Dairy intollerant?'),
+          '#options' => array(
+              t('Yes'),
+              t('No'),
+          ),
+          '#required' => TRUE,
+      );
+      $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => 'submit',
+      );
+      return $form;
+    }
+    function question3_form() {
+      $form['taste'] = array(
+          '#title' => 'What do you perfer?',
+          '#type' => 'radios',
+          '#description' => t('Which do you perfer?'),
+          '#options' => array(
+              t('Sweet'),
+              t('Savory'),
+              t('Spicy'),
+          ),
+          '#required' => TRUE,
+      );
+      $form['submit'] = array(
+          '#type' => 'submit',
+          '#value' => 'submit',
+      );
+      return $form;
+    }
 
 function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'submit',
+        '#value' => 'Take the Quiz!',
     );
-
     return $form;
 }
 
 function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
+  $gluten = $_SESSION['gluten'];
+  $dairy = $_SESSION['dairy'];
+  $taste = $_SESSION['taste'];
+  if ($gluten === '0' && $taste = '0') {
+    return '<h1>Try our Chocolate Pots</h1>
+            <p>This extra-rich, creamy pudding incorporates both bittersweet chocolate and cocoa powder for a double dose of chocolate.</p>
+            <img src="sites/all/modules/pastry_quiz/images/chocolate.jpg" alt="Chocolate Pots">';
+  } else if ($dairy === '0' && $taste = '1') {
+    return '<h1>Sweet Potato Alfajores</h1>
+            <p>This vegan version of an Argentinian classic cookie is a brilliant shade of fuchsia, thanks to the incorporation of purple sweet potatoes. Coconut milk dolce de leche replaces that traditional dairy filling to create a delicious, dairy-free cookie.</p>
+            <img src="sites/all/modules/pastry_quiz/images/Sweet Potato Alfajores.jpg" alt="Sweet Potato Alfajores">';
+  } else if ($taste = '0' && $dairy = '0') {
+    return '<h1>Dark Chocolate Hazelnut Tart with Fresh Strawberries</h1>
+            <p>This completely raw, no-bake chocolate tart with ganache filling is absolutely sinful. This entire dessert is so creamy, you won’t believe that there isn’t a drop of dairy.</p>
+            <img src="sites/all/modules/pastry_quiz/images/hazlenut tart.jpg" alt="Hazlenut Tart">';
+  } else if ($taste = '2' && $dairy = '1') {
+    return '<h1>Salted Chocolate Diablo Cookie Ice Cream Sandwiches</h1>
+            <p>With cinnamon, ginger, and cayenne. Sinfully good.</p>
+            <img src="sites/all/modules/pastry_quiz/images/ice_creme.jpg" alt="Ice Creme Sandwiches">';
+  } else if ($taste = '0' && $dairy = '0' && $gluten = '0') {
+    return '<h1>Vegan Strawberry Cheesecake Bites</h1>
+            <p>This vegan, raw and gluten-free dessert is healthy enough to eat as a snack, and sweet enough as a satisfying dessert.</p>
+            <img src="sites/all/modules/pastry_quiz/images/cheesecake.jpg" alt="Vegan Cheesecake Bites">';
   } else {
-    return "<p>cool! we've got stuff for you too!/p>";
+    return '<p>Cool! We have got stuff for you too!</p>
+            <img src="sites/all/modules/pastry_quiz/images/dessert1.jpg" alt="Dessert">
+            <img src="sites/all/modules/pastry_quiz/images/dessert2.jpg" alt="Dessert">
+            <img src="sites/all/modules/pastry_quiz/images/dessert3.jpg" alt="Dessert">';
   }
 }
 
@@ -83,9 +131,27 @@ function start_form_submit($form, &$form_state) {
   $form_state['redirect'] = 'quiz_question_1';
 }
 
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+function question1_form_submit($form, &$form_state) {
+  $form_state['redirect'] = 'quiz_question_2';
   $gluten = $form_state['values']['gluten'];
   $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
 }
+
+function question2_form_submit($form, &$form_state) {
+  $form_state['redirect'] = 'quiz_question_3';
+  $dairy = $form_state['values']['dairy'];
+  $_SESSION['dairy'] = $dairy;
+}
+
+function question3_form_submit($form, &$form_state) {
+  $form_state['redirect'] = 'quiz_results';
+  $taste = $form_state['values']['taste'];
+  $_SESSION['taste'] = $taste;
+}
+
+// function quiz_form_submit($form, &$form_state) {
+//   $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+//   $gluten = $form_state['values']['gluten'];
+//   $_SESSION['gluten'] = $gluten;
+//   $form_state['redirect'] = 'quiz_results';
+// }
