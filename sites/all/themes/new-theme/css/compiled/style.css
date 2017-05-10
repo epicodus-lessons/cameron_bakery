@@ -1092,3 +1092,7 @@ tr.odd {
   display: table-cell;
   float: none;
 }
+
+#node-66 h2 {
+  border-bottom: 2px double ghostwhite;
+}

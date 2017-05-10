@@ -71,6 +71,7 @@ function new_theme_preprocess_page(&$vars, $hook) {
   if (!empty($vars['secondary_menu'])) {
     $vars['classes_array'][] = 'with-subnav';
   }
+  dpm($vars);
 }
 
 function new_theme_preprocess_node(&$vars) {
