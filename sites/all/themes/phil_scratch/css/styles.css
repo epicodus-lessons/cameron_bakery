@@ -1,0 +1,37 @@
+html {
+  height: 100%;
+  width: 100%
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+#block-system-main-menu {
+  width: 10%;
+  float: left;
+  padding-right: 6%;
+}
+#block-system-main-menu h2 {
+  display: none;
+}
+#block-system-navigation {
+  width: 18%;
+  float: right;
+  margin-right: 2px;
+}
+#block-system-main, .region-content {
+  width: 70%;
+  margin-left: 10px;
+  margin-right: 10px
+}
+
+#node-3 {
+  margin: 10px;
+  width: 60%;
+}
+#header {
+  text-align:center;
+}
+#navigation .section h2 {
+
+}
