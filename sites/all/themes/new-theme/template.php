@@ -55,6 +55,11 @@ function new_theme_preprocess_page(&$vars, $hook) {
   if (isset($vars['node_title'])) {
     $vars['title'] = $vars['node_title'];
   }
+  //this adds node title class to each node
+  if (isset($vars['node']->title) ) {
+    $vars['classes_array'][] = 'node_' . str_replace(' ', '_', strtolower($vars['node']->title));
+    $vars['classes_array'][] = 'node_' . str_replace(' ', '_', strtolower($vars['node']->type));
+}
   // Adding a class to #page in wireframe mode
   if (theme_get_setting('wireframe_mode')) {
     $vars['classes_array'][] = 'wireframe-mode';
@@ -66,6 +71,7 @@ function new_theme_preprocess_page(&$vars, $hook) {
   if (!empty($vars['secondary_menu'])) {
     $vars['classes_array'][] = 'with-subnav';
   }
+  dpm($vars);
 }
 
 function new_theme_preprocess_node(&$vars) {

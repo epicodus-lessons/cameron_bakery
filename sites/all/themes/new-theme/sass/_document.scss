@@ -40,7 +40,7 @@ audio:not([controls]) {
 #skip a {
   // "Skip to Navigation" link
   // ---------------------------
-  // This link useful for both visually impaired people and those with 
+  // This link useful for both visually impaired people and those with
   // mobility impairments who cannot use a mouse.
   @include element-invisible-focusable;
 }

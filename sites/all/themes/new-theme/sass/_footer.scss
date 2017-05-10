@@ -1,0 +1,18 @@
+#footer{
+    display:table;
+    background-color: #9A6F51;
+    h2.block-title{
+        display: none;
+    }
+    ul{
+        display: table-row;
+            li {
+                :visited {
+                    color: white;
+                }
+                display:table-cell;
+                float:none;
+                text-decoration:none;
+        }
+    }
+}

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Page Styling
 // --------------------
-// This file combines all partials into one main style sheet, to be loaded on 
+// This file combines all partials into one main style sheet, to be loaded on
 // all pages.
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -12,3 +12,11 @@
 @import "modules";   // Defines module styles.
 //@import "mobile";   // We can now define our mobile styles inline
 @import "print";    // Defines styles for printing.
+
+//custom pages
+@import "cafe_menu"; //this is the styling for the cafe's main menu
+@import "header"; //this is the styling for the header
+@import "navigation"; //this is the styling for the nav bar
+@import "locations"; //styling for the locations page
+@import "footer"; //styling for the footer
+@import "home_page"; //styling for the footer
