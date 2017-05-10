@@ -137,5 +137,5 @@ function new_zen_preprocess_comment(&$variables, $hook) {
 }
 // */
 function new_zen_preprocess_node(&$variables){
-    
+    dpm($variables);
 }
