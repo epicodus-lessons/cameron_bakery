@@ -2,7 +2,7 @@
 
 ##### Epicodus Drupal Code Review 3
 
-#### By _**Michaela Davis**_   &nbsp; 5.8.17
+#### By Michaela Davis   &nbsp; 5.8.17
 #### Original Content By Diane Douglas
 
 ## Description
@@ -14,7 +14,7 @@ I also added a own custom module with a touch of JavaScript and a Zen sub-theme.
 
 ```bash
 git clone https://github.com/Michaela-Davis/cameron_bakery.git
-cd drupal_cipher
+cd cameron_bakery
 ```
 
 * Click on Preferences in your MAMP window and set your document root to the top level of your repository.
