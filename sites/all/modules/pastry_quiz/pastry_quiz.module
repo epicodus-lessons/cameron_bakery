@@ -1,11 +1,5 @@
 <?php
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
-// Assignment: at least three questions on different pages and at least three unique outcomes for the quiz result page. After that, the content is totally up to you! In fact the quiz can be about anything, as long as it suggests pastries.
-
 function pastry_quiz_menu() {
     $items['quiz'] = array(
         'title' => 'Which pastry should I choose!?',
@@ -101,18 +95,21 @@ function start_form() {
         }
 
         function quiz_success() {
-            $gluten = $_SESSION['values']['gluten'];
-            // $nuts = $_SESSION['values']['nuts'];
-            // $bacon = $_SESSION['values']['bacon'];
-            if ($gluten) {
+            $gluten = $_SESSION['gluten'];
+            $bacon = $_SESSION['bacon'];
+
+            // if $gluten is TRUE/YES then it will return Try one of our amazing gluten-free donuts!
+            if (!$gluten) {
                 return '<p> Try one of our amazing gluten-free donuts! </p>';
 
-                // } elseif ($bacon && !$gluten){
-                //     return "<p> BACON MAPLE BAR, \'nuf said... </p>";
+            // if $bacon is TRUE/YES  and $gluten is FALSE/NO then it will return
+            } elseif (!$bacon){
+                return "<p> BACON MAPLE BAR, nuf said </p>";
 
-                } else {
-                    return "<p> Our apricot scones are delicious! </p>";
-                }
+            // if $bacon is FALSE/NO and $gluten is FALSE/NO then it will return
+            } else {
+                return "<p> Our apricot scones are delicious! </p>";
+            }
         }
 
     function start_form_submit($form, &$form_state) {
@@ -128,15 +125,7 @@ function start_form() {
     }
 
     function question_three_submit($form, &$form_state) {
-        //   $form['gluten']['default_value'] = variable_get('comment_preview', 1);
           $bacon = $form_state['values']['bacon'];
           $_SESSION['bacon'] = $bacon;
           $form_state['redirect'] = 'quiz_results';
     }
-
-    // function quiz_form_submit($form, &$form_state) {
-    //   $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-    //   $gluten = $form_state['values']['gluten'];
-    //   $_SESSION['gluten'] = $gluten;
-    //   $form_state['redirect'] = 'quiz_results';
-    // }
