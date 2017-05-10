@@ -1,10 +1,4 @@
-
 <?php
-
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
 
 function pastry_quiz_menu() {
     $items['quiz'] = array(
