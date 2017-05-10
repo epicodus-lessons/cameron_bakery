@@ -1,19 +1,31 @@
-# Cameron's Bakery
+# Cameron Bakery
 
-##### Epicodus Drupal Code Review 3
+Cameron Bakery is a Drupal website that was made for a fictional client who owns a bakery. This project contains a quiz that suggests which item a customer should purchase based on their responses. It also includes a custom theme and a custom subtheme that includes custom styling and Javascript. 
 
-#### By Diane Douglas
+## To run Cameron Bakery from a personal computer:
 
-## Description
+You will need the following properly installed on your computer.
 
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+* Git
+* PHP
+* MAMP
 
-## Setup
+## Installation
 
-* Clone this repository
-* Set document root to the top level directory of the repository
-* Import the database, called "bakery", found in `sites/db-backup`
-* Create a user for the database: username = "cameron", password = "cameron"
-* Point browser to localhost
-* Site maintenance account info: username = "cameron", password = "cameron"
+**Step 1**: Clone this repository to your local computer
+
+```console
+git clone https://github.com/Sean-Peterson/drupal-bookstore
+```
+
+**Step 2**: Open mamp and set port: apache port: 8888 and mysql port: 8889
+
+**Step 3**: Set mamp configuration web server to the project directory
+
+**Step 4**: Open a web browser and navigate to localhost:8888/MAMP/ and then click on the phpMyAdmin link
+
+**Step 5**: Click on Import, choose file, and select drupal-bookstore/sites/db-backup/bookstore.sql
+
+**Step 6**: Start MAMP servers
+
+**Step 7**: In your web browser navigate to localhost:8888
