@@ -32,6 +32,7 @@ features[] = secondary_menu
 scripts[] = js/libs/modernizr-2.6.2-respond-1.1.0.min.js
 scripts[] = js/script.js
 scripts[] = js/plugins.js
+scripts[] = js/custom.js
 
 plugins[panels][layouts] = layouts
 
@@ -51,4 +52,3 @@ version = "7.x-1.10"
 core = "7.x"
 project = "boilerplate"
 datestamp = "1402073928"
-

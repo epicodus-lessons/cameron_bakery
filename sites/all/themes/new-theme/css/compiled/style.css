@@ -1079,8 +1079,7 @@ tr.odd {
 
 #footer {
   display: table;
-  border: 0px none white;
-  background-color: lightgray;
+  background-color: #9A6F51;
 }
 #footer h2.block-title {
   display: none;
@@ -1091,6 +1090,10 @@ tr.odd {
 #footer ul li {
   display: table-cell;
   float: none;
+  text-decoration: none;
+}
+#footer ul li :visited {
+  color: white;
 }
 
 #node-66 h2 {
