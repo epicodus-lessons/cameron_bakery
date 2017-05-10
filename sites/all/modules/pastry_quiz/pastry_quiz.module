@@ -78,12 +78,12 @@ function quiz_form_1() {
 
 function quiz_form_2() {
     $form['fear'] = array(
-        '#title' => 'Gluten Intollerant',
+        '#title' => 'Fear of Heights',
         '#type' => 'radios',
-        '#description' => t('Are you afraid of gluten?'),
+        '#description' => t('Are you afraid of heights?'),
         '#options' => array(
-          t('Yes'),
-          t('No'),
+            t('Yes'),
+            t('No'),
         ),
         '#required' => TRUE,
     );
@@ -106,7 +106,7 @@ function quiz_form_3() {
             t('No'),
         ),
         '#required' => TRUE,
-      );
+    );
 
     $form['submit'] = array(
         '#type' => 'submit',

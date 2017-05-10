@@ -8,7 +8,7 @@ function bakery_user_menu() {
     );
     return $items;
 }
-
+ 
 function bakery_user_login(&$edit, $account) {
     $_GET['destination'] = 'welcome';
 }
