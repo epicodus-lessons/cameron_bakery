@@ -6,159 +6,159 @@
 // 3. make suggestions based on questions
 
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What should I eat!?',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
+  $items['quiz'] = array(
+    'title' => 'What should I eat!?',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('start_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
 
-    $items['quiz_question_1'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_question_1'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
-    $items['quiz_question_2'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_question_2'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
-    $items['quiz_question_3'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_question_3'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question_1'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_question_1'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['quiz_question_2'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_question_2'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  $items['quiz_question_3'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_question_3'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_results'] = array(
+    'title' => 'Quiz Results!',
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  return $items;
 }
 
 function start_form() {
 
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'Start Quiz!',
-    );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Start Quiz!',
+  );
 
-    return $form;
+  return $form;
 }
 
 function start_form_submit($form, &$form_state) {
-    $form_state['redirect'] = 'quiz_question_1';
+  $form_state['redirect'] = 'quiz_question_1';
 }
 
 function quiz_question_1() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+$form['gluten'] = array(
+  '#title' => 'Gluten Intollerance',
+  '#type' => 'radios',
+  '#description' => t('Are you gluten intollerant?'),
+  '#options' => array(
+      t('Yes'),
+      t('No'),
+  ),
+  '#required' => TRUE,
+);
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
+$form['submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'submit',
+);
 
-  return $form;
+return $form;
 }
 
 function quiz_question_1_submit($form, &$form_state) {
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_question_2';
+$gluten = $form_state['values']['gluten'];
+$_SESSION['gluten'] = $gluten;
+$form_state['redirect'] = 'quiz_question_2';
 }
 
 function quiz_question_2() {
-  $form['doughnuts'] = array(
-      '#title' => 'Doughnuts?',
-      '#type' => 'radios',
-      '#description' => t('Do you like doughnuts'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+$form['doughnuts'] = array(
+  '#title' => 'Doughnuts?',
+  '#type' => 'radios',
+  '#description' => t('Do you like doughnuts'),
+  '#options' => array(
+      t('Yes'),
+      t('No'),
+  ),
+  '#required' => TRUE,
+);
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
+$form['submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'submit',
+);
 
-  return $form;
+return $form;
 }
 function quiz_question_2_submit($form, &$form_state) {
 
-  $doughnuts = $form_state['values']['doughnuts'];
-  $_SESSION['doughnuts'] = $doughnuts;
-  $form_state['redirect'] = 'quiz_question_3';
+$doughnuts = $form_state['values']['doughnuts'];
+$_SESSION['doughnuts'] = $doughnuts;
+$form_state['redirect'] = 'quiz_question_3';
 }
 
 function quiz_question_3() {
-  $form['chocolate'] = array(
-      '#title' => 'Chocolate',
-      '#type' => 'radios',
-      '#description' => t('Do you like Chocolate?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+$form['chocolate'] = array(
+  '#title' => 'Chocolate',
+  '#type' => 'radios',
+  '#description' => t('Do you like Chocolate?'),
+  '#options' => array(
+    t('Yes'),
+    t('No'),
+  ),
+  '#required' => TRUE,
+);
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
+$form['submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'submit',
+);
 
-  return $form;
+return $form;
 }
 function quiz_question_3_submit($form, &$form_state) {
 
-  $chocolate = $form_state['values']['chocolate'];
-  $_SESSION['chocolate'] = $chocolate;
-  $form_state['redirect'] = 'quiz_results';
+$chocolate = $form_state['values']['chocolate'];
+$_SESSION['chocolate'] = $chocolate;
+$form_state['redirect'] = 'quiz_results';
 }
 
 function quiz_success() {
-    $gluten = $_SESSION['gluten'];
-    $doughnuts = $_SESSION['doughnuts'];
-    $chocolate = $_SESSION['chocolate'];
+  $gluten = $_SESSION['gluten'];
+  $doughnuts = $_SESSION['doughnuts'];
+  $chocolate = $_SESSION['chocolate'];
 
-    if($gluten == 0){
-      if($chocolate == 0) {
-        $output = "Our gluten free chocolate puff pastry is for you!";
-      }else{
-        $output = "Our gluten free puff pastry is for you!";
-      }
-    }else if($doughnuts == 0 ){
-      if ($chocolate == 0) {
-        $output = "You should try our freshly made chocolate covered doughnuts!";
-      }else{
-        $output = "You should try our freshly made glazed doughnuts!";
-      }
+  if($gluten == 0){
+    if($chocolate == 0) {
+      $output = "Our gluten free chocolate puff pastry is for you!";
     }else{
-      if ($chocolate == 0) {
-        $output = "How about some fresh out of the oven chocolate chip cookies!";
-      }else{
-        $output = "How about some fresh out of the oven oatmeal raisin cookies!";
-      }
+      $output = "Our gluten free puff pastry is for you!";
     }
+  }else if($doughnuts == 0 ){
+    if ($chocolate == 0) {
+      $output = "You should try our freshly made chocolate covered doughnuts!";
+    }else{
+      $output = "You should try our freshly made glazed doughnuts!";
+    }
+  }else{
+    if ($chocolate == 0) {
+      $output = "How about some fresh out of the oven chocolate chip cookies!";
+    }else{
+      $output = "How about some fresh out of the oven oatmeal raisin cookies!";
+    }
+  }
 
-    return $output;
+  return $output;
 }
