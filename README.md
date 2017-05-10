@@ -2,7 +2,7 @@
 
 ##### Epicodus Drupal Code Review 3
 
-#### By Diane Douglas
+#### By Jeremiah Freeman
 
 ## Description
 
@@ -11,7 +11,7 @@ Students must fix the module, add their own custom module and a Zen sub-theme.
 
 ## Setup
 
-* Clone this repository
+* Clone this repository ( https://github.com/jaythinkshappiness/cameron_bakery )
 * Set document root to the top level directory of the repository
 * Import the database, called "bakery", found in `sites/db-backup`
 * Create a user for the database: username = "cameron", password = "cameron"

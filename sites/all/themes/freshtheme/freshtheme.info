@@ -1,0 +1,15 @@
+name = Fresh Theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/colors.css
+scripts[] = js/scripts.js
+
+
+regions[deals] = Deals
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[content] = Content
+regions[help] = Help
+regions[love] = Love
+regions[user_menu] = User Menu
+regions[main_menu] = Main Menu

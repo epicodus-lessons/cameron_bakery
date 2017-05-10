@@ -5,24 +5,29 @@
 // 2. write at least two more questions
 // 3. make suggestions based on questions
 
+// front page link - question 1 and question 2 - success page //
 function pastry_quiz_menu() {
     $items['quiz'] = array(
-        'title' => 'What should I eat!?',
+        'title' => 'What can you eat?',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('start_form'),
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
-
     $items['quiz_question_1'] = array(
         'page callback' => 'drupal_get_form',
         'page arguments' => array('quiz_form'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
     );
-
+    $items['quiz_question_2'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('quiz_form_2'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
     $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
+        'title' => '',
         'page callback' => 'quiz_success',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
@@ -30,38 +35,19 @@ function pastry_quiz_menu() {
 
     return $items;
 }
-function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
-
-  return $form;
-}
-
+// first page form  //
 function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
+    $form['gluten'] = array(
+        '#title' => 'Are you gluten intollerant?',
+        '#type' => 'radios',
+        '#description' => t(''),
+        '#options' => array(
+            t('Yes'),
+            t('No'),
+        ),
+        '#required' => TRUE,
+    );
     $form['submit'] = array(
         '#type' => 'submit',
         '#value' => 'submit',
@@ -70,22 +56,179 @@ function start_form() {
     return $form;
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
-}
-
+// first page submit //
 function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
+    $result = $form_state['values']['gluten'];
+    $_SESSION['first_stash'] = $result;
+    $form_state['redirect'] = 'quiz_question_1';
 }
 
+// second page form //
+function quiz_form() {
+    $result = $_SESSION['first_stash'];
+    if ($result == "0") {
+
+        $form['second_question'] = array(
+            '#title' => 'Would you like extra sugar instead then?',
+            '#type' => 'radios',
+            '#description' => t(''),
+            '#options' => array(
+                t('Yes'),
+                t('No'),
+            ),
+            '#required' => TRUE,
+        );
+        $form['submit'] = array(
+            '#type' => 'submit',
+            '#value' => 'submit',
+        );
+        return $form;
+
+    } elseif ($result == "1") {
+          $form['second_question'] = array(
+              '#title' => 'Great, then choose a cookie!',
+              '#type' => 'radios',
+              '#description' => t(''),
+              '#options' => array(
+                  t('chocolate'),
+                  t('Vanilla'),
+              ),
+              '#required' => TRUE,
+          );
+
+          $form['submit'] = array(
+                  '#type' => 'submit',
+                  '#value' => 'submit',
+          );
+          return $form;
+    }
+
+
+}
+// second page submit //
 function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
-  $gluten = $form_state['values']['gluten'];
-  $_SESSION['gluten'] = $gluten;
-  $form_state['redirect'] = 'quiz_results';
+
+    $result = $form_state['values']['second_question'];
+    $_SESSION['second_stash'] = $result;
+    $form_state['redirect'] = 'quiz_question_2';
+
+}
+
+// second page form //
+function quiz_form_2() {
+    $result = $_SESSION['second_stash'];
+    if ($result == "0") {
+
+        $form['third_question'] = array(
+            '#title' => 'How clogged up would you like your arteries?',
+            '#type' => 'radios',
+            '#description' => t(''),
+            '#options' => array(
+                t('Cupcaked up'),
+                t('Caked up'),
+                t('Couped up'),
+            ),
+            '#required' => TRUE,
+        );
+
+        $form['submit'] = array(
+            '#type' => 'submit',
+            '#value' => 'submit',
+        );
+        return $form;
+
+
+    } elseif ($result == "1") {
+          $form['third_question'] = array(
+              '#title' => 'How about these sugar-free options?',
+              '#type' => 'radios',
+              '#description' => t(''),
+              '#options' => array(
+                  t('Cardboard Cookies'),
+                  t('Plain Pastry'),
+                  t("Papa's Purple"),
+              ),
+              '#required' => TRUE,
+          );
+
+          $form['submit'] = array(
+                  '#type' => 'submit',
+                  '#value' => 'submit',
+          );
+          return $form;
+    }
+}
+
+// second page submit //
+function quiz_form_2_submit($form, &$form_state) {
+
+    $result = $form_state['values']['third_question'];
+    $_SESSION['third_stash'] = $result;
+    $form_state['redirect'] = 'quiz_results';
+}
+
+// success page //
+function quiz_success() {
+    $result = $_SESSION['third_stash'];
+    if ($result == "0"){
+        $display = " <h2> <strong>Cardboard Cookies</strong></h2> <br>1 1/4 cups whole wheat flour
+        1 1/4 teaspoons of baking powder<br>
+        1/2 teaspoon baking soda<br>
+        1/2 teaspoon salt<br>
+        2 eggs<br>
+        3/4 cup raw cane sugar<br>
+        2 teaspoons pure vanilla extract<br>
+        1/2 cup vegetable oil (I usually use a little less so it is not that greasy)<br>
+        1/2 cup milk + 1/2 teaspoon vinegar<br>
+        Frosting of your choice or click here for recipes<br>
+        For Decorating: desired sprinkles<br>
+        Large round decorating tip or Large Open Star Tip to frost the cupcakes";
+    return $display;
+
+    } elseif ($result == "1") {
+        $display = " <h2><strong>Plain Pastry</strong></h2><br><br>
+        Ingredients<br>
+        1 kg (2 1/4 pounds) white bread flour<br>
+        1 cup sugar<br>
+        1 teaspoon salt<br>
+        1 packet instant yeast<br>
+        1 litre lukewarm water<br>
+        Vegetable oil for deep frying<br>
+        In a large bowl mix flour, sugar, salt and yeast together.<br>
+        Slowly add lukewarm water and stir. Mix to form a smooth dough. Knead the dough for about 5 minutes until smooth.<br>
+        Cover with oiled cling fling, and leave to rise for about 30 minutes or until doubled in size.<br>
+        Heat enough vegetable oil for deep frying.<br>
+        Take a piece of dough rolling into the shape and size of a tennis ball and carefully lowering it into hot oil. Deep fry six fat cakes at a time.<br>
+        Allow to turn golden brown on sides by frequently turning. They are ready when floating and making puffy sound and doubled in size.<br>
+        Remove from oil and drain on kitchen paper.";
+    return $display;
+
+    } elseif ($result == "2") {
+        $display = " <h2><strong>Papa's Purple</strong></h2><br>
+        For the bottom layer:<br>
+        6 tablespoons unsalted butter, melted.<br>
+        1/2 cup granulated sugar<br>
+        1/2 cup light brown sugar<br>
+        2 large eggs<br>
+        3/4 teaspoon salt<br>
+        1 1/2 cups flour<br>
+        2 teaspoons baking powder<br><br>
+        For the top layer:<br><br>
+        8 ounces cream cheese, softened<br>
+        6 tablespoons light brown sugar<br>
+        2 large eggs<br>
+        1 tablespoon vanilla extract<br>
+        3 1/2 cups powdered sugar, plus extra for serving<br><br>
+        Instructions<br><br>
+        First, preheat the oven to 350. Line a 8x8-inch baking pan one direction with parchment paper (meaning it covers the bottom and only two sides of the pan. Lightly spray the exposed sides with cooking spray).<br>
+        First, make the bottom layer: In a medium bowl, whisk together the melted butter and sugars.<br>
+        Add the eggs and salt and whisk well to combine. Finally, add the flour and baking powder.<br>
+        Scoop the mixture into the prepared pan, and press flat using your hands. It’s a bit sticky—flour your fingers to help spread it evenly.
+        Next, wipe out the bowl, and add the cream cheese and brown sugar. Beat with an electric mixer on medium speed until light and fluffy, about 1 minute. Next, add the eggs and vanilla. Beat until combined. Finally, add the powdered sugar and beat until homogenous.
+        Pour the top layer on the crust.<br>
+        Bake for 50-55 minutes, until the center only has a slight jiggle. Don’t over-bake (or it won’t be gooey).<br>
+        Let cool completely, and then refrigerate or freeze until firm enough to cut evenly.<br>
+        Sprinkle with powdered sugar and serve.";
+    return $display;
+    }
 }
