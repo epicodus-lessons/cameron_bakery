@@ -6,97 +6,97 @@
 // 3. make suggestions based on questions
 
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What Should I Eat',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
+  $items['quiz'] = array(
+    'title' => 'What Should I Eat',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('start_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
 
-    $items['quiz_question_1'] = array(
-        'title' => 'Quiz Question 1',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question_1'] = array(
+    'title' => 'Quiz Question 1',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_question_2'] = array(
-        'title' => 'Quiz Question 2',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form_2'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question_2'] = array(
+    'title' => 'Quiz Question 2',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_form_2'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_question_3'] = array(
-        'title' => 'Quiz Question 3',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form_3'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question_3'] = array(
+    'title' => 'Quiz Question 3',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_form_3'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_results'] = array(
+    'title' => 'Quiz Results!',
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  return $items;
 }
 function quiz_form() {
   $form['gluten'] = array(
-      '#title' => 'Are you gluten intolerant?',
-      '#type' => 'radios',
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+  '#title' => 'Are you gluten intolerant?',
+  '#type' => 'radios',
+  '#options' => array(
+  t('Yes'),
+  t('No'),
+  ),
+  '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'Next Question',
+  '#type' => 'submit',
+  '#value' => 'Next Question',
   );
 
   return $form;
 }
 function quiz_form_2() {
   $form['protein'] = array(
-      '#title' => 'Do you work out a lot?',
-      '#type' => 'radios',
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+  '#title' => 'Do you work out a lot?',
+  '#type' => 'radios',
+  '#options' => array(
+  t('Yes'),
+  t('No'),
+  ),
+  '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'Next Question',
+  '#type' => 'submit',
+  '#value' => 'Next Question',
   );
 
   return $form;
 }
 function quiz_form_3() {
   $form['diet'] = array(
-      '#title' => 'Can you eat carbs?',
-      '#type' => 'radios',
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+  '#title' => 'Can you eat carbs?',
+  '#type' => 'radios',
+  '#options' => array(
+  t('Yes'),
+  t('No'),
+  ),
+  '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'See Results',
+  '#type' => 'submit',
+  '#value' => 'See Results',
   );
 
   return $form;
@@ -104,12 +104,12 @@ function quiz_form_3() {
 
 function start_form() {
 
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'Start Quiz',
-    );
+  $form['submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'Start Quiz',
+  );
 
-    return $form;
+  return $form;
 }
 
 function quiz_success() {
