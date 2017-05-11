@@ -15,18 +15,18 @@ function pastry_quiz_menu() {
     );
 
     $items['quiz_question_2'] = array(
-       'page callback' => 'drupal_get_form',
-       'page arguments' => array('second_form'),
-       'access callback' => TRUE,
-       'type' => MENU_CALLBACK,
-   );
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('second_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
 
-   $items['quiz_question_3'] = array(
-      'page callback' => 'drupal_get_form',
-      'page arguments' => array('third_form'),
-      'access callback' => TRUE,
-      'type' => MENU_CALLBACK,
-  );
+    $items['quiz_question_3'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('third_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
 
     $items['quiz_success_page'] = array(
         'title' => 'Quiz Results!',
@@ -39,80 +39,79 @@ function pastry_quiz_menu() {
 }
 
 function first_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
-  );
+    $form['gluten'] = array(
+    '#title' => 'Gluten Intollerance',
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intollerant?'),
+    '#options' => array(
+      t('Yes'),
+      t('No'),
+    ),
+    '#required' => TRUE,
+    );
 
-  $form['submit'] = array(
+    $form['submit'] = array(
           '#type' => 'submit',
           '#value' => 'submit',
-  );
-
-  return $form;
+    );
+    return $form;
 }
 
 function second_form() {
-  $form['size'] = array(
-      '#title' => 'What size pastry are you after?',
-      '#type' => 'radios',
-      '#description' => t('Choose your desired size.'),
-      '#options' => array(
+    $form['size'] = array(
+        '#title' => 'What size pastry are you after?',
+        '#type' => 'radios',
+        '#description' => t('Choose your desired size.'),
+        '#options' => array(
           t('Large'),
           t('Small'),
-      ),
-      '#required' => TRUE,
-  );
+        ),
+        '#required' => TRUE,
+    );
 
-  $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
-  );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'submit',
+    );
 
-  return $form;
+    return $form;
 }
 
 function third_form() {
-  $form['flavor'] = array(
-      '#title' => 'Do you prefer chocolate or fruit?',
-      '#type' => 'radios',
-      '#description' => t('Choose your desired flavor.'),
-      '#options' => array(
+    $form['flavor'] = array(
+        '#title' => 'Do you prefer chocolate or fruit?',
+        '#type' => 'radios',
+        '#description' => t('Choose your desired flavor.'),
+        '#options' => array(
           t('Chocolate'),
           t('Fruit'),
-      ),
-      '#required' => TRUE,
-  );
+        ),
+        '#required' => TRUE,
+    );
 
-  $form['submit'] = array(
+    $form['submit'] = array(
           '#type' => 'submit',
           '#value' => 'submit',
-  );
+    );
 
-  return $form;
+    return $form;
 }
 
 
 
 function first_form_submit($form, &$form_state) {
-  $_SESSION['gluten'] = $form_state['values']['gluten'];
-  $form_state['redirect'] = 'quiz_question_2';
+    $_SESSION['gluten'] = $form_state['values']['gluten'];
+    $form_state['redirect'] = 'quiz_question_2';
 }
 
 function second_form_submit($form, &$form_state) {
-  $_SESSION['size'] = $form_state['values']['size'];
-  $form_state['redirect'] = 'quiz_question_3';
+    $_SESSION['size'] = $form_state['values']['size'];
+    $form_state['redirect'] = 'quiz_question_3';
 }
 
 function third_form_submit($form, &$form_state) {
-  $_SESSION['flavor'] = $form_state['values']['flavor'];
-  $form_state['redirect'] = 'quiz_success_page';
+    $_SESSION['flavor'] = $form_state['values']['flavor'];
+    $form_state['redirect'] = 'quiz_success_page';
 }
 
 function quiz_success() {

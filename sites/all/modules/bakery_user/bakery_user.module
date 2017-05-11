@@ -13,6 +13,6 @@ function welcome_user() {
     return "<p>Welcome to Cameron's Bakery!</p>";
 }
 
-function bakery_user_login() {
+function bakery_user_user_login() {
     $_GET['destination'] = 'welcome';
 }
