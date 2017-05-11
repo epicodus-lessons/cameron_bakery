@@ -1,48 +1,48 @@
 <?php
 
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What should I eat quiz!?',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
-    $items['quiz_question2'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('question2_form'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz'] = array(
+    'title' => 'What should I eat quiz!?',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('start_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['quiz_question2'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question2_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_question3'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('question3_form'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question3'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question3_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_results'] = array(
+    'title' => 'Quiz Results!',
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  return $items;
 }
 
 function start_form() {
   $form['size'] = array(
-      '#title' => 'Question 1',
-      '#type' => 'radios',
-      '#description' => t('Do you want a tiny snack or something that fills you up?'),
-      '#default_value'=> variable_get('answer1', 1),
-      '#options' => array(
-          t('Tiny'),
-          t('Big'),
-      ),
-      '#required' => TRUE,
+    '#title' => 'Question 1',
+    '#type' => 'radios',
+    '#description' => t('Do you want a tiny snack or something that fills you up?'),
+    '#default_value'=> variable_get('answer1', 1),
+    '#options' => array(
+      t('Tiny'),
+      t('Big'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
@@ -59,20 +59,20 @@ function start_form_submit($form, &$form_state) {
 }
 function question2_form() {
   $form['calories'] = array(
-      '#title' => 'Question 2',
-      '#type' => 'radios',
-      '#description' => t('Are you concern about calories?'),
-      '#default_value' => variable_get('answer2', 1),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+    '#title' => 'Question 2',
+    '#type' => 'radios',
+    '#description' => t('Are you concern about calories?'),
+    '#default_value' => variable_get('answer2', 1),
+    '#options' => array(
+        t('Yes'),
+        t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
+      '#type' => 'submit',
+      '#value' => 'submit',
   );
 
   return $form;
@@ -87,20 +87,20 @@ function question2_form_submit($form, &$form_state) {
 
 function question3_form() {
   $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#default_value' => variable_get('comment_preview', 1),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+    '#title' => 'Gluten Intollerance',
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intollerant?'),
+    '#default_value' => variable_get('comment_preview', 1),
+    '#options' => array(
+        t('Yes'),
+        t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
+    '#type' => 'submit',
+    '#value' => 'submit',
   );
 
   return $form;
@@ -111,7 +111,6 @@ function question3_form_submit($form, &$form_state) {
   $_SESSION['gluten'] = $gluten;
   $form_state['redirect'] = 'quiz_results';
 }
-
 
 function quiz_success() {
   $size = $_SESSION['size'];
