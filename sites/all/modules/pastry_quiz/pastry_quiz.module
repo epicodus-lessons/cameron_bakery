@@ -47,56 +47,57 @@ function pastry_quiz_menu() {
 
   return $items;
 }
+
 function quiz_form() {
   $form['gluten'] = array(
-  '#title' => 'Are you gluten intolerant?',
-  '#type' => 'radios',
-  '#options' => array(
-  t('Yes'),
-  t('No'),
-  ),
-  '#required' => TRUE,
+    '#title' => 'Are you gluten intolerant?',
+    '#type' => 'radios',
+    '#options' => array(
+    t('Yes'),
+    t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'Next Question',
+    '#type' => 'submit',
+    '#value' => 'Next Question',
   );
 
   return $form;
 }
 function quiz_form_2() {
   $form['protein'] = array(
-  '#title' => 'Do you work out a lot?',
-  '#type' => 'radios',
-  '#options' => array(
-  t('Yes'),
-  t('No'),
-  ),
-  '#required' => TRUE,
+    '#title' => 'Do you work out a lot?',
+    '#type' => 'radios',
+    '#options' => array(
+    t('Yes'),
+    t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'Next Question',
+    '#type' => 'submit',
+    '#value' => 'Next Question',
   );
 
   return $form;
 }
 function quiz_form_3() {
   $form['diet'] = array(
-  '#title' => 'Can you eat carbs?',
-  '#type' => 'radios',
-  '#options' => array(
-  t('Yes'),
-  t('No'),
-  ),
-  '#required' => TRUE,
+    '#title' => 'Can you eat carbs?',
+    '#type' => 'radios',
+    '#options' => array(
+    t('Yes'),
+    t('No'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'See Results',
+    '#type' => 'submit',
+    '#value' => 'See Results',
   );
 
   return $form;
@@ -105,8 +106,8 @@ function quiz_form_3() {
 function start_form() {
 
   $form['submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'Start Quiz',
+    '#type' => 'submit',
+    '#value' => 'Start Quiz',
   );
 
   return $form;
