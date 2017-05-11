@@ -55,39 +55,39 @@ function start_form() {
 
 function quiz_form_2() {
   $form['tastebud'] = array(
-  '#title' => 'Tastebud',
-  '#type' => 'radios',
-  '#description' => t('Are you craving sweet or savory?'),
-  '#options' => array(
-  t('Sweet'),
-  t('Savory'),
-  ),
-  '#required' => TRUE,
+    '#title' => 'Tastebud',
+    '#type' => 'radios',
+    '#description' => t('Are you craving sweet or savory?'),
+    '#options' => array(
+      t('Sweet'),
+      t('Savory'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'submit',
+    '#type' => 'submit',
+    '#value' => 'submit',
   );
-
+  
   return $form;
 }
 
 function quiz_form_3() {
   $form['calories'] = array(
-  '#title' => 'Calories',
-  '#type' => 'radios',
-  '#description' => t('Low or high calorie?'),
-  '#options' => array(
-  t('<500 cal'),
-  t('>500 cal'),
-  ),
-  '#required' => TRUE,
+    '#title' => 'Calories',
+    '#type' => 'radios',
+    '#description' => t('Low or high calorie?'),
+    '#options' => array(
+      t('<500 cal'),
+      t('>500 cal'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-  '#type' => 'submit',
-  '#value' => 'submit',
+    '#type' => 'submit',
+    '#value' => 'submit',
   );
 
   return $form;
