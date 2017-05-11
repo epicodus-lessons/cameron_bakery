@@ -134,7 +134,9 @@
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
-
+      <div id="specials" class="specials">
+        <?php print render($page['deals']); ?>
+      </div>
       <?php if ($page['sidebar_first']): ?>
         <div id="sidebar-first" class="column sidebar"><div class="section">
           <?php print render($page['sidebar_first']); ?>
