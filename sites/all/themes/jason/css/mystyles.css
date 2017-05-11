@@ -1,0 +1,27 @@
+body {
+    margin: 5%;
+    background-color: #d3d3d3;
+}
+
+a {
+    text-decoration: none;
+}
+
+.layout-3col__right-content {
+    padding-left: 5%;
+}
+
+.visually-hidden .visually-hidden--focusable a {
+    padding-right: 3%;
+}
+
+.layout-3col__left-sidebar {
+    border-radius: 4px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 2px #117aa2;
+}
+
+.header {
+    margin-bottom: 5%;
+}
+ 
