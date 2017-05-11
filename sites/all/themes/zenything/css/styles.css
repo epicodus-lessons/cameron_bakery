@@ -3,9 +3,9 @@
 }
 
 html {
-  font-size: 100%;
+  font-size: 150%;
   line-height: 1.5em;
-  font-family: Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-family: Courier, Monospace, "DejaVu Sans", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   min-height: 100%;
@@ -13,15 +13,15 @@ html {
 
 @media print {
   html {
-    font-size: 12pt;
+    font-size: 20pt;
   }
 }
 
 body {
   margin: 0;
   padding: 0;
-  color: #000;
-  background-color: #fff;
+  color: #111;
+  background-color: #efe;
 }
 
 article,
@@ -61,7 +61,7 @@ template,
 }
 
 a {
-  color: #0072b9;
+  color: #red;
   -webkit-text-decoration-skip: objects;
 }
 
