@@ -4,6 +4,7 @@
 
 body {
   background-image: url('../background.jpeg');
+  text-align: center;
 }
 
 h1, h2, p, a {
@@ -16,4 +17,13 @@ h1, h2, p, a {
 #site-slogan {
   color: magenta;
   text-shadow: -1px 0 pink, 0 1px pink, 1px 0 pink, 0 -1px pink;
+}
+
+#content {
+  background-color: #B4D8E7;
+}
+
+.menu {
+    width: 15%;
+    margin: auto;
 }
