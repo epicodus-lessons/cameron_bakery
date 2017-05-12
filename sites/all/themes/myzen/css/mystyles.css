@@ -1,0 +1,23 @@
+body {
+  background-image: url('../new-logo.gif');
+
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+    0% {background-position: left top;}
+    33% {background-position: right bottom;}
+    66% {background-position: right top;}
+    100% {background-position: left bottom;}
+}
+
+h1, h2, p {
+  font-family: cursive;
+  color: magenta;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.header__logo > img {
+  display: none;
+}

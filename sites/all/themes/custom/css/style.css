@@ -1,0 +1,29 @@
+#header {
+  background-color: #B4D8E7;
+}
+
+body {
+  background-image: url('../background.jpeg');
+  text-align: center;
+}
+
+h1, h2, p, a {
+  font-family: cursive;
+  font-weight: bold;
+  color: blue;
+  text-shadow: -1px 0 pink, 0 1px pink, 1px 0 pink, 0 -1px pink;
+}
+
+#site-slogan {
+  color: magenta;
+  text-shadow: -1px 0 pink, 0 1px pink, 1px 0 pink, 0 -1px pink;
+}
+
+#content {
+  background-color: #B4D8E7;
+}
+
+.menu {
+    width: 10%;
+    margin: auto;
+}
