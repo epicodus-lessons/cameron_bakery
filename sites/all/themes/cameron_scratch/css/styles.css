@@ -1,0 +1,91 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5%;
+  margin-right: 8%;
+  margin-left: 8%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo img {
+  height: 150px;
+  width: auto;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+#site-name {
+  font-size: 50pt;
+  font-family: 'Montez', cursive;
+}
+
+#site-slogan {
+  font-size: 16pt;
+}
+
+#navigation h2 {
+  display: none;
+}
+
+#navigation {
+  background-color: #4747d1;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#main-menu a {
+  color: white;
+}
+
+#secondary-menu {
+  float: right;
+  font-size: 10pt;
+  margin-top: 30px;
+}
+
+#breadcrumb {
+  display: none;
+}
+
+#sidebar-first {
+  margin-top: 5%;
+  float: left;
+  width: 20%;
+  margin-right: 3%;
+}
+
+#content {
+  margin-top: 5%;
+  float: left;
+}
+
+#sidebar-second {
+  margin-top: 5%;
+  float: right;
+  margin-right: 3%;
+  width: 20%;
+  overflow: hidden;
+}
+
+.submitted {
+  font-size: 10pt;
+}
+
+.feed-icon {
+  display: none;
+}
+
+#footer {
+  font-weight: 300;
+  color: #c9bfb5;
+  display: block;
+  height: 3%;
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+}

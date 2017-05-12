@@ -1,0 +1,32 @@
+body {
+  background-color: #d1e0e0;
+  margin: 5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img.header__logo-image {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.header__name-and-slogan {
+  margin-bottom: 3%;
+}
+
+ul.navbar.clearfix {
+  background-color: #a3c2c2;
+}
+
+ul.navbar.clearfix li {
+  padding: 10px;
+}
+
+ul.navbar.clearfix li.active {
+  background-color: #669999;
+}
