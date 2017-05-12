@@ -4,12 +4,12 @@
 
 /*BEGIN CUSTOM STYLING*/
 a:hover {
-    font-size: 110%;
-    transition: .5s;
+  font-size: 110%;
+  transition: .5s;
 }
 
 a {
-    transition: .5s;
+  transition: .5s;
 }
 
 body {
@@ -30,90 +30,90 @@ html {
 }
 
 li a {
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 #block-user-login {
-    background-color: #C5E0DC;
-    border: 3px solid #E08E79;
-    border-radius: 10px;
-    text-align: center;
-    padding-bottom: 10px;
+  background-color: #C5E0DC;
+  border: 3px solid #E08E79;
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .breadcrumb {
-    display: none;
+  display: none;
 }
 
 .feed-icon {
-    display: none;
+  display: none;
 }
 
 .form-submit {
-    border-radius: 10px;
-    background-color: #E08E79;
-    padding-left: 20px;
-    padding-right: 20px;
+  border-radius: 10px;
+  background-color: #E08E79;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header__site-link {
-    font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 70px;
-    color: #C5E0DC;
-    text-shadow: -2px 2px #774F38;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 70px;
+  color: #C5E0DC;
+  text-shadow: -2px 2px #774F38;
 }
 
 .header__name-and-slogan {
-    margin-top: 30px;
-    margin-left: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .header__site-slogan {
-    font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 30px;
-    margin-top: 20px;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 30px;
+  margin-top: 20px;
 }
 
 .main-menu {
-    padding-top: 20px;
-    margin: auto;
-    width: 50%;
+  padding-top: 20px;
+  margin: auto;
+  width: 50%;
 }
 
 .rollover-effect {
-    font-size: 110%;
-    transition: .5s;
-    -webkit-animation: rainbow .5s infinite, border 3s infinite;
+  font-size: 110%;
+  transition: .5s;
+  -webkit-animation: rainbow .5s infinite, border 3s infinite;
 }
 
 @-webkit-keyframes rainbow{
-	20%{color: red;}
-	40%{color: yellow;}
-	60%{color: green;}
-	80%{color: blue;}
-	100%{color: orange;}
+  20%{color: red;}
+  40%{color: yellow;}
+  60%{color: green;}
+  80%{color: blue;}
+  100%{color: orange;}
 }
 
 @-webkit-keyframes border{
-	16%{border-radius: 20px;}
-	32%{border-radius: 0px;}
-	48%{border-radius: 20px;}
-	64%{border-radius: 0px;}
-	80%{border-radius: 20px;}
-	100%{border-radius: 0px;}
+  16%{border-radius: 20px;}
+  32%{border-radius: 0px;}
+  48%{border-radius: 20px;}
+  64%{border-radius: 0px;}
+  80%{border-radius: 20px;}
+  100%{border-radius: 0px;}
 }
 
 /*END CUSTOM STYLING*/
 
 @media print {
-    html {
-        font-size: 12pt;
-    }
+  html {
+    font-size: 12pt;
+  }
 }
 
 article,

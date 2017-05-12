@@ -17,16 +17,14 @@
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
-
-        $('#block-user-login').mouseover(function() {
+      $('#block-user-login').mouseover(function() {
         $('.block-user .block__title').addClass('rollover-effect');
         $('#block-user-login').addClass('rollover-effect');
-    });
-        $('#block-user-login').mouseleave(function() {
+      });
+      $('#block-user-login').mouseleave(function() {
         $('.block-user .block__title').removeClass('rollover-effect');
         $('#block-user-login').removeClass('rollover-effect');
-    });
-
+      });
     }
   };
 
