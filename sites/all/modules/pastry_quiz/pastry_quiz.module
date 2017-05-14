@@ -1,91 +1,126 @@
 <?php
 
-// TO DO:
-// 1. fix everything
-// 2. write at least two more questions
-// 3. make suggestions based on questions
-
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'What should I eat!?',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
+  $items['quiz'] = array(
+    'title' => 'What should I eat quiz!?',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('start_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['quiz_question2'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question2_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_question_1'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question3'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('question3_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_results'] = array(
+    'title' => 'Quiz Results!',
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  return $items;
 }
-function quiz_form() {
-  $form['gluten'] = array(
-      '#title' => 'Gluten Intollerance',
-      '#type' => 'radios',
-      '#description' => t('Are you gluten intollerant?'),
-      '#options' => array(
-          t('Yes'),
-          t('No'),
-      ),
-      '#required' => TRUE,
+
+function start_form() {
+  $form['size'] = array(
+    '#title' => 'Question 1',
+    '#type' => 'radios',
+    '#description' => t('Do you want a tiny snack or something that fills you up?'),
+    '#default_value'=> variable_get('answer1', 1),
+    '#options' => array(
+      t('Tiny'),
+      t('Big'),
+    ),
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
-          '#type' => 'submit',
-          '#value' => 'submit',
+    '#type' => 'submit',
+    '#value' => 'next',
+  );
+
+  return $form;
+}
+function start_form_submit($form, &$form_state) {
+  $size = $form_state['values']['size'];
+  $_SESSION['size'] = $size;
+  $form_state['redirect'] = 'quiz_question2';
+}
+function question2_form() {
+  $form['calories'] = array(
+    '#title' => 'Question 2',
+    '#type' => 'radios',
+    '#description' => t('Are you concern about calories?'),
+    '#default_value' => variable_get('answer2', 1),
+    '#options' => array(
+        t('Yes'),
+        t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => 'submit',
   );
 
   return $form;
 }
 
-function start_form() {
-    // $form['gluten'] = array(
-    //     '#title' => 'Gluten Intollerance',
-    //     '#type' => 'radios',
-    //     '#description' => t('Are you gluten intollerant?'),
-    //     '#options' => array(
-    //         t('Yes'),
-    //         t('No'),
-    //     ),
-    //     '#required' => TRUE,
-    // );
-
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
-
-    return $form;
+function question2_form_submit($form, &$form_state) {
+  $calories = $form_state['values']['calories'];
+  $_SESSION['calories'] = $calories;
+  $form_state['redirect'] = 'quiz_question3';
 }
 
-function quiz_success() {
-  $gluten = $_SESSION['values']['gluten'];
-  if ($gluten) {
-    return '<p>get a donut!</p>';
-  } else {
-    return "<p>cool! we've got stuff for you too!/p>";
-  }
+
+function question3_form() {
+  $form['gluten'] = array(
+    '#title' => 'Gluten Intollerance',
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intollerant?'),
+    '#default_value' => variable_get('comment_preview', 1),
+    '#options' => array(
+        t('Yes'),
+        t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+  );
+
+  return $form;
 }
 
-function start_form_submit($form, &$form_state) {
-  $form_state['redirect'] = 'quiz_question_1';
-}
-
-function quiz_form_submit($form, &$form_state) {
-  $form['gluten']['default_value'] = variable_get('comment_preview', 1);
+function question3_form_submit($form, &$form_state) {
   $gluten = $form_state['values']['gluten'];
   $_SESSION['gluten'] = $gluten;
   $form_state['redirect'] = 'quiz_results';
+}
+
+function quiz_success() {
+  $size = $_SESSION['size'];
+  $calories = $_SESSION['calories'];
+  $gluten = $_SESSION['gluten'];
+  if ($gluten && $size && $calories) {
+    return '<p>You must eat our Monster Donut!</p>';
+  } elseif (!$gluten && !$calories && !$size) {
+    return '<h3>Go eat someplace else, weirdo.</h3>';
+  } else {
+    return "<p>A Cameron Cookie or a Stella Vodka Cake should work./p>";
+  }
 }
