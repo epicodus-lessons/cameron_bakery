@@ -1,0 +1,5 @@
+name = Custom Theme for Cameron
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/styles.css
+scripts[] = js/script.js
