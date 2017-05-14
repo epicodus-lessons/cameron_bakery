@@ -1,0 +1,15 @@
+.camelView {
+    text-align: center;
+}
+
+body {
+    background-color: tan;
+    color: #512c16;
+}
+
+a {
+    color: black;
+}
+a:visited {
+    color: #a82121;
+}
