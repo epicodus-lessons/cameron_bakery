@@ -1,19 +1,35 @@
 # Cameron's Bakery
 
-##### Epicodus Drupal Code Review 3
+#### A website for a fictional bakery, March, 2017
 
-#### By Diane Douglas
+#### By **Clayton Collins and Diane Douglass**
 
 ## Description
 
-This is a basic fictional website for a bakery, which comes with a buggy custom module.
-Students must fix the module, add their own custom module and a Zen sub-theme.
+This branch contains the fixes needed on Cameron's site. It includes some crazy custom styles, and a quiz to find out what kind of pastry you should get.
 
-## Setup
+## Setup/Installation Requirements
 
 * Clone this repository
-* Set document root to the top level directory of the repository
-* Import the database, called "bakery", found in `sites/db-backup`
-* Create a user for the database: username = "cameron", password = "cameron"
-* Point browser to localhost
-* Site maintenance account info: username = "cameron", password = "cameron"
+* Begin MAMP or similar service in the root directory
+* Make sure you have a database called `bakery` in mySQL
+* Navigate to localhost:8888 in your web browser
+* use the admin name and password `cameron` to initialize the site
+* enjoy the delicious virtual treats!
+
+
+## Known Bugs
+
+No known bugs, some of the styles might be a little too offputting. The quiz could have more questions too.
+
+## Support and contact details
+
+Let me know if you run into any issues or have questions, ideas or concerns.  Contact me or make a contribution to the code via pull request.
+
+## Technologies Used
+
+Drupal, PHP, CSS
+### License
+
+
+Copyright (c) 2017 **Clayton Collins**
