@@ -1,6 +1,7 @@
 name = Bakery
 description = Custom theme for Cameron's bakery.
 package = Core
+engine = phptemplate 
 version = VERSION
 core = 7.x
 stylesheets[all][] = style.css
