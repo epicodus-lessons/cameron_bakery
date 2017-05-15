@@ -13,7 +13,7 @@ This is a basic website for a bakery, which comes with a buggy custom module. I 
 2. Fix bakery user issue.
 3. Fix quiz problems.
 4. Add all three quiz questions and resulting suggestions and coupons.
-5. Create "Cameron" custom theme files.
+5. Create "Cameron's Custom Theme" custom theme files.
 6. Add styling for nav bars and modifies page template.
 7. Add rounded edges and borders.
 8. Create "Zen Bakery" custom zen theme.

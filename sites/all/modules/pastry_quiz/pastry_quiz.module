@@ -6,141 +6,141 @@
 // 3. make suggestions based on questions
 
 function pastry_quiz_menu() {
-    $items['quiz'] = array(
-        'title' => 'Food Intelligence Test!',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('start_form'),
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
+  $items['quiz'] = array(
+    'title' => 'Food Intelligence Test!',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('start_form'),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
 
-    $items['quiz_question_1'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('quiz_form_1'),
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  $items['quiz_question_1'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quiz_form_1'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    $items['quiz_question_2'] = array(
+  $items['quiz_question_2'] = array(
         'page callback' => 'drupal_get_form',
         'page arguments' => array('quiz_form_2'),
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
-    );
-    $items['quiz_results'] = array(
-        'title' => 'Quiz Results!',
-        'page callback' => 'quiz_success',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
+  );
+  $items['quiz_results'] = array(
+    'title' => 'Quiz Results!',
+    'page callback' => 'quiz_success',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
 
-    return $items;
+  return $items;
 }
 
 function start_form() {
 
-    $form['gluten'] = array(
-        '#title' => 'Gluten Intollerance',
-        '#type' => 'radios',
-        '#description' => t('Are you gluten intollerant?'),
-        '#options' => array(
-            t('Yes'),
-            t('No'),
-        ),
-        '#required' => TRUE,
-    );
+  $form['gluten'] = array(
+    '#title' => 'Gluten Intollerance',
+    '#type' => 'radios',
+    '#description' => t('Are you gluten intollerant?'),
+    '#options' => array(
+      t('Yes'),
+      t('No'),
+    ),
+    '#required' => TRUE,
+  );
 
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+  );
 
-    return $form;
+  return $form;
 
 }
 
 function quiz_form_1() {
-    $form['croissant'] = array(
-        '#title' => 'Croissant',
-        '#type' => 'radios',
-        '#description' => t('Do you wish you could eat a croissant?'),
-        '#options' => array(
-            t('Yes'),
-            t('No'),
-        ),
-        '#required' => TRUE,
-    );
+  $form['croissant'] = array(
+    '#title' => 'Croissant',
+    '#type' => 'radios',
+    '#description' => t('Do you wish you could eat a croissant?'),
+    '#options' => array(
+        t('Yes'),
+        t('No'),
+    ),
+    '#required' => TRUE,
+  );
 
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+  );
 
-    return $form;
+   return $form;
 }
 function quiz_form_2() {
-    $form['beverage'] = array(
-        '#title' => 'Coffee or Tea?',
-        '#type' => 'radios',
-        '#description' => t("What's your favorite pastry companion?"),
-        '#options' => array(
-            t('Tea'),
-            t('Coffee'),
-        ),
-        '#required' => TRUE,
-    );
+  $form['beverage'] = array(
+    '#title' => 'Coffee or Tea?',
+    '#type' => 'radios',
+    '#description' => t("What's your favorite pastry companion?"),
+    '#options' => array(
+        t('Tea'),
+        t('Coffee'),
+    ),
+    '#required' => TRUE,
+  );
 
-    $form['submit'] = array(
-        '#type' => 'submit',
-        '#value' => 'submit',
-    );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'submit',
+  );
 
-    return $form;
+  return $form;
 }
 
 function start_form_submit($form, &$form_state) {
-    $_SESSION['gluten'] = $form_state['values']['gluten'];
-    $form_state['redirect'] = 'quiz_question_1';
+  $_SESSION['gluten'] = $form_state['values']['gluten'];
+  $form_state['redirect'] = 'quiz_question_1';
 }
 
 function quiz_form_1_submit($form, &$form_state) {
-    $croissant = $form_state['values']['croissant'];
-    $_SESSION['croissant'] = $croissant;
-    $form_state['redirect'] = 'quiz_question_2';
+  $croissant = $form_state['values']['croissant'];
+  $_SESSION['croissant'] = $croissant;
+  $form_state['redirect'] = 'quiz_question_2';
 }
 function quiz_form_2_submit($form, &$form_state) {
-    $beverage = $form_state['values']['beverage'];
-    $_SESSION['beverage'] = $beverage;
-    $form_state['redirect'] = 'quiz_results';
+  $beverage = $form_state['values']['beverage'];
+  $_SESSION['beverage'] = $beverage;
+  $form_state['redirect'] = 'quiz_results';
 }
 
 function quiz_success() {
-    $gluten = $_SESSION['gluten'];
-    $croissant = $_SESSION['croissant'];
-    $beverage = $_SESSION['beverage'];
+  $gluten = $_SESSION['gluten'];
+  $croissant = $_SESSION['croissant'];
+  $beverage = $_SESSION['beverage'];
 
-    $output = "<p> ";
+  $output = "<p> ";
 
-    if ($croissant==="0" && $gluten==="0") {
-        $output .= "We've developed the worlds first gluten free croissant! They are not free though... ";
-    }
-    if ($croissant==="1"){
-        $output .= "Wow you are the one person in the whole world that doesn't like croissants, but that's OK!!! ";
-    }
-    if ($croissant==="0") {
-        $output .= "We have amazing croissants! ";
-    }
-    if ($gluten==="0") {
-        $output .= "We've got tons of gluten free options for you! They are not free though... ";
-    }
-    if ($gluten==="1") {
-        $output .= "We've got lots of traditional pastries! ";
-    }
-    if ($beverage==="0"){
-        $output .= "Here's a coupon for a free tea of your choice. ";
-    }
-    if ($beverage==="1"){
-        $output .= "Here's a coupon for a fresh cup of coffee with your next pastry! Or just by itself, if you can resist the smell of fresh baked pastries that is. ";
-    }
-    return $output . "</p>";
+  if ($croissant==="0" && $gluten==="0") {
+    $output .= "We've developed the worlds first gluten free croissant! They are not free though... ";
+  }
+  if ($croissant==="1"){
+    $output .= "Wow you are the one person in the whole world that doesn't like croissants, but that's OK!!! ";
+  }
+  if ($croissant==="0") {
+    $output .= "We have amazing croissants! ";
+  }
+  if ($gluten==="0") {
+    $output .= "We've got tons of gluten free options for you! They are not free though... ";
+  }
+  if ($gluten==="1") {
+    $output .= "We've got lots of traditional pastries! ";
+  }
+  if ($beverage==="0"){
+    $output .= "Here's a coupon for a free tea of your choice. ";
+  }
+  if ($beverage==="1"){
+    $output .= "Here's a coupon for a fresh cup of coffee with your next pastry! Or just by itself, if you can resist the smell of fresh baked pastries that is. ";
+  }
+  return $output . "</p>";
 }
