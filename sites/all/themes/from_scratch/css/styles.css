@@ -1,0 +1,19 @@
+* {
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+
+#logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+#site-name, #site-slogan {
+  text-align: center;
+}
+
+body {
+  padding: 35px;
+}
