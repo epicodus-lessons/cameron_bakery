@@ -1,0 +1,16 @@
+name = Cameron's Custom Theme
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/style.css
+scripts[] = js/scripts.js
+
+regions[deals] = Deals
+regions[header] = Header
+regions[help] = Help
+regions[navbar_classes] = Navbar Classes
+regions[content] = Content
+regions[help] = Help
+regions[content_column_class] = Content Column Class
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[footer] = Footer
