@@ -1,19 +1,25 @@
 <?php
-function bakery_user_menu() {
-    $item = array();
-    $items['welcome'] = array(
-        'title' => 'Hi There!',
-        'page callback' => 'greeting',
-        'access callback' => TRUE,
-        'type' => MENU_CALLBACK,
-    );
-    return $items;
+/**
+*Implement hook_menu
+*/
+function bakery_menu() {
+  $items = array();
+  $items['welcome'] = array(
+    'title' => 'Hi There!',
+    'page callback' => 'greeting',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
 }
 
+/**
+*Implement hook_user_login
+*/
 function bakery_user_login(&$edit, $account) {
-    $_GET['destination'] = 'welcome';
+  $_GET['destination'] = 'welcome';
 }
-
+//return greeting message. Called when a user logs in
 function greeting() {
-    return "<p>Welcome to Cameron's Bakery!</p>";
+  return "<p>Welcome to Cameron's Bakery!</p>";
 }
